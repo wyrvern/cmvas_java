@@ -1,5 +1,10 @@
 //package com.mkyong.client;
 
+/**
+
+
+**/
+
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.security.cert.Certificate;
