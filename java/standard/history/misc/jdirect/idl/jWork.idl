@@ -1,0 +1,47 @@
+import "unknwn.idl" ; 
+import "oaidl.idl" ;
+import "ocidl.idl";
+import "oleidl.idl";
+import "objidl.idl";
+
+[
+  uuid(feb69231-faaa-4ef6-9f9a-fb23fe0f84dd),
+  version(1.0),
+  helpstring("jWork")
+]
+
+library jWork
+{
+    // TLib :     // TLib : OLE Automation : {00020430-0000-0000-C000-000000000046}
+    importlib("stdole2.tlb");
+
+    typedef struct tagWIN32_FIND_DATA {
+        long dwFileAttributes;
+        FILETIME ftCreationTime;
+        FILETIME ftLastAccessTime;
+        FILETIME ftLastWriteTime;
+        long nFileSizeHigh;
+        long nFileSizeLow;
+        long dwReserved0;
+        long dwReserved1;
+        unsigned char cFileName[255];
+        unsigned char cAlternate[14];
+    } WIN32_FIND_DATA;
+
+    typedef struct tagLUID_AND_ATTRIBUTES {
+        LUID Luid;
+        DWORD Attributes;
+    } LUID_AND_ATTRIBUTES;
+
+    typedef struct tagTOKEN_PRIVILEGES {
+        DWORD PrivilegeCount;
+        LUID_AND_ATTRIBUTES Privileges[1];
+    } TOKEN_PRIVILEGES;
+
+    [
+      uuid(00021401-0000-0000-C000-000000000046),
+      helpstring("jShell class")
+    ]
+    coclass jWork {
+    }
+};

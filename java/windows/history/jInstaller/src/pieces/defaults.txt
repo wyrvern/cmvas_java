@@ -1,0 +1,35 @@
+link {
+    exePath; // = "C:\\temp\\files\\link\\TimeSaver.exe";
+    lnkPath; // = "C:\\temp\\files\\link\\test.lnk";
+    workDir; // = "C:\\temp\\files\\link\\";
+    lnkDesc; // = "Description";
+    icoFile; // = "C:\\temp\\files\\link\\isotop.ico";
+    lnkArgu; // = 
+}
+file descriptor {
+    {FileDescription=autorun: autoloader, Description=autorun:
+     autoloader, Language=English (United States), FileType=Ap
+    plication, OperatingSystem=Windows NT Win32, MajorVersion=
+    1, MinorVersion=0, InternalName=autorun, BuildNumber=0, Fi
+    leVersion=1.00, ProductVersionNumber=1.0.0.0, BuildIncreme
+    nt=0, ProductVersion=1.00, CompanyName=fuel., LegalCopyrig
+    ht=Copyright ¬ 2000 - 2002 fuel., ProductName=fuel« class
+    loader, OriginalFilename=autorun.exe}
+
+      (FileDescription  =)
+      (Description      =)
+      (Language         =)
+      (FileType         =)
+      (OperatingSystem  =)
+      (MajorVersion     =)
+      (MinorVersion     =)
+      (InternalName     =)
+      (BuildNumber      =)
+      (FileVersion      =)
+      (BuildIncrement   =)
+      (ProductVersion   =)
+      (ComapnyName      =)
+      (LegalCopyright   =)
+      (ProductName      =)
+      (OriginalFilename =)
+}

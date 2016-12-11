@@ -1,0 +1,73 @@
+'[0]------------------------------------------------------------------------;
+         frmMail.StatusBar.Panels(1).Text = "Processing..."
+         Call MouseChange("frmDate", "Wait")
+         a_str = Empty
+
+         Shift = False
+         If InStr(whole, LCase(rs(dbCheck(x)))) <> 0 Then
+            Shift = True
+         ElseIf IsNull(LCase(rs(dbCheck(x)))) = True Then
+            Shift = True
+         End If
+
+         If Shift = False Then
+            j = Split(dbField(x), ",")
+            For q = 0 To UBound(j)
+               If j(q) = "firstname" Then
+                  a_str = a_str & rs(j(q)) & " " & rs(j(q + 1)) & Chr(9)
+                  q = q + 1
+               Else
+                  a_str = a_str & rs(j(q)) & Chr(9)
+               End If
+            Next
+            frmMail.grdMain.AddItem (a_str)
+         End If
+         whole = whole & " " & LCase(rs(dbCheck(x)))
+         Call MouseChange("frmDate", "Normal")
+         frmMail.StatusBar.Panels(1).Text = "Ready"
+'[1]------------------------------------------------------------------------;
+         frmMail.StatusBar.Panels(1).Text = "Processing..."
+         Call MouseChange("frmDate", "Wait")
+         a_str = Empty
+
+         Shift = False
+         If InStr(whole, LCase(rs(dbCheck(t_pos)))) <> 0 Then
+            Shift = True
+         ElseIf IsNull(LCase(rs(dbCheck(t_pos)))) = True Then
+            Shift = True
+         End If
+
+         If Shift = False Then
+            j = Split(dbField(t_pos), ",")
+            For q = 0 To UBound(j)
+               If j(q) = "firstname" Then
+                  a_str = a_str & rs(j(q)) & " " & rs(j(q + 1)) & Chr(9)
+                  q = q + 1
+               Else
+                  a_str = a_str & rs(j(q)) & Chr(9)
+               End If
+            Next
+            frmMail.grdMain.AddItem (a_str)
+         End If
+         whole = whole & " " & LCase(rs(dbCheck(t_pos)))
+         Call MouseChange("frmDate", "Normal")
+         frmMail.StatusBar.Panels(1).Text = "Ready"
+'[2]------------------------------------------------------------------------;
+   frmMail.StatusBar.Panels(1).Text = "Processing..."
+   Call MouseChange("frmMail", "Wait")
+
+   rowLimit = frmMail.grdMain.Rows
+   For i = 1 To rowLimit
+   If i = rowLimit Then
+      Exit For
+   End If
+
+   If LCase(frmMail.grdMain.TextMatrix(i, 1)) = LCase(rs(dbCheck(x))) Then
+      frmMail.grdMain.RemoveItem (i)
+      rowLimit = rowLimit - 1
+      i = i - 1
+   End If
+
+   Next i
+   Call MouseChange("frmMail", "Normal")
+   frmMail.StatusBar.Panels(1).Text = "Ready"

@@ -1,0 +1,146 @@
+// 
+// typelib filename: jShell.tlb
+
+import "unknwn.idl" ; 
+import "oaidl.idl" ;
+
+    [
+      odl,
+      uuid(0000010B-0000-0000-C000-000000000046),
+      helpstring("IPersistFile Interface")
+    ]
+    interface IPersistFile : IUnknown {
+        [helpstring("GetClassID")]
+        HRESULT _stdcall GetClassID([in, out] long* pClassID);
+        [helpstring("IsDirty")]
+        HRESULT _stdcall IsDirty();
+        [helpstring("Load")]
+        HRESULT _stdcall Load(
+                        [in] LPSTR pszFileName, 
+                        [in] long dwMode);
+        [helpstring("Save")]
+        HRESULT _stdcall Save(
+                        [in] LPSTR pszFileName, 
+                        [in] long fRemember);
+        [helpstring("SaveCompleted")]
+        HRESULT _stdcall SaveCompleted([in] LPSTR pszFileName);
+        [helpstring("GetCurFile")]
+        HRESULT _stdcall GetCurFile([in, out] LPSTR* ppszFileName);
+    };
+
+    [
+      odl,
+      uuid(000214EE-0000-0000-C000-000000000046),
+      helpstring("IShellLinkA Interface"),
+      hidden
+    ]
+    interface IShellLinkA : IUnknown {
+        [helpstring("GetPath")]
+        HRESULT _stdcall GetPath(
+                        [in] LPSTR pszFile, 
+                        [in] long cchMaxPath, 
+                        [in, out] WIN32_FIND_DATA* pfd, 
+                        [in] long fflags);
+        [helpstring("GetIDList")]
+        HRESULT _stdcall GetIDList([in, out] long* ppidl);
+        [helpstring("SetIDList")]
+        HRESULT _stdcall SetIDList([in] long pidl);
+        [helpstring("GetDescription")]
+        HRESULT _stdcall GetDescription(
+                        [in] LPSTR pszName, 
+                        [in] long cchMaxName);
+        [helpstring("SetDescription")]
+        HRESULT _stdcall SetDescription([in] LPSTR pszName);
+        [helpstring("GetWorkingDirectory")]
+        HRESULT _stdcall GetWorkingDirectory(
+                        [in] LPSTR pszDir, 
+                        [in] long cchMaxPath);
+        [helpstring("SetWorkingDirectory")]
+        HRESULT _stdcall SetWorkingDirectory([in] LPSTR pszDir);
+        [helpstring("GetArguments")]
+        HRESULT _stdcall GetArguments(
+                        [in] LPSTR pszArgs, 
+                        [in] long cchMaxPath);
+        [helpstring("SetArguments")]
+        HRESULT _stdcall SetArguments([in] LPSTR pszArgs);
+        [helpstring("GetHotkey")]
+        HRESULT _stdcall GetHotkey([in, out] long* pwHotkey);
+        [helpstring("SetHotkey")]
+        HRESULT _stdcall SetHotkey([in] long wHotkey);
+        [helpstring("GetShowCmd")]
+        HRESULT _stdcall GetShowCmd([in, out] long* piShowCmd);
+        [helpstring("SetShowCmd")]
+        HRESULT _stdcall SetShowCmd([in] long iShowCmd);
+        [helpstring("GetIconLocation")]
+        HRESULT _stdcall GetIconLocation(
+                        [in] LPSTR pszIconPath, 
+                        [in] long cchIconPath, 
+                        [in, out] long* piIcon);
+        [helpstring("SetIconLocation")]
+        HRESULT _stdcall SetIconLocation(
+                        [in] LPSTR pszIconPath, 
+                        [in] long iIcon);
+        [helpstring("SetRelativePath")]
+        HRESULT _stdcall SetRelativePath(
+                        [in] LPSTR pszPathRel, 
+                        [in] long dwReserved);
+        [helpstring("Resolve")]
+        HRESULT _stdcall Resolve(
+                        [in] long hwnd, 
+                        [in] long fflags);
+        [helpstring("SetPath")]
+        HRESULT _stdcall SetPath([in] LPSTR pszFile);
+    };
+
+[
+  uuid(11269241-F241-11CF-BD9A-00AA00575603),
+  version(1.0),
+  helpstring("jShell")
+]
+
+library IShellLinkA
+{
+    // TLib :     // TLib : OLE Automation : {00020430-0000-0000-C000-000000000046}
+    importlib("stdole2.tlb");
+
+    // Forward declare all types defined in this typelib
+    interface jPersistFile_Dispatch;
+    interface jShellLinkA_Dispatch;
+
+    typedef struct tagFILETIME {
+        long dwLowDateTime;
+        long dwHighDateTime;
+    } FILETIME;
+
+    typedef struct tagWIN32_FIND_DATA {
+        long dwFileAttributes;
+        FILETIME ftCreationTime;
+        FILETIME ftLastAccessTime;
+        FILETIME ftLastWriteTime;
+        long nFileSizeHigh;
+        long nFileSizeLow;
+        long dwReserved0;
+        long dwReserved1;
+        unsigned char cFileName[255];
+        unsigned char cAlternate[14];
+    } WIN32_FIND_DATA;
+
+    typedef enum {
+        SLR_NO_UI = 1,
+        SLR_ANY_MATCH = 2,
+        SLR_UPDATE = 4
+    } SLR_FLAGS;
+
+    typedef enum {
+        SLGP_SHORTPATH = 1,
+        SLGP_UNCPRIORITY = 2
+    } SLGP_FLAGS;
+
+    [
+      uuid(00021401-0000-0000-C000-000000000046),
+      helpstring("jShell class")
+    ]
+    coclass jShell {
+        [default] interface IShellLinkA;
+    };
+};

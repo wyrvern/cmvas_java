@@ -1,0 +1,89 @@
+If cmbTable.Text  <> "" And _
+   fromDay.Text   <> "" And _
+   fromMonth.Text <> "" And _
+   fromYear.Text  <> "" And _
+   toDay.Text     <> "" And _
+   toMonth.Text   <> "" And _
+   toYear.Text    <> "" Then
+
+  fromMonth = fromMonth.Text
+  fromDay   = fromDay.Text
+  fromYear  = fromDay.Text
+  toMonth   = toMonth.Text 
+  toDay     = toDay.Text 
+  toYear    = toYear.Text 
+   
+  fieldSelect = Replace(cmbTable.Text, " ", "")  
+
+ 'sqlopen = "select * from " & fieldSelect & " where ApprovalCode = '" & "AP/AP/Approved" & "'"
+  sqlopen = "select * from " & fieldSelect
+  Set rs = conn.Execute(sqlopen)
+
+Do While Not rs.EOF
+   dbdate = rs("CurrentDate")
+   shstring = "/"
+   dbsplit = Split(dbdate, shstring)
+   dcheck = 0
+   drem = ""
+
+For Each shstring In dbsplit
+  dcheck = dcheck + 1
+    
+  For i = 1 To 9
+   If shstring = i Then
+     shstring = "0" & shstring
+   End If
+  Next
+
+  varYear = DatePart("yyyy", dbdate)
+
+  If dcheck = 1 Then
+    dateMonth = shstring
+  End If
+  If dcheck = 2 Then
+    dateDay = shstring
+  End If
+  If dcheck = 3 Then
+    dateYear = varyear
+  End If
+
+If dcheck = 3 Then
+
+  If dateMonth >= fromMonth And dateMonth <= toMonth And _
+    dateDay >= fromDay And dateDay <= toDay And _
+    dateYear >= fromYear And dateYear <= toYear Then
+    drem = dateMonth & dateDay & dateyear
+  End If
+
+  If dateMonth > fromMonth And dateMonth < toMonth And _
+    dateYear >= fromYear And dateYear <= toYear Then
+    drem = dateMonth & dateDay & dateYear
+  End If
+
+  If dateMonth = fromMonth And dateMonth <> toMonth And _
+    dateDay >= fromDay And _
+    dateYear >= fromYear And dateYear <= toYear Then
+    drem = dateMonth & dateday & dateYear
+  End If
+
+  If dateMonth = toMonth And dateMonth <> fromMonth And _
+    dateDay <= toDay And _
+    dateYear >= fromYear And dateYear <= toYear Then
+    drem = dateMonth & dateDay & dateYear
+  End If
+
+End If
+Next
+
+If drem <> "" Then
+ msgbox("!")
+End If
+rs.movenext
+Loop
+
+rs.Close
+conn.Close
+Set rs = Nothing
+Set conn = Nothing
+
+Else

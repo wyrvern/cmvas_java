@@ -1,0 +1,36 @@
+# title  : isotopBulk mail instructions
+# author : null@null.co.za
+
+                                   isotopBulk Instructions
+----------------------------------------------------------
+Both the date range selection and group selection are
+seperate. If you wish to send via the date selection,
+ONLY the date selection tickbox must be checked.
+The same applies to group selection. There is no combination
+of the two.
+----------------------------------------------------------
+- To utilise the date-range option, check 'Send via Date',
+  select the table you wish to use (ie, 'Sales, RR, etc),
+  enter the dates to begin & end with.
+  Remember to proceed numbers less than 10, such as 9 as 09.
+  Enter the fields for Subject, from & message & send your email.
+  This will send an email to all within that table between
+  the dates you enetred.
+----------------------------------------------------------
+- to utilise the group selection option (example)
+  To send to all those who have downloaded the demo,
+  minus those who have bought the cd.
+- Check 'Send via Group Selection'
+- Select 'Downloaders' and submit '+ Group'
+- Select 'Sales' and submit '- Group'
+  This adds the Downloaders, removing all of those who
+  have bought the CD.
+- Submission of 'Duplicates' removes any duplicates between
+  two tables. In this example, only Downloaders was added.
+  Were you to add two tables, ie (Downloaders/Sales) you would
+  be required to use this button.
+- Next, Fill in 'Subject', select 'From', and enter the message
+  to send. The 'To' field will be the email address of the
+  recipient. I will probably remove this text box in a revision.
+- Press send to send bulk mail.
+----------------------------------------------------------

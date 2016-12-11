@@ -1,0 +1,46 @@
+//
+// Interface descriptions
+//
+import "unknwn.idl" ; 
+import "oaidl.idl" ;
+
+// Interface IShellLink
+[
+	object,
+	uuid(000214EE-0000-0000-C000-000000000046),
+	helpstring("IShellLinkA Interface"),
+	pointer_default(unique)
+]
+
+interface IShellLink : IUnknown
+{
+	HRESULT GetArguments([in] LPSTR pszArgs,[in] int cchMaxPath);
+//	HRESULT GetArguments([in] int cchMaxPath,[out,retval] LPSTR* pszArgs);
+//	HRESULT removeListener([in] BSTR key);
+//	HRESULT sendMessage([in] BSTR message);
+//	HRESULT sendObjects([in] SAFEARRAY(VARIANT) dataArray);
+//	HRESULT sendObjects([in] SAFEARRAY(VARIANT) * dataArray);
+} ;
+
+//
+// Hub description
+//
+[
+	uuid(0089E242-0AE1-11d2-9B9D-00C04F8C94D0),
+	version(1.0),
+	helpstring("Installer type Library")
+]
+library ShellLink
+{
+	importlib("stdole32.tlb");
+
+	// ShellLink
+	[
+		uuid(04E5D4BA-0A64-11d2-9B9D-00C04F8C94D0),
+		helpstring("Installer Interface")
+	]
+	coclass ShellLinkA
+	{
+		[default] interface IShellLink ;
+	};
+} ;

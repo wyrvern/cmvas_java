@@ -1,0 +1,34 @@
+// ------------------------------------------------------------------;
+   wyr@null.co.za - report (cmvas) : 08/12/2016
+
+   - General function : public void db_connect () : postgresql/jdbc driver
+     and basic connection settings.
+   - Implementation of strFactory/stdFactory. These will only find
+     valuable use in producion.
+   - I intend to pick up 2 CellC sims tomorrow. I have already managed
+     to intercept CellC website traffic via the Zed Proxy. I should be
+     able to intercept the GET/POST replies? (This I'll deal with
+     tomorrow)
+   - SQL parameters, such as INSERT/SELECT/etc - I need to address this
+     as soon as I have a valid reply from the CellC website.
+   - "However we will need to retrieve balances for more than one SIM, 
+     so your application will have to run through this process as 
+     many times as necessary." -- I need clarification on this,
+     although I have a few ideas as to how to implement this - given
+     the use of a poll() function to pool various connections if
+     necessary.
+
+// ------------------------------------------------------------------;
+   wyr@null.co.za - report (cmvas) : 07/12/2016
+
+   - Writen basic CLI application using java.
+   - Deployed Exception model.
+   - Usage of older java libraries (Some of my java/helper libraries) :
+
+      - lib.libstr.strFactory
+      - lib.libstd.stdFactory
+
+   - WebClient/HtmlPage functionality : submittingForm()
+
+// ------------------------------------------------------------------;
+

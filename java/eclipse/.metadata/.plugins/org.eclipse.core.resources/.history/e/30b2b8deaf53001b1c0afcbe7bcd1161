@@ -1,0 +1,51 @@
+
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import java.awt.BorderLayout;
+
+public class visual {
+
+	private JFrame jFrame = null;  //  @jve:decl-index=0:visual-constraint="17,18"
+	private JPanel jContentPane = null;
+
+	/**
+	 * This method initializes jFrame	
+	 * 	
+	 * @return javax.swing.JFrame	
+	 */
+	private JFrame getJFrame() {
+		if (jFrame == null) {
+			jFrame = new JFrame();
+			jFrame.setSize(new java.awt.Dimension(475,228));
+			jFrame.setContentPane(getJContentPane());
+		}
+		return jFrame;
+	}
+
+	/**
+	 * This method initializes jContentPane	
+	 * 	
+	 * @return javax.swing.JPanel	
+	 */
+	private JPanel getJContentPane() {
+		if (jContentPane == null) {
+			jContentPane = new JPanel();
+			jContentPane.setLayout(new BorderLayout());
+		}
+		return jContentPane;
+	}
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		visual v = new visual ();
+		v.jFrame = v.getJFrame();
+		v.jFrame.setVisible(true);
+		//v.getJContentPane();
+	
+	}
+
+}

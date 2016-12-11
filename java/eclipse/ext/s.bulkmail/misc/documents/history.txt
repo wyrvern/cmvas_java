@@ -1,0 +1,67 @@
+null@base                      html/converter
+____________________________________________]
+keys:(e:error)(h:history)(o:outstanding)
+
+o) ^up/down keys.
+   concept:
+   abcdefgh                  [1/line]
+   ^^^^^^^^                  =8chrs
+   var,                 nl   =nl+1
+   var,                 cpos =cpos+1
+   var,                 cpos =8chrs
+   :::: return
+   var,               ll     =nl
+   var,               nl     =0
+   var,               ln     =ln+1
+   var,array,     larray     ="("&ln&'):["&ll&'];'
+         ='(1):[10];(2):[15];(3):[13];(4):[18]'
+   ::::: return
+   var,               ll     =nl
+   var,               nl     =0
+   var,               ln     =ln+1
+   var,array,     larray     =larray&"("&ln&'):["&ll&'];'
+   abcde                     =[2/line]
+   ^^^^^                     =5chrs
+   :::: onup
+
+   eg)   ..........
+         ..........
+         .....
+   larray='(1):[chr];(2):[chr];(3):[chr];(4):[chr]'
+         ='(1):[10];(2):[15];(3):[13];(4):[18]'
+
+         ln=ln
+         nl(5)
+         sv=","
+         lsplit=split(larray,",")
+         for (sv, lsplit){
+         pns_s=instr(sv, "(")+1
+         pls_s=instr(sv, "[")+1
+         pns_e=instr(sv, ")")-pns_s
+         pls_e=instr(sv, "]")-pls_s
+         num_n=mid(siv,pns_s,pns_e)
+         num_l=mid(siv,pls_s,pls_e)
+         if(num_n=ln && num_l>=nl){
+         negv=nl+num_l+1
+         cpos=cpos-negv+nl
+         exitfor}
+         elseif(num_n=ln && num_l<nl){
+         negv=nl+num_l-1
+         cpos=cpos-negv+num_l
+         exitfor}
+         next}
+
+        
+   status:
+
+e) backspace, within var, destroys all +
+   eg: 1) aaAAaa.AAaa  2) aaAAa.
+   status: fixed.
+
+h) bugfix: SHIFT+char/ran Ucase+Lcase funct.
+   operand(<>SHIFT on Lcase,fix)
+
+
+
+null@base                      html/converter
+____________________________________________]

@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>Cabinet File Creation Sample</TITLE>
+<style>@import url(../../misc/jsdk_ie4.css);</style>
+<link disabled rel="stylesheet" href="../../misc/jsdk_ie3.css">
+<META NAME="ROBOTS" CONTENT="NOINDEX"></HEAD>
+<BODY>
+
+<H1><A NAME="cab_create"></A><SUP></SUP>Cabinet File Creation Sample</H1>
+
+<P>This sample is located in <B>\Samples\Packaging\Create</B>. </P>
+<!-- Jump Table Starts Here -->
+<P><A HREF="#samples_cab_create_description">Description</A><BR>
+<A HREF="#samples_cab_create_using_the_sample">Using the Sample</A><BR>
+<A HREF="#samples_cab_create_key_project_files">Key Project Files</A><BR>
+<A HREF="#samples_cab_create_technologies_demonstrated">Technologies Demonstrated</A></P>
+<!-- Jump Table Ends Here -->
+<H2><A NAME="samples_cab_create_description"></A>Description</H2>
+
+<P>This sample provides a tool for creating cabinet (.cab) files. The tool includes options for choosing a compression mode and for recursing into subdirectories when creating the cabinet.</P>
+<!-- Description Ends Here -->
+<H2><A NAME="samples_cab_create_using_the_sample"></A>Using the Sample</H2>
+
+<P class=label><B>To compile the sample</B></P>
+
+<P>Use Nmake.exe to compile the makefile in the <B>\Samples\Packaging\Create</B> directory.</P>
+
+<P class=label><B>To use the sample</B></P>
+
+<P>Use the following command to run the create tool:</P>
+
+<P class=indent>jview Create [<I>options</I>] &lt;<I>cabinet file</I>&gt; &lt;<I>input files</I>&gt;</P>
+
+<P>The command-line arguments are as follows.</P>
+
+<TABLE border=1 cellpadding=5 frame=hsides rules=rows>
+
+<TR VALIGN="top">
+<TD width=17%><I>options</I></TD>
+<TD width=83%>Two options are available:
+<P><B>/m</B> &lt;<I>mode</I>&gt;</P>
+
+<P>Specifies the compression mode. It can be NONE, MSZIP, or LZX:n, where n is between 15 and 21 inclusive. The LZX compression mode is supported by Microsoft&#174; Internet Explorer 4.0 or later. The default compression mode is MSZIP.</P>
+
+<P><B>/r</B></P>
+
+<P>Archives files recursively in all subdirectories. </P>
+</TD>
+</TR>
+
+<TR VALIGN="top">
+<TD width=17%><I>cabinet file</I></TD>
+<TD width=83%>Name of the cabinet file to be created.</TD>
+</TR>
+
+<TR VALIGN="top">
+<TD width=17%><I>input files</I></TD>
+<TD width=83%>Names of the files to archived in the cabinet file.</TD>
+</TR>
+</TABLE><BR>
+
+<P>To test the create tool, use the following command to create a cabinet (archiving the file Create.java):</P>
+
+<P class=indent>jview Create /m MSZIP test.cab Create.java</P>
+
+<P>The created cabinet file, test.cab, can be extracted using the Extract utility found in the <B>\Samples\Packaging\Extract</B> directory. Note that this sample does not preserve the date and time of files added to a cabinet file. </P>
+
+<P>To display help on the create tool, use the following command:</P>
+
+<P class=indent>jview Create</P>
+
+<H2><A NAME="samples_cab_create_key_project_files"></A>Key Project Files</H2>
+<A HREF="Create.java">Create.java</A>
+<P>This class processes user input and determines what action to take (display Help, create a cabinet file). The code passes a CabMaker object to the CabCreator class when creating a cabinet file. This file also contains the code for displaying Help on the create tool.</P>
+<A HREF="CabMaker.java">CabMaker.java</A>
+<P>This class creates the cabinet file. </P>
+
+<H2><A NAME="samples_cab_create_technologies_demonstrated"></A>Technologies Demonstrated</H2>
+
+<H4>Packaging</H4>
+
+<UL type=disc>
+	<LI>This sample shows how to use the CabCreator class in com.ms.util.cab to create cabinet files.</LI>
+</UL>
+<!-- Sample Ends Here --><P><CENTER>
+<FONT FACE="VERDANA,ARIAL,HELVETICA" SIZE="1"><A HREF="../../../cpyright.htm" target="_top">&#169; 1999 Microsoft Corporation. All rights reserved. Terms of use.</A></FONT>
+</CENTER>
+
+</BODY>
+</HTML>

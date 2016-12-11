@@ -1,0 +1,70 @@
+Public Function fCreateShellLink(sLnkFile As String, sExeFile As String, sWorkDir As String, _
+       sExeArgs As String, sIconFile As String, lIconIdx As Long, _
+       ShowCmd As SHOWCMDFLAGS) As Long
+
+Dim cShellLink   As ShellLinkA   ' An explorer IShellLinkA(Win 9x/Win NT) instance
+Dim cPersistFile As IPersistFile ' An explorer IPersistFile instance
+    
+If (sLnkFile = "") Or (sExeFile = "") Then Exit Function
+
+On Error GoTo fCreateShellLinkError
+Set cShellLink = New ShellLinkA   'Create new IShellLink interface
+Set cPersistFile = cShellLink     'Implement cShellLink's IPersistFile interface
+    
+With cShellLink
+    'Set command line exe name & path to new ShortCut.
+    .SetPath sExeFile
+    
+    'Set working directory in shortcut
+    If sWorkDir <> "" Then .SetWorkingDirectory sWorkDir
+    
+    'Add arguments to command line
+    If sExeArgs <> "" Then .SetArguments sExeArgs
+    
+    'Set shortcut description
+    .SetDescription "link" & vbNullChar
+'   If (LnkDesc <> "") Then .SetDescription pszName
+    
+    'Set shortcut icon location & index
+    If sIconFile <> "" Then .SetIconLocation sIconFile, lIconIdx
+    
+    'Set shortcut's startup mode (min,max,normal)
+    .SetShowCmd ShowCmd
+End With
+
+cShellLink.Resolve 0, SLR_UPDATE
+cPersistFile.Save StrConv(sLnkFile, vbUnicode), 0 'Unicode conversion that must be done!
+fCreateShellLink = True                           'Return Success
+
+fCreateShellLinkError:
+    Set cPersistFile = Nothing
+    Set cShellLink = Nothing
+End Function
+=================================================================
+   try {
+        hres = (IShellLinkA)com.ms.win32.Ole32.CoCreateInstance(
+        CLSID_ShellLink, 
+        null,
+        com.ms.win32.win.CLSCTX_ALL, 
+        IID_IUnknown);
+     }catch(com.ms.com.ComFailException e){
+ 	System.out.println("Object Exception : "+e);
+     }
+=================================================================
+  private static final _Guid CLSID_ShellLink = new _Guid("{00021401-0000-0000-C000-000000000046}");
+  private static final _Guid IID_IShellLink  = new _Guid("{000214EE-0000-0000-C000-000000000046}");
+  private static final _Guid IID_IUnknown = new _Guid("{00000000-0000-0000-C000-000000000046}");
+/** @dll.import("ole32", ole) */
+  private static native com.ms.com.IUnknown CoInitialize (int pvReserved);
+/** @dll.import("ole32", ole) */
+  private static native com.ms.com.IUnknown CoCreateGuid (_Guid pguid);
+
+  private _Guid getGuid() {
+    _Guid IID_This = new _Guid();
+    try {   
+        CoCreateGuid(IID_This);
+     }catch(com.ms.com.ComFailException e){
+      	System.out.println("Object Exception : "+e);
+     }
+  return IID_This;
+  }

@@ -1,0 +1,115 @@
+null@base : encryption
+/----------------------------------------------------------/
+ algorithm switches between +- (30, 60)
+ primary alphabetical letters (a-?c),
+ on +60 switch receive faults.
+ must not fall between (128->159/safe)
+/----------------------------------------------------------/
+¦ : off-limit(s)    (128-159)
+¦ : acceptable
+? : key/ascii-range (32-126)
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦????????
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+????????????????????????????????????????
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+??????¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦
+/----------------------------------------------------------/
+implementation (
+crypt_
+        do{
+           n = (int)in[x];
+           if(bit == 0) {
+              n     -= 30; 
+              bit    = 1;
+           }else{
+              n     += 128;
+              bit    = 0;
+           }
+           buf.append((char)n);
+           x++;
+        }while(x<eval.length());
+decrypt_
+        do{
+           n = (int)in[x];
+           if(bit == 0) {
+              n     -= 30; 
+              bit    = 1;
+           }else{
+              n     += 128;
+              bit    = 0;
+           }
+           buf.append((char)n);
+           x++;
+        }while(x<eval.length());
+
+)
+/----------------------------------------------------------/
+<a_cn_xyz>isotop Global Partnership,<a_cc_xyz>info@isotop.
+net,<a_pn_xyz>isotopDemo,<a_pd_xyz>isotopDemo,<a_ps_xyz>de
+bug@isotop.net,<a_se_xyz>TimeSaver.exe,<a_si_xyz>isotop.ic
+o,<a_sl_xyz>isotop Demo.lnk,<a_sd_xyz>C:\Program Files\iso
+topDemo\,<a_sp_fyz>TimeSaver.exe;isotop.cnt;DemoData.ini;d
+ealerdata.dat;isotop.gid;isotop.hlp;demodata.txt;un.ico;is
+otop.ico,<a_ss_fyz>msstdfmt.dll;msvbvm60.dll;msvcrt.dll;ol
+edlg.dll;riched20.dll;riched32.dll;actbar.ocx;library.ocx;
+synFormLock.ocx;syngradient.ocx;synrich.ocx;synRichEd.ocx;
+vsview6.ocx;ssa3d30.ocx;ssscrl30.ocx;comdlg32.ocx;richtx32
+.ocx,<a_sl_ryz>null,<a_ss_ryz>msstdfmt.dll,<a_vp_xyz>1.0.a
+----------------------------------------------------------
+?¥A?P?Z¦\zK»Q¦Q¼??N½D¥N\2¥T¦PíT»JÑRh?¥A?E?Z¦\zK¬H½"ÑU½V½Rj
+PíVh?¥A¼P?Z¦\zK»Q¦Q¼&íO½?xC?RáA¦[¦ ÑU½V½R?G¬Qh?¥A¼U?Z¦\zFí
+D¦I|K»Q¦Q¼?¬G¦?xC?UíA¦[¦ ÉK¬GÅC¦G«?íZí?xC?UÑA¦[¦ ÑU½V½RjK?
+Qh?¥A»N?Z¦\zK»Q¦Q¼??G¬QjN¬Mh?¥A»F?Z¦\z%v>?T½I«C¬??K¿G»>ÑU½
+V½R?G¬Q??xC?U¼Aó[¦ ÉK¬GÅC¦G«?íZí?ÑU½V½RjE¬Vw&íO½&¥V¥?ÑPÑ?á
+G¥NíTáC¦CjF¥VwK»Q¦Q¼?úKá?ÑU½V½RjJ¿RwFíO½F¥V¥?¦Z¦?¦PjK?QwK»
+Q¦Q¼?ÑE½?xC?U»Aó[¦ ¬U»VáH¬VjF¿NwO»X?X¬?l?áN¿?¬U¦E«VjF¿NwQ¿
+GáNú?áN¿?«K?JíFn?jF¿NwTÑEñGá§n?áN¿?¥E¦D¥TjQ?ZwNÑD«C«[jQ?Zw
+U¦P?Q«O?Q?MjQ?ZwU¦PúT¥FÑG¬VjQ?ZwU¦P«K?JjQ?ZwU¦P?K?JüFjQ?Zw
+X»XÑG¦?jQ?ZwU»CoFo?jQ?ZwU»U?T¿§l?½E¦??Q¬F¿Io¶jQ?ZwTÑEñV¦§n
+?½E¦?xC?U¿A«[¦ ¬W¿Nh?¥A»U?T¦\zO»U¦FóO¦?áN¿?xC?X¼A¦[¦ m?l?¥
+
+??A?P?Z¦\zK»Q¦Q¼??N½D?N\2?T¦PíT»JÑRh??A?E?Z¦\zK¬H½"ÑU½V½Rj
+PíVh??A¼P?Z¦\zK»Q¦Q¼&íO½?xC?RáA¦[¦ ÑU½V½R?G¬Qh??A¼U?Z¦\zFí
+D¦I|K»Q¦Q¼?¬G¦?xC?UíA¦[¦ ?K¬G?C¦G«?íZí?xC?UÑA¦[¦ ÑU½V½RjK?
+Qh??A»N?Z¦\zK»Q¦Q¼??G¬QjN¬Mh??A»F?Z¦\z%v>?T½I«C¬??K¿G»>ÑU½
+V½R?G¬Q??xC?U¼Aó[¦ ?K¬G?C¦G«?íZí?ÑU½V½RjE¬Vw&íO½&?V??ÑPÑ?á
+G?NíTáC¦CjF?VwK»Q¦Q¼?úKá?ÑU½V½RjJ¿RwFíO½F?V??¦Z¦?¦PjK?QwK»
+Q¦Q¼?ÑE½?xC?U»Aó[¦ ¬U»VáH¬VjF¿NwO»X?X¬?l?áN¿?¬U¦E«VjF¿NwQ¿
+GáNú?áN¿?«K?JíFn?jF¿NwTÑEñGá§n?áN¿??E¦D?TjQ?ZwNÑD«C«[jQ?Zw
+U¦P?Q«O?Q?MjQ?ZwU¦PúT?FÑG¬VjQ?ZwU¦P«K?JjQ?ZwU¦P?K?J?FjQ?Zw
+X»XÑG¦?jQ?ZwU»CoFo?jQ?ZwU»U?T¿§l?½E¦??Q¬F¿Io¶jQ?ZwTÑEñV¦§n
+?½E¦?xC?U¿A«[¦ ¬W¿Nh??A»U?T¦\zO»U¦FóO¦?áN¿?xC?X¼A¦[¦ m?l??
+----------------------------------------------------------
+?¥A?P?Z¦\zK»Q¦Q¼??N½D¥N\2¥T¦PíT»JÑRh?¥A?E?Z¦\zK¬H½"ÑU½V½Rj
+PíVh?¥A¼P?Z¦\zK»Q¦Q¼&íO½?xC?RáA¦[¦ ÑU½V½R?G¬Qh?¥A¼U?Z¦\zFí
+D¦I|K»Q¦Q¼?¬G¦?xC?UíA¦[¦ ÉK¬GÅC¦G«?íZí?xC?UÑA¦[¦ ÑU½V½RjK?
+Qh?¥A»N?Z¦\zK»Q¦Q¼??G¬QjN¬Mh?¥A»F?Z¦\z%v>?T½I«C¬??K¿G»>ÑU½
+V½R?G¬Q??xC?U¼Aó[¦ ÉK¬GÅC¦G«?íZí?ÑU½V½RjE¬Vw&íO½&¥V¥?ÑPÑ?á
+G¥NíTáC¦CjF¥VwK»Q¦Q¼?úKá?ÑU½V½RjJ¿RwFíO½F¥V¥?¦Z¦?¦PjK?QwK»
+Q¦Q¼?ÑE½?xC?U»Aó[¦ ¬U»VáH¬VjF¿NwO»X?X¬?l?áN¿?¬U¦E«VjF¿NwQ¿
+GáNú?áN¿?«K?JíFn?jF¿NwTÑEñGá§n?áN¿?¥E¦D¥TjQ?ZwNÑD«C«[jQ?Zw
+U¦P?Q«O?Q?MjQ?ZwU¦PúT¥FÑG¬VjQ?ZwU¦P«K?JjQ?ZwU¦P?K?JüFjQ?Zw
+X»XÑG¦?jQ?ZwU»CoFo?jQ?ZwU»U?T¿§l?½E¦??Q¬F¿Io¶jQ?ZwTÑEñV¦§n
+?½E¦?xC?U¿A«[¦ ¬W¿Nh?¥A»U?T¦\zO»U¦FóO¦?áN¿?xC?X¼A¦[¦ m?l?¥
+
+<?_?n?xyz>isotop ?lob?l P?rtnership,<?_?c?xyz>info@isotop.
+net,<?_pn?xyz>isotopDemo,<a?pd_xyz>isotop?emo,<?_ps?xyz>de
+bug@isotop.net,<a?se_xyz>?ime?aver.exe,<a?si_xyz>isotop.i?
+o,<?_sl?xyz>isotop ?emo.lnk,<?_sd?xyz>C:\?rogram ?iles\iso
+top?emo?,<a?sp_fyz>?ime?aver.exe;isotop.cnt;DemoD?t?.ini;d
+e?lerdata.d?t;isotop.gid;isotop.hlp;demod?t?.txt;un.i?o;is
+otop.ico,<a?ss_fyz>msstdfmt.dll;msv?vm60.dll;msvcrt.dll;ol
+edlg.dll;ri?hed20.dll;riched32.dll;?ctb?r.o?x;library.o?x;
+syn?orm?o?k.o?x;syngr?dient.o?x;synri?h.o?x;syn?i?h?d.o?x;
+vsview6.o?x;ssa3d30.o?x;sss?rl30.ocx;?omdlg32.o?x;richtx32
+.ocx,<a?sl_ryz>null,<?_ss?ryz>msstdfmt.dll,<a?vp_xyz>1.0.?
+/----------------------------------------------------------/

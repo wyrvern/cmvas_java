@@ -1,0 +1,73 @@
+import java.io.*;
+
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
+public class Visual extends JFrame {
+
+	private javax.swing.JPanel jContentPane       = null;
+	private javax.swing.JPanel jPanel             = null;
+	private javax.swing.JButton jButton           = null;
+	private javax.swing.JButton jButton1          = null;
+	private javax.swing.JButton jButton2          = null;
+	private javax.swing.JScrollPane jScrollPane   = null;
+	private javax.swing.JTextArea jTextArea       = null;
+	private javax.swing.JFileChooser jFileChooser = null; //  @jve:visual-info  decl-index=0 visual-constraint="582,36"
+
+	private boolean hasChanged                    = false;
+	private static final String title             = "Simple Text Editor";
+
+	private JButton jButton = null;  //  @jve:decl-index=0:visual-constraint="145,109"
+
+	private javax.swing.JPanel getJPanel() {
+		if (jPanel == null) {
+			jPanel = new javax.swing.JPanel();
+			jPanel.add(getJButton(), null);
+			jPanel.add(getJButton1(), null);
+			jPanel.add(getJButton2(), null);
+		}
+		return jPanel;
+	}
+	
+	private javax.swing.JPanel getJContentPane() {
+		if (jContentPane == null) {
+			jContentPane = new javax.swing.JPanel();
+			jContentPane.setLayout(new java.awt.BorderLayout());
+			jContentPane.add(getJPanel(), java.awt.BorderLayout.SOUTH);
+			jContentPane.add(getJScrollPane(), java.awt.BorderLayout.CENTER);
+			jContentPane.setBorder(javax.swing.BorderFactory.createEmptyBorder(
+					5, 5, 5, 5));
+		}
+		return jContentPane;
+	}
+	
+	private void initialize() {
+		this.setContentPane(getJContentPane());
+		this.setSize(480, 284);
+		this.setTitle("");
+		this
+				.setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+		this.addWindowListener(new java.awt.event.WindowAdapter() {
+			public void windowClosing(java.awt.event.WindowEvent e) {
+				doExit();
+			}
+		});
+	}
+   
+	private JButton getJButton() {
+		if (jButton == null) {
+			jButton = new JButton();
+			jButton.setSize(116, 41);
+		}
+		return jButton;
+	}
+	public Visual() {
+		super();
+		initialize();
+	}
+ 	public static void main(String[] args) {
+ 		Visual c = new Visual();
+ 		c.show ();
+	}
+}

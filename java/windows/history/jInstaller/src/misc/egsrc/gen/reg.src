@@ -1,0 +1,35 @@
+
+'function to call to register the ActiveX
+Private Declare Function RegComCtl32 Lib "COMCTL32.OCX" Alias _
+    "DllRegisterServer" () As Long
+
+' function to call to unregister the ActiveX
+Private Declare Function UnRegComCtl32 Lib "COMCTL32.OCX" Alias _
+    "DllUnregisterServer" () As Long
+Const ERROR_SUCCESS = 0&
+
+Note that the two functions work only if the DLL is in the system path or in the current directory. Therefore, if you want to register a DLL located outside system directories, you must use ChDrive and ChDir commands to make that directory the current one. 
+
+For example, say that you have a Test.DLL file in the C:\MyApp directory. Here's the code that registers it: 
+
+
+Private Declare Function RegisterTestDLL Lib "Test.Dll" _
+    Alias "DllRegisterServer" () As Long
+Dim retCode As Long
+
+On Error Resume Next
+
+' move to the DLL's directory
+ChDrive "C:"
+ChDir "C:\MyApp"
+' register the DLL
+retCode = RegisterTestDLL()
+
+If Err <> 0 Then
+    ' probably the DLL isn't there
+    MsgBox "Unable to find the Test.Dll file"
+ElseIf retCode <> ERROR_SUCCESS Then
+    ' the registration run but failed 
+    MsgBox "Registration failed"
+End If
+

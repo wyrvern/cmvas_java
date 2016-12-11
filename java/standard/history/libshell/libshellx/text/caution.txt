@@ -1,0 +1,17 @@
+ To create a JCDW object from a given memory location,
+ use the com.ms.dll.DllLib.ptrToStruct( ) method.
+ It takes the native memory location of the data and
+ the class of the JCDW representing the structure
+ stored in that location. The result is an instance
+ of specified JCDW initialized with the values from
+ the specified memory location. Note that the Microsoft
+ VM attempts to propagate all native values into the
+ new JCDW instance. As a result, if the memory location
+ is simply a newly allocated block, it will contain
+ uninitialized garbage-collection values. This may
+ cause the Microsoft VM to fault, especially if the
+ JCDW contains some pointer values that may be mapped
+ into protected memory. To guard against this, ensure
+ that the memory location being used in the mapping
+ has been initialized.
+

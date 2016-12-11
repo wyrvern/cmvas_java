@@ -1,0 +1,748 @@
+Call CheckVersion
+Call ReadLocation
+Call DLLUnReg
+===========================================================
+--- onOpen()
+Call pSetDefaults(App.Path & "\")
+Call CheckVersion
+
+===========================================================
+--- onSetup()
+Call CreateFolders
+Call CopyFiles
+Call WriteLocation
+Call CreateLink
+Call DLLReg
+MsgBox ("Setup Complete!" & vbCrLf & "Installed to : " & InstallDir)
+
+Run = Shell(InstallDir & "\TimeSaver.exe", vbNormalFocus)
+'Run = Shell(InstallDir & "\isotopDemo.exe", vbNormalFocus)
+===========================================================
+
+Option Explicit
+Public checkResult As Variant
+Public OpSystem As Variant
+Public InstallDir As String
+Public sysDir As String
+Public sPath As String
+
+Public ExDir As Variant
+Public ExFile As Variant
+Public eraseDir As Integer
+------------------------------------------------------------
+Function CreateLink()
+On Error GoTo errHandler
+
+If OpSystem = 1 Then
+'sysPath (0)
+'Call CreateShellLink(sPath & "ISO 14001 Route.lnk", InstallDir & "\" & "isotopDemo.exe", InstallDir & "\", "", InstallDir & "\" & "isotop.ico", 0, 5)
+'sysPath (&H2)
+'Call CreateShellLink(sPath & "ISO 14001 Route\ISO 14001 Route.lnk", InstallDir & "\" & "isotopDemo.exe", InstallDir & "\", "", InstallDir & "\" & "isotop.ico", 0, 5)
+
+ sysPath (&H19&)
+Call CreateShellLink(sPath & "isotop Demo.lnk", InstallDir & "\" & "TimeSaver.exe", InstallDir & "\", "", InstallDir & "\" & "isotop.ico", 0, 5)
+ sysPath (&H17&)
+Call CreateShellLink(sPath & "isotop Demo\isotop Demo.lnk", InstallDir & "\" & "TimeSaver.exe", InstallDir & "\", "", InstallDir & "\" & "isotop.ico", 0, 5)
+
+'Call CreateShellLink(sPath & "ISO 14001 Route\Uninstall.lnk", App.Path & "\" & "isotopInstall.exe", App.Path & "\", "", App.Path & "\" & "un.ico", 0, 5)
+Call CreateShellLink(sPath & "isotop Demo\Uninstall.lnk", App.Path & "\" & "isotopInstall.exe", App.Path & "\", "", App.Path & "\" & "un.ico", 0, 5)
+End If
+
+If OpSystem = 2 Then
+'sysPath (0)
+'Call CreateShellLink(sPath & "ISO 14001 Route.lnk", InstallDir & "\" & "isotopDemo.exe", InstallDir & "\", "", InstallDir & "\" & "isotop.ico", 0, 5)
+'sysPath (&H2)
+'Call CreateShellLink(sPath & "ISO 14001 Route\ISO 14001 Route.lnk", InstallDir & "\" & "isotopDemo.exe", InstallDir & "\", "", InstallDir & "\" & "isotop.ico", 0, 5)
+
+sysPath (0)
+Call CreateShellLink(sPath & "isotop Demo.lnk", InstallDir & "\" & "TimeSaver.exe", InstallDir & "\", "", InstallDir & "\" & "isotop.ico", 0, 5)
+sysPath (&H2)
+Call CreateShellLink(sPath & "isotop Demo\isotop Demo.lnk", InstallDir & "\" & "TimeSaver.exe", InstallDir & "\", "", InstallDir & "\" & "isotop.ico", 0, 5)
+
+'Call CreateShellLink(sPath & "ISO 14001 Route\Uninstall.lnk", App.Path & "\" & "isotopInstall.exe", App.Path & "\", "", App.Path & "\" & "un.ico", 0, 5)
+Call CreateShellLink(sPath & "isotop Demo\Uninstall.lnk", App.Path & "\" & "isotopInstall.exe", App.Path & "\", "", App.Path & "\" & "un.ico", 0, 5)
+End If
+
+If OpSystem = 3 Then
+'sysPath (0)
+'Call CreateShellLink(sPath & "ISO 14001 Route.lnk", InstallDir & "\" & "isotopDemo.exe", InstallDir & "\", "", InstallDir & "\" & "isotop.ico", 0, 5)
+'sysPath (&H2)
+'Call CreateShellLink(sPath & "ISO 14001 Route\ISO 14001 Route.lnk", InstallDir & "\" & "isotopDemo.exe", InstallDir & "\", "", InstallDir & "\" & "isotop.ico", 0, 5)
+
+sysPath (0)
+Call CreateShellLink(sPath & "isotop Demo.lnk", InstallDir & "\" & "TimeSaver.exe", InstallDir & "\", "", InstallDir & "\" & "isotop.ico", 0, 5)
+sysPath (&H2)
+Call CreateShellLink(sPath & "isotop Demo\isotop Demo.lnk", InstallDir & "\" & "TimeSaver.exe", InstallDir & "\", "", InstallDir & "\" & "isotop.ico", 0, 5)
+
+'Call CreateShellLink(sPath & "ISO 14001 Route\Uninstall.lnk", App.Path & "\" & "isotopInstall.exe", App.Path & "\", "", App.Path & "\" & "un.ico", 0, 5)
+Call CreateShellLink(sPath & "isotop Demo\Uninstall.lnk", App.Path & "\" & "isotopInstall.exe", App.Path & "\", "", App.Path & "\" & "un.ico", 0, 5)
+End If
+
+Exit Function
+errHandler:
+Call errHandler(Err.Number, Err.Source & " " & Err.Description & " " & Err.LastDllError)
+End Function
+------------------------------------------------------------
+Function CopyFiles()
+On Error GoTo errHandler
+
+Dim dFiles As Variant
+Dim rFiles As Variant
+Dim i As Integer
+Dim fso
+Dim dType
+Dim CopyFile
+
+'----------------------Set for Type
+dType = 0
+
+Set fso = CreateObject("Scripting.FileSystemObject")
+rFiles = Array("\isotopDemo.exe", "\msvbvm60.dll")
+
+dFiles = Array("\TimeSaver.exe", "\isotop.cnt", "\dealerdata.dat", _
+"\isotop.gid", "\isotop.hlp", "\demodata.txt", "\actbar.ocx", _
+"\comdlg32.ocx", "\library.ocx", "\richtx32.ocx", "\ssa3d30.ocx", _
+"\synrich.ocx", "\vsview6.ocx", "\msstdfmt.dll", "\msvcrt.dll", _
+"\oledlg.dll", "\riched20.dll", "\riched32.dll", "\isotop.ico", _
+"\ssscrl30.ocx", "\synFormLock.ocx", "\syngradient.ocx", _
+"\DemoData.ini", "\synRichEd.ocx", "\msvbvm60.dll")
+
+If dType = 0 Then
+ For i = 0 To UBound(dFiles)
+ Set CopyFile = fso.GetFile(App.Path & dFiles(i))
+ CopyFile.Copy (InstallDir & dFiles(i))
+ 
+ If dFiles(i) = "\msvbvm60.dll" Then
+  GoTo dSkip:
+ Else
+ CopyFile.Delete
+ End If
+dSkip:
+ Next
+ElseIf dType = 1 Then
+ For i = 0 To UBound(dFiles)
+ Set CopyFile = fso.GetFile(App.Path & rFiles(i))
+ CopyFile.Copy (InstallDir & rFiles(i))
+ 
+ If rFiles(i) = "\msvbvm60.dll" Then
+  GoTo rSkip:
+ Else
+ CopyFile.Delete
+ End If
+rSkip:
+ Next
+End If
+
+'1"\TimeSaver.exe")
+'2"\isotop.cnt")
+'3"\dealerdata.dat")
+'4"\isotop.gid")
+'5"\isotop.hlp")
+'6"\demodata.txt")
+'7'"\isotopDemo.exe")
+'8"\actbar.ocx")
+'9"\comdlg32.ocx")
+'10"\library.ocx")
+'11"\richtx32.ocx")
+'12"\ssa3d30.ocx")
+'13"\synrich.ocx")
+'14"\vsview6.ocx")
+'15"\msstdfmt.dll")
+'16"\msvcrt.dll")
+'17"\oledlg.dll")
+'18"\riched20.dll")
+'19"\riched32.dll")
+'20"\isotop.ico")
+
+'21"\ssscrl30.ocx")
+'22"\synFormLock.ocx")
+'23"\syngradient.ocx")
+'24"\DemoData.ini")
+'25"\synRichEd.ocx")
+
+'26"\msvbvm60.dll")
+
+Exit Function
+errHandler:
+Call errHandler(Err.Number, Err.Source & " " & Err.Description & " " & Err.LastDllError)
+End Function
+------------------------------------------------------------
+Function CreateFolders()
+On Error GoTo errHandler
+
+Dim fso, f
+Set fso = CreateObject("Scripting.FileSystemObject")
+
+If OpSystem = 1 Then
+If (fso.FolderExists(InstallDir)) Then
+fso.DeleteFolder (InstallDir)
+End If
+ sysPath (&H17&)
+If (fso.FolderExists(sPath & "isotop Demo\")) Then
+fso.DeleteFolder (sPath & "isotop Demo")
+End If
+'If (fso.FolderExists(sPath & "ISO 14001 Route\")) Then
+'fso.DeleteFolder (sPath & "ISO 14001 Route")
+'End If
+
+Set f = fso.CreateFolder(InstallDir)
+Set f = fso.CreateFolder(sPath & "isotop Demo")
+'Set f = fso.CreateFolder(sPath & "ISO 14001 Route")
+End If
+
+If OpSystem = 2 Then
+If (fso.FolderExists(InstallDir)) Then
+fso.DeleteFolder (InstallDir)
+End If
+sysPath (&H2)
+If (fso.FolderExists(sPath & "isotop Demo\")) Then
+fso.DeleteFolder (sPath & "isotop Demo")
+End If
+'If (fso.FolderExists(sPath & "ISO 14001 Route\")) Then
+'fso.DeleteFolder (sPath & "ISO 14001 Route")
+'End If
+
+Set f = fso.CreateFolder(InstallDir)
+Set f = fso.CreateFolder(sPath & "isotop Demo")
+'Set f = fso.CreateFolder(sPath & "ISO 14001 Route")
+End If
+
+If OpSystem = 3 Then
+If (fso.FolderExists(InstallDir)) Then
+fso.DeleteFolder (InstallDir)
+End If
+sysPath (&H2)
+If (fso.FolderExists(sPath & "isotop Demo\")) Then
+fso.DeleteFolder (sPath & "isotop Demo")
+End If
+'If (fso.FolderExists(sPath & "ISO 14001 Route\")) Then
+'fso.DeleteFolder (sPath & "ISO 14001 Route")
+'End If
+
+Set f = fso.CreateFolder(InstallDir)
+Set f = fso.CreateFolder(sPath & "isotop Demo")
+'Set f = fso.CreateFolder(sPath & "ISO 14001 Route")
+End If
+
+Set fso = Nothing
+
+Exit Function
+errHandler:
+Call errHandler(Err.Number, Err.Source & " " & Err.Description & " " & Err.LastDllError)
+End Function
+------------------------------------------------------------
+Public Function sysPath(id As Long)
+On Error GoTo errHandler
+
+ Dim lId   As Long
+
+ lId = id
+'lId = 0
+'lId = &H2
+ If fGetSystemFolderPath(Me.hwnd, lId, sPath) Then
+  Call pSetDefaults(sPath)
+ End If
+
+Exit Function
+errHandler:
+Call errHandler(Err.Number, Err.Source & " " & Err.Description & " " & Err.LastDllError)
+End Function
+------------------------------------------------------------
+Public Function CheckVersion()
+On Error GoTo errHandler
+
+Dim fso, f
+Dim i As Integer
+Dim sysPaths As Variant
+ sysPath (&H19&)
+If Left$(LCase(sPath), 17) = LCase("C:\WINNT\Profiles") Then
+ checkResult = 1
+ sysDir = "C:\WINNT\System32\"
+ElseIf Left$(LCase(sPath), 18) = LCase("C:\Windows\Desktop") Then
+ checkResult = 2
+ sysDir = "C:\Windows\System\"
+ElseIf Left$(LCase(sPath), 25) = LCase("C:\Documents and Settings") Then
+ checkResult = 3
+ sysPaths = Array("C:\Windows\System32\", "C:\WINNT\System32\")
+For i = 1 To UBound(sysPaths)
+Set fso = CreateObject("Scripting.FileSystemObject")
+ If fso.FolderExists(sysPaths(i)) Then
+  sysDir = sysPaths(i)
+  Exit For
+ End If
+Next
+Else
+ checkResult = 0
+End If
+
+Exit Function
+errHandler:
+Call errHandler(Err.Number, Err.Source & " " & Err.Description & " " & Err.LastDllError)
+End Function
+------------------------------------------------------------
+Private Sub cmdExit_Click()
+On Error GoTo errHandler
+
+Unload Me
+
+Exit Sub
+errHandler:
+Call errHandler(Err.Number, Err.Source & " " & Err.Description & " " & Err.LastDllError)
+End Sub
+------------------------------------------------------------
+Public Function DLLReg()
+On Error GoTo errHandler
+
+Dim i As Integer
+Call CheckVersion
+ExDir = Mid(InstallDir, 3, Len(InstallDir))
+ExFile = Array("\actbar.ocx", "\comdlg32.ocx", "\library.ocx", "\richtx32.ocx", "\ssa3d30.ocx", "\ssscrl30.ocx", "\synFormLock.ocx", "\syngradient.ocx", "\synrich.ocx", "\synriched.ocx", "\vsview6.ocx")
+
+Dim fso, f
+Set fso = CreateObject("Scripting.FileSystemObject")
+For i = 0 To UBound(ExFile)
+ If (fso.FileExists(InstallDir & ExFile(i))) Then
+  Shell (sysDir & "regsvr32.exe /s " & Chr(34) & ExDir & ExFile(i) & Chr(34))
+  eraseDir = 0
+ Else
+  MsgBox ("File : (" & Mid(ExFile(i), 2, Len(ExFile(i))) & ") Missing")
+  eraseDir = -1
+ End If
+
+Next
+
+Exit Function
+errHandler:
+Call errHandler(Err.Number, Err.Source & " " & Err.Description & " " & Err.LastDllError)
+End Function
+------------------------------------------------------------
+Public Function DLLUnReg()
+On Error GoTo errHandler
+
+Dim i As Integer
+ExDir = Mid(InstallDir, 3, Len(InstallDir))
+ExFile = Array("\actbar.ocx", "\comdlg32.ocx", "\library.ocx", "\richtx32.ocx", "\ssa3d30.ocx", "\ssscrl30.ocx", "\synFormLock.ocx", "\syngradient.ocx", "\synrich.ocx", "\synriched.ocx", "\vsview6.ocx")
+
+Dim fso, f
+Set fso = CreateObject("Scripting.FileSystemObject")
+For i = 0 To UBound(ExFile)
+ If (fso.FileExists(InstallDir & ExFile(i))) Then
+  Shell (sysDir & "regsvr32.exe /u /s " & Chr(34) & ExDir & ExFile(i) & Chr(34))
+  eraseDir = 0
+ Else
+  MsgBox ("File : (" & Mid(ExFile(i), 2, Len(ExFile(i))) & ") Missing")
+  eraseDir = -1
+ End If
+Next
+
+Exit Function
+errHandler:
+Call errHandler(Err.Number, Err.Source & " " & Err.Description & " " & Err.LastDllError)
+End Function
+------------------------------------------------------------
+Private Sub cmdSetup_Click()
+On Error GoTo errHandler
+Dim Run
+
+InstallDir = txtSetupDir.Text
+
+Call CreateFolders
+Call CopyFiles
+Call WriteLocation
+Call CreateLink
+Call DLLReg
+MsgBox ("Setup Complete!" & vbCrLf & "Installed to : " & InstallDir)
+
+Run = Shell(InstallDir & "\TimeSaver.exe", vbNormalFocus)
+'Run = Shell(InstallDir & "\isotopDemo.exe", vbNormalFocus)
+Unload Me
+
+Exit Sub
+errHandler:
+Call errHandler(Err.Number, Err.Source & " " & Err.Description & " " & Err.LastDllError)
+End Sub
+------------------------------------------------------------
+Private Sub cmdUninstall_Click()
+On Error GoTo errHandler
+
+Call CheckVersion
+Call ReadLocation
+Call DLLUnReg
+Dim fso, f
+Set fso = CreateObject("Scripting.FileSystemObject")
+
+If OpSystem = 1 Then
+ If eraseDir = 0 Then
+fso.DeleteFolder (InstallDir)
+ End If
+ sysPath (&H17&)
+If (fso.FolderExists(sPath & "isotop Demo\")) Then
+fso.DeleteFolder (sPath & "isotop Demo\")
+End If
+'If (fso.FolderExists(sPath & "ISO 14001 Route\")) Then
+'fso.DeleteFolder (sPath & "ISO 14001 Route\")
+'End If
+ sysPath (&H19&)
+If (fso.FileExists(sPath & "isotop Demo.lnk")) Then
+fso.DeleteFile (sPath & "isotop Demo.lnk")
+End If
+'If (fso.FileExists(sPath & "ISO 14001 Route.lnk")) Then
+'fso.DeleteFile (sPath & "ISO 14001 Route.lnk")
+'End If
+Set fso = Nothing
+End If
+
+If OpSystem = 2 Then
+ If eraseDir = 0 Then
+fso.DeleteFolder (InstallDir)
+ End If
+sysPath (&H2)
+If (fso.FolderExists(sPath & "isotop Demo\")) Then
+fso.DeleteFolder (sPath & "isotop Demo")
+End If
+'If (fso.FolderExists(sPath & "ISO 14001 Route\")) Then
+'fso.DeleteFolder (sPath & "ISO 14001 Route")
+'End If
+sysPath (0)
+If (fso.FileExists(sPath & "isotop Demo.lnk")) Then
+fso.DeleteFile (sPath & "isotop Demo.lnk")
+End If
+'If (fso.FileExists(sPath & "ISO 14001 Route.lnk")) Then
+'fso.DeleteFile (sPath & "ISO 14001 Route.lnk")
+'End If
+Set fso = Nothing
+End If
+
+If OpSystem = 3 Then
+ If eraseDir = 0 Then
+fso.DeleteFolder (InstallDir)
+ End If
+sysPath (&H2)
+If (fso.FolderExists(sPath & "isotop Demo\")) Then
+fso.DeleteFolder (sPath & "isotop Demo")
+End If
+'If (fso.FolderExists(sPath & "ISO 14001 Route\")) Then
+'fso.DeleteFolder (sPath & "ISO 14001 Route")
+'End If
+sysPath (0)
+If (fso.FileExists(sPath & "isotop Demo.lnk")) Then
+fso.DeleteFile (sPath & "isotop Demo.lnk")
+End If
+'If (fso.FileExists(sPath & "ISO 14001 Route.lnk")) Then
+'fso.DeleteFile (sPath & "ISO 14001 Route.lnk")
+'End If
+Set fso = Nothing
+End If
+
+MsgBox ( _
+"Uninstall Complete!" & vbCrLf & _
+"Please remove the folder : 'c:\temp\setup'")
+
+Unload Me
+
+Shell ("command.com /c del c:\temp\setup\*.ocx")
+Shell ("command.com /c del c:\temp\setup\*.cnt")
+Shell ("command.com /c del c:\temp\setup\*.dat")
+Shell ("command.com /c del c:\temp\setup\*.gid")
+Shell ("command.com /c del c:\temp\setup\*.hlp")
+Shell ("command.com /c del c:\temp\setup\*.txt")
+Shell ("command.com /c del c:\temp\setup\*.tlb")
+Shell ("command.com /c del c:\temp\setup\*.ico")
+Shell ("command.com /c del c:\temp\setup\*.inf")
+Shell ("command.com /c del c:\temp\setup\*.dll")
+Shell ("command.com /c del c:\temp\setup\*.exe")
+Shell ("command.com /c rd  c:\temp\setup\")
+
+Exit Sub
+errHandler:
+Call errHandler(Err.Number, Err.Source & " " & Err.Description & " " & Err.LastDllError)
+End Sub
+------------------------------------------------------------
+Public Function WriteLocation()
+On Error GoTo errHandler
+
+  Const ForReading = 1, ForWriting = 2, ForAppending = 3
+  Dim fso, f
+  Set fso = CreateObject("Scripting.FileSystemObject")
+  Set f = fso.CreateTextFile(App.Path & "\" & "uninstall.inf", True)
+  f.Write (InstallDir)
+  f.Close
+  Set fso = Nothing
+
+Exit Function
+errHandler:
+Call errHandler(Err.Number, Err.Source & " " & Err.Description & " " & Err.LastDllError)
+End Function
+------------------------------------------------------------
+Public Function ReadLocation()
+On Error GoTo errHandler
+
+  Const ForReading = 1, ForWriting = 2
+  Dim fso, f
+  Set fso = CreateObject("Scripting.FileSystemObject")
+  Set f = fso.OpenTextFile(App.Path & "\" & "uninstall.inf", ForReading)
+  InstallDir = f.ReadAll
+
+Exit Function
+errHandler:
+Call errHandler(Err.Number, Err.Source & " " & Err.Description & " " & Err.LastDllError)
+End Function
+------------------------------------------------------------
+Public Sub Form_Load()
+On Error GoTo errHandler
+
+Call pSetDefaults(App.Path & "\")
+Call CheckVersion
+Dim evalResult As String
+
+Select Case checkResult
+Case 0
+evalResult = "Unknown"
+OpSystem = 0
+Case 1
+evalResult = "Windows NT"
+OpSystem = 1
+Case 2
+evalResult = "Windows 95/98"
+OpSystem = 2
+Case 3
+evalResult = "Windows 2000"
+OpSystem = 3
+End Select
+frmSetup.Caption = "isotop Installer ver 1.0K : " & evalResult
+If OpSystem = 1 Then
+ sysPath (&H19&)
+ txtDesktop.Text = sPath
+ sysPath (&H17&)
+ txtPrograms.Text = sPath
+Else
+ sysPath (0)
+ txtDesktop.Text = sPath
+ sysPath (&H2)
+ txtPrograms.Text = sPath
+End If
+
+Exit Sub
+errHandler:
+Call errHandler(Err.Number, Err.Source & " " & Err.Description & " " & Err.LastDllError)
+
+End Sub
+Public Sub CreateShellLink(strLink As String, strExeName As String, strWorkDir As String, strArgs As String, strIconFile As String, strIconIndex As String, strShowCmd As String)
+On Error GoTo errHandler
+
+fCreateShellLink _
+    strLink, _
+    strExeName, _
+    strWorkDir, _
+    strArgs, _
+    strIconFile, _
+    CLng(strIconIndex), _
+    CLng(strShowCmd)
+
+Exit Sub
+errHandler:
+Call errHandler(Err.Number, Err.Source & " " & Err.Description & " " & Err.LastDllError)
+End Sub
+=================================================================
+Public Enum STGM
+    STGM_DIRECT = &H0&
+    STGM_TRANSACTED = &H10000
+    STGM_SIMPLE = &H8000000
+    STGM_READ = &H0&
+    STGM_WRITE = &H1&
+    STGM_READWRITE = &H2&
+    STGM_SHARE_DENY_NONE = &H40&
+    STGM_SHARE_DENY_READ = &H30&
+    STGM_SHARE_DENY_WRITE = &H20&
+    STGM_SHARE_EXCLUSIVE = &H10&
+    STGM_PRIORITY = &H40000
+    STGM_DELETEONRELEASE = &H4000000
+    STGM_CREATE = &H1000&
+    STGM_CONVERT = &H20000
+    STGM_FAILIFTHERE = &H0&
+    STGM_NOSCRATCH = &H100000
+End Enum
+'
+' Shell Folder Path Constants...
+'
+' on NT:
+'   ..\WinNT\profiles\username
+'
+' on Windows 9x:
+'   ..\Windows
+Public Enum SHELLFOLDERS
+    CSIDL_DESKTOP = &H0&            ' \Desktop
+    CSIDL_PROGRAMS = &H2&           ' \Start Menu\Programs
+    CSIDL_CONTROLS = &H3&           ' No Path
+    CSIDL_PRINTERS = &H4&           ' No Path
+    CSIDL_PERSONAL = &H5&           ' \Personal
+    CSIDL_FAVORITES = &H6&          ' \Favorites
+    CSIDL_STARTUP = &H7&            ' \Start Menu\Programs\Startup
+    CSIDL_RECENT = &H8&             ' \Recent
+    CSIDL_SENDTO = &H9&             ' \SendTo
+    CSIDL_BITBUCKET = &HA&          ' No Path
+    CSIDL_STARTMENU = &HB&          ' \Start Menu
+    CSIDL_DESKTOPDIRECTORY = &H10&  ' \Desktop
+    CSIDL_DRIVES = &H11&            ' No Path
+    CSIDL_NETWORK = &H12&           ' No Path
+    CSIDL_NETHOOD = &H13&           ' \NetHood
+    CSIDL_FONTS = &H14&             ' \Fonts
+    CSIDL_TEMPLATES = &H15&         ' \ShellNew
+    CSIDL_COMMON_STARTMENU = &H16&  ' ..\WinNT\profiles\All Users\Start Menu
+    CSIDL_COMMON_PROGRAMS = &H17&   ' ..\WinNT\profiles\All Users\Start Menu\Programs
+    CSIDL_COMMON_STARTUP = &H18&    ' ..\WinNT\profiles\All Users\Start Menu\Programs\Startup
+    CSIDL_COMMON_DESKTOPDIRECTORY = &H19& '..\WinNT\profiles\All Users\Desktop
+    CSIDL_APPDATA = &H1A&           ' ..\WinNT\profiles\username\Application Data
+    CSIDL_PRINTHOOD = &H1B&         ' ..\WinNT\profiles\username\PrintHood
+End Enum
+
+Public Enum SHOWCMDFLAGS
+    SHOWNORMAL = 5
+    SHOWMAXIMIZE = 3
+    SHOWMINIMIZE = 7
+End Enum
+
+Public Const MAX_PATH = 255
+
+Public Declare Function SHGetSpecialFolderLocation Lib "Shell32" (ByVal hwndOwner As Long, ByVal nFolder As Integer, ppidl As Long) As Long
+Public Declare Function SHGetPathFromIDList Lib "Shell32" Alias "SHGetPathFromIDListA" (ByVal pidl As Long, ByVal szPath As String) As Long
+Public Function fCreateShellLink(sLnkFile As String, sExeFile As String, sWorkDir As String, _
+       sExeArgs As String, sIconFile As String, lIconIdx As Long, _
+       ShowCmd As SHOWCMDFLAGS) As Long
+
+Dim cShellLink   As ShellLinkA   ' An explorer IShellLinkA(Win 9x/Win NT) instance
+Dim cPersistFile As IPersistFile ' An explorer IPersistFile instance
+    
+If (sLnkFile = "") Or (sExeFile = "") Then Exit Function
+
+On Error GoTo fCreateShellLinkError
+Set cShellLink = New ShellLinkA   'Create new IShellLink interface
+Set cPersistFile = cShellLink     'Implement cShellLink's IPersistFile interface
+    
+With cShellLink
+    'Set command line exe name & path to new ShortCut.
+    .SetPath sExeFile
+    
+    'Set working directory in shortcut
+    If sWorkDir <> "" Then .SetWorkingDirectory sWorkDir
+    
+    'Add arguments to command line
+    If sExeArgs <> "" Then .SetArguments sExeArgs
+    
+    'Set shortcut description
+    .SetDescription "link" & vbNullChar
+'   If (LnkDesc <> "") Then .SetDescription pszName
+    
+    'Set shortcut icon location & index
+    If sIconFile <> "" Then .SetIconLocation sIconFile, lIconIdx
+    
+    'Set shortcut's startup mode (min,max,normal)
+    .SetShowCmd ShowCmd
+End With
+
+cShellLink.Resolve 0, SLR_UPDATE
+cPersistFile.Save StrConv(sLnkFile, vbUnicode), 0 'Unicode conversion that must be done!
+fCreateShellLink = True                           'Return Success
+
+fCreateShellLinkError:
+    Set cPersistFile = Nothing
+    Set cShellLink = Nothing
+End Function
+Public Function fGetSystemFolderPath(ByVal hwnd As Long, ByVal id As Integer, sfPath As String) As Long
+Dim lReturn As Long
+Dim lPidl   As Long
+Dim lPath   As Long
+Dim sPath   As String
+
+sPath = Space$(MAX_PATH)
+lReturn = SHGetSpecialFolderLocation(hwnd, id, lPidl)  ' Get lPidl for Id...
+If lReturn = 0 Then                                    ' If success is 0
+    lReturn = SHGetPathFromIDList(lPidl, sPath)        '   Get Path from Item Id List
+    If lReturn = 1 Then                                '   If success is 1
+        sPath = Trim$(sPath)                           '     Fix path string
+        lPath = Len(sPath)                             '     Get length of path
+        If Asc(Right$(sPath, 1)) = 0 Then lPath = lPath - 1 'Adjust path length
+        If lPath > 0 Then sfPath = Left$(sPath, lPath) '     Adjust path string variable
+        fGetSystemFolderPath = True                    '     Return success
+    End If
+End If
+End Function
+Public Function fGetShellLinkInfo(sLnkFile As String, sExeFile As String, sWorkDir As String, _
+       sExeArgs As String, sIconFile As String, lIconIdx As Long, _
+       lShowCmd As Long) As Long
+Dim lPidl        As Long              ' Item id list
+Dim lHotKey      As Long              ' Hotkey to shortcut...
+Dim lBuffLen     As Long
+Dim sTemp        As String
+Dim sDescription As String
+Dim cShellLink   As ShellLinkA        ' An explorer IShellLink instance
+Dim cPersistFile As IPersistFile      ' An explorer IPersistFile instance
+Dim fd           As WIN32_FIND_DATA
+
+If sLnkFile = "" Then Exit Function
+
+Set cShellLink = New ShellLinkA       ' Create new IShellLink interface
+Set cPersistFile = cShellLink         ' Implement cShellLink's IPersistFile interface
+
+'Load Shortcut file...(must do this UNICODE hack!)
+On Error GoTo fGetShellLinkInfoError
+cPersistFile.Load StrConv(sLnkFile, vbUnicode), STGM_DIRECT
+
+With cShellLink
+    'Get command line exe name & path of shortcut
+    sExeFile = Space$(MAX_PATH)
+    lBuffLen = Len(sExeFile)
+    .GetPath sExeFile, lBuffLen, fd, SLGP_UNCPRIORITY
+    sTemp = fd.cFileName  ' Not returned to calling function
+    
+    'Get working directory of shortcut
+    sWorkDir = Space$(MAX_PATH)
+    lBuffLen = Len(sWorkDir)
+    .GetWorkingDirectory sWorkDir, lBuffLen
+    
+    'Get command line arguments of shortcut
+    sExeArgs = Space$(MAX_PATH)
+    lBuffLen = Len(sExeArgs)
+    .GetArguments sExeArgs, lBuffLen
+    
+    'Get description of shortcut
+    sDescription = Space$(MAX_PATH)
+    lBuffLen = Len(sDescription)
+    .GetDescription sDescription, lBuffLen ' Not returned to calling function
+    
+    'Get the HotKey for shortcut
+    .GetHotkey lHotKey  ' Not returned to calling function
+   
+    'Get shortcut icon location & index
+    sIconFile = Space$(MAX_PATH)
+    lBuffLen = Len(sIconFile)
+    .GetIconLocation sIconFile, lBuffLen, lIconIdx
+    
+    'Get Item ID List...
+    .GetIDList lPidl ' Not returned to calling function
+            
+    'Set shortcut's startup mode (min,max,normal)
+    .GetShowCmd lShowCmd
+End With
+fGetShellLinkInfo = True
+
+fGetShellLinkInfoError:
+    Set cPersistFile = Nothing
+    Set cShellLink = Nothing
+End Function
+Public Function pSetDefaults(spth As String)
+Dim AppPath As String
+
+AppPath = App.Path                                      ' Get current path
+
+If Right$(AppPath, 1) <> "\" Then AppPath = AppPath & "\" ' Fix application path if necessary
+If Right$(spth, 1) <> "\" Then spth = spth & "\"        ' Fix path if necessary
+End Function
+Public Function errHandler(No, Source)
+ errText = "Error : " & No & " , With : " & Source
+ MsgBox (errText)
+ MsgBox ("Please report this error to : support@isotop.net")
+ Unload frmMail
+End Function
+
+

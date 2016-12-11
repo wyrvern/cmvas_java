@@ -1,0 +1,19 @@
+ // "C:\\Program Files\\bulkMail\\";
+
+// public  String packageName       = "bulkMail";
+// public  String packageFldr       = "bulkMail";
+// public  String productSupport    = "debug@null.co.za";
+// public  String productContact    = "info@null.co.za";
+// public  String productCompany    = "nullWare";
+// public  String packageExe        = "bulkMail.exe";
+// public  String packageIco        = "mail.ico";
+// public  String packageLnk        = "bulkMail.lnk";
+
+// private static final String packageFiles[]    = { "mail.ico", "un.ico", "comctl32.ocx", "comdlg32.ocx", "msflxgrd.ocx", "msinet.ocx", "richtx32.ocx", "bulkMail.exe", "msvbvm60.dll", "smtpsvg.dll", "isotop.mdb", "help.txt" };
+// private static final String systemFiles[]   = { "smtpsvg.dll", "msinet.ocx" };
+// private static final String localRegister[]   = null;
+// private static final String systemRegister[]   = { "smtpsvg.dll", "msinet.ocx" };
+// private static String copyPackage[]           = null;
+
+// private static final String localFiles[]      = { "actbar.ocx", "comdlg32.ocx", "library.ocx", "richtx32.ocx", "ssa3d30.ocx", "ssscrl30.ocx", "synFormLock.ocx", "syngradient.ocx", "synrich.ocx", "synRichEd.ocx", "vsview6.ocx", "TimeSaver.exe", "isotop.cnt", "DemoData.ini", "dealerdata.dat", "isotop.gid", "isotop.hlp", "demodata.txt", "un.ico", "isotop.ico" };
+// private static final String localRegister[]   = { "actbar.ocx", "library.ocx", "synFormLock.ocx", "syngradient.ocx", "synrich.ocx", "synRichEd.ocx", "vsview6.ocx" };

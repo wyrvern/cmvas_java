@@ -1,0 +1,8 @@
+frmMail = 0, 0, 0, 0, C, 22, 22, 555, 470, C
+frmFont = 0, 0, 0, 0, C, 0, 0, 0, 0, C
+modMain = 0, 0, 0, 0, C
+frmUpdate = 0, 0, 0, 0, C, 0, 0, 0, 0, C
+frmAssist = 0, 0, 0, 0, C, 0, 0, 0, 0, C
+frmMessage = 0, 0, 0, 0, C, 0, 0, 0, 0, C
+frmSingle = 0, 0, 0, 0, C, 0, 0, 0, 0, C
+frmDate = 0, 0, 0, 0, C, 0, 0, 0, 0, C

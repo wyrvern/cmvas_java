@@ -1,0 +1,46 @@
+/**
+  Todo :
+  **/
+
+a] write reverse function for dates >-><
+   status : removed.
+b] write io function to log bulkmail sent
+   status : ?
+c] close button/duplicates automaticate after build
+   status : done.
+d] approvalcode / active
+   status : done.
+/*---------------------------------------------*/
+key, 32 : rOrder // eval on chr(ident)
+/*---------------------------------------------*/
+algorithm instruct::additional (
+ while(loop),count(c)chr (
+   sequence [>< -(count)chrs(c)- >!halt.]
+   if((c) < prev(line))
+     line == chr(c)total.
+   )
+)
+/*---------------------------------------------*/
+aaaa bbbb cccc
+eeee pp--pp dddd
+hhhh aaaa bbbb
+cccc dddd eeee
+
+aaaa bbbb cccc<br>
+dddd aaa--a bbbb<br>
+cccc aaaa dddd
+
+aaaa bbbb cccc<br>eeee pp--pp dddd<br>
+hhhh aaaa bbbb<br>cccc dddd eeee
+
+: chr(13). - 1/return.
+
+http://null/isotop/hub/hubrun.asp?dbSection=Orders,Downloads,Assess,ReferralResellers,ReferredCustomers,ProductResellers,SSContracts&dbPos=212,4110,882,77,773,21,0&dbFieldID=OrderID,DnID,AssessID,RrID,RcID,PrID,SsID&dbField=CustomerEmail,CustomerName,Date,ApprovalCode;Email,FirstName,LastName,CurrentDate;Email,FirstName,LastName,CurrentDate;RREmail,RRFirstName,RRLastName,RRCurrentDate;RCEmail,RCFirstName,RCLastName,RCCurrentDate;Email,FirstName,LastName,CurrentDate;CustomerEmail,CustomerName,Date
+/*---------------------------------------------*/
+unpaid.
+- R 1039.32
+Henny,Van niekerk,
+950-7014
+
+Marius : [083]-266-4630
+plot 3, piet riteief road, harveston, honeydiew.

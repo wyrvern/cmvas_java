@@ -1,0 +1,195 @@
+     lib.shellx.OSVERSIONINFO    vi        = new lib.shellx.OSVERSIONINFO();
+     vi.dwOSVersionInfoSize                = com.ms.dll.DllLib.sizeOf(vi);
+     GetVersionEx (vi);
+     System.out.println("win32] "+com.ms.dll.DllLib.getLastWin32Error()); 
+
+//    wine.ENDSESSION_LOGOFF;
+
+//    winv.VER_PLATFORM_WIN32s;
+//    winv.VER_PLATFORM_WIN32_WINDOWS;
+//    winv.VER_PLATFORM_WIN32_NT;
+
+//    winf.FORMAT_MESSAGE_ALLOCATE_BUFFER;
+//    winf.FORMAT_MESSAGE_IGNORE_INSERTS;
+//    winf.FORMAT_MESSAGE_FROM_STRING;
+//    winf.FORMAT_MESSAGE_FROM_HMODULE;
+//    winf.FORMAT_MESSAGE_FROM_SYSTEM;
+//    winf.FORMAT_MESSAGE_ARGUMENT_ARRAY;
+//    winf.FORMAT_MESSAGE_MAX_WIDTH_MASK;
+
+//    winstrings.SE_SHUTDOWN_NAME;
+//    wins.SE_PRIVILEGE_ENABLED;
+
+//    winr.READ_CONTROL;
+
+//    wins.STANDARD_RIGHTS_REQUIRED;
+//    wins.STANDARD_RIGHTS_READ;
+//    wins.STANDARD_RIGHTS_WRITE;
+//    wins.STANDARD_RIGHTS_EXECUTE;
+//    wins.STANDARD_RIGHTS_ALL;
+
+//    wint.TOKEN_ASSIGN_PRIMARY;
+//    wint.TOKEN_DUPLICATE;
+//    wint.TOKEN_IMPERSONATE;
+//    wint.TOKEN_QUERY;
+//    wint.TOKEN_QUERY_SOURCE;
+//    wint.TOKEN_ADJUST_PRIVILEGES;
+//    wint.TOKEN_ADJUST_GROUPS;
+//    wint.TOKEN_ADJUST_DEFAULT;
+//    wint.TOKEN_EXECUTE;
+//    wint.TOKEN_SOURCE_LENGTH;
+
+/**
+    private static final int TOKEN_ALL_ACCESS = ( wins.STANDARD_RIGHTS_REQUIRED |
+                                                  wint.TOKEN_ASSIGN_PRIMARY     |
+                                                  wint.TOKEN_DUPLICATE          |
+                                                  wint.TOKEN_IMPERSONATE        |
+                                                  wint.TOKEN_QUERY              |
+                                                  wint.TOKEN_QUERY_SOURCE       |
+                                                  wint.TOKEN_ADJUST_PRIVILEGES  |
+                                                  wint.TOKEN_ADJUST_GROUPS      |
+                                                  wint.TOKEN_ADJUST_DEFAULT );
+    private static final int TOKEN_READ       = ( wins.STANDARD_RIGHTS_READ     |
+                                                  wint.TOKEN_QUERY );
+    private static final int TOKEN_WRITE      = ( wins.STANDARD_RIGHTS_WRITE    |
+                                                  wint.TOKEN_ADJUST_PRIVILEGES  |
+                                                  wint.TOKEN_ADJUST_GROUPS      |
+                                                  wint.TOKEN_ADJUST_DEFAULT );
+**/
+
+    public String winError(int lLastDLLError) {
+      try {
+         StringBuffer sBuff = new StringBuffer(255);
+         int    lCount;
+         lCount             = FormatMessage(winf.FORMAT_MESSAGE_FROM_SYSTEM | winf.FORMAT_MESSAGE_IGNORE_INSERTS,
+                              new Variant(0),
+                              lLastDLLError,
+                              0,
+                              sBuff,
+                              sBuff.length(),
+                              0);
+         if (lCount != 0) {
+            return new lib.strlib.strFactory().Left(sBuff.toString(), lCount);
+         }
+       }catch(Exception e) {
+ 	System.out.println("Object Exception : "+e);
+       }
+        return null;
+    }
+
+    private static boolean bOnce;
+    private static boolean bValue;
+
+    public boolean isNT() {  
+      try {
+         if (!this.bOnce) {
+            lib.shellx.OSVERSIONINFO tVI = new lib.shellx.OSVERSIONINFO();
+//            tVI.dwOSVersionInfoSize = com.ms.dll.DllLib.sizeOf(tVI.class);
+            tVI.dwOSVersionInfoSize = com.ms.dll.DllLib.sizeOf(tVI);
+            if (GetVersionEx(tVI) != false) {
+               this.bValue = (tVI.dwPlatformId == winv.VER_PLATFORM_WIN32_NT);
+               this.bOnce  = true;
+            }
+         }
+        return bValue;
+       }catch(Exception e) {
+ 	System.out.println("Object Exception : "+e);
+       }
+        return false;
+    }
+
+    public boolean NTEnableShutDown(String sMsg) {
+      try {
+/**
+         lib.shellx.LUID             tLUID    = new lib.shellx.LUID();
+         int                         hProcess = -1;
+         int                         hToken   = -1;
+         lib.shellx.TOKEN_PRIVILEGES tTP      = new lib.shellx.TOKEN_PRIVILEGES();
+         lib.shellx.TOKEN_PRIVILEGES tTPOld   = new lib.shellx.TOKEN_PRIVILEGES();
+         int                         lTpOld   = -1;
+         boolean                     lR;
+         lR = LookupPrivilegeValue(null,
+                                   winstrings.SE_SHUTDOWN_NAME,
+                                   tLUID);
+         if (lR) {
+            hProcess = GetCurrentProcess();
+            if (hProcess != 0) {
+               lR = OpenProcessToken(hProcess,
+                                     wint.TOKEN_ADJUST_PRIVILEGES | wint.TOKEN_QUERY,
+                                     hToken);
+               if (lR) {
+                  tTP.PrivilegeCount = 1;
+                  tTP.Privileges[0].Attributes    = wins.SE_PRIVILEGE_ENABLED;
+                  tTP.Privileges[0].Luid.HighPart = tLUID.HighPart;
+                  tTP.Privileges[0].Luid.LowPart  = tLUID.LowPart;
+                  lR = AdjustTokenPrivileges(hToken,
+                                             false,
+                                             tTP,
+                                             com.ms.dll.DllLib.sizeOf(tTP),
+                                             tTPOld,
+                                             lTpOld);
+                  if(lR) {
+                     return true;                
+                  }else                   
+                     winError(com.ms.dll.DllLib.getLastWin32Error());
+               }else
+                  winError(com.ms.dll.DllLib.getLastWin32Error());
+            }else
+               winError(com.ms.dll.DllLib.getLastWin32Error());
+         }else
+            winError(com.ms.dll.DllLib.getLastWin32Error());
+**/
+       }catch(Exception e) {
+ 	System.out.println("Object Exception : "+e);
+       }
+        return false;
+    }
+
+    public boolean ShutdownSystem(int eType) {   
+      try {
+         int     yn;
+         boolean lR;
+         String sMsg = null;
+         if (eType < lib.shellx.EShutDownTypes.EWX_LOGOFF |
+             eType > lib.shellx.EShutDownTypes.EWX_FORCEIFHUNG) {
+         }
+         if (isNT()) {
+              if (!NTEnableShutDown(sMsg)) {
+              }
+         }
+         lR = ExitWindowsEx(eType, 0);
+         if (lR == false) {
+            System.out.println("Shutdown failed");
+         }
+       }catch(Exception e) {
+ 	System.out.println("Object Exception : "+e);
+       }
+        return false;
+    }
+
+/**
+       int                           hToken = 0;
+       lib.shellx.TOKEN_PRIVILEGES[] tkp    = new lib.shellx.TOKEN_PRIVILEGES[1];
+       if (!OpenProcessToken(GetCurrentProcess(),
+                             wint.TOKEN_ADJUST_PRIVILEGES | wint.TOKEN_QUERY,
+                             hToken)) {
+          return false;
+       }else
+          LookupPrivilegeValue(null, 
+                               "SE_SHUTDOWN_NAME", 
+                               tkp.Privileges[0].LUID);
+          tkp.PrivilegeCount           = 1;
+          tkp.Privileges[0].Attributes = wins.SE_PRIVILEGE_ENABLED;
+          AdjustTokenPrivileges(hToken,
+                                false,
+                                tkp[0],
+                                0, 
+                                (lib.shellx.TOKEN_PRIVILEGES)null,
+                                0);
+    
+          if (err != wine.ERROR_SUCCESS) {
+             infoBox("win32 ComException", new Integer(err).toString(), 0);
+          }else{
+             return ExitWindowsEx(wine.EWX_REBOOT, 0);
+          }
+**/

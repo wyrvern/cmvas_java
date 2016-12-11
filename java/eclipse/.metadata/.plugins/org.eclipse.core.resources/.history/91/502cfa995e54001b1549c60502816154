@@ -1,0 +1,7 @@
+ import java.util.Collection;
+ import java.util.Vector;
+ import javax.swing.table.AbstractTableModel;
+ 
+public class m_table_model {
+
+}

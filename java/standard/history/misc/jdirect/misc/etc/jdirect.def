@@ -1,0 +1,8 @@
+; jdirect.def
+LIBRARY	jdirect.dll
+DESCRIPTION	'jdirect/stub DLL'
+EXPORTS
+	DllGetClassObject	@1 PRIVATE
+	DllCanUnloadNow		@2 PRIVATE
+	DllRegisterServer	@3 PRIVATE
+	DllUnregisterServer	@4 PRIVATE

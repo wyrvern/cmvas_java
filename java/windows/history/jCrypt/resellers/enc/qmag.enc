@@ -1,0 +1,15 @@
+     String enc = "<a_cn_xyz>Q-MAG Consulting and Training,";
+     enc       += "<a_cc_xyz>auditor@icon.co.za,";
+     enc       += "<a_cu_xyz>http://www.iso2000.co.za/,";
+     enc       += "<a_ps_xyz>debug@isotop.net,";
+     enc       += "<a_pn_xyz>isotop Demo,";
+     enc       += "<a_pd_xyz>isotopDemo,";
+     enc       += "<a_se_xyz>TimeSaver.exe,";
+     enc       += "<a_si_xyz>isotop.ico,";
+     enc       += "<a_sl_xyz>isotop Demo.lnk,";
+     enc       += "<a_sd_xyz>C:\\Program Files\\isotopDemo\\,";
+     enc       += "<a_sl_fyz>TimeSaver.exe;isotop.cnt;DemoData.ini;dealerdata.dat;isotop.gid;isotop.hlp;demodata.txt;un.ico;isotop.ico,";
+     enc       += "<a_ss_fyz>msstdfmt.dll;msvbvm60.dll;msvcrt.dll;oledlg.dll;riched20.dll;riched32.dll;actbar.ocx;library.ocx;synFormLock.ocx;syngradient.ocx;synrich.ocx;synRichEd.ocx;vsview6.ocx;ssa3d30.ocx;ssscrl30.ocx;comdlg32.ocx;richtx32.ocx,";
+     enc       += "<a_sl_ryz>,";
+     enc       += "<a_ss_ryz>msstdfmt.dll,";
+     enc       += "<a_vp_xyz>1.0.d";

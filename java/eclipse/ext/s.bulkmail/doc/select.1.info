@@ -1,0 +1,10 @@
+//-----------------------------------;
+t_sect=1 - table all (0) / single (1)
+
+p_sect=0 - standard  (0) / date   (1)
+s_sect=1 - no search (0) / search (1)
+f_type=0 - and       (0)
+
+f_sect=1 - field all (0) / single (1)
+//-----------------------------------;
+t_sect-1 p_sect-0 s_sect-1 f_type-0 f_sect-1

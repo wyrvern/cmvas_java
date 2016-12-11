@@ -1,0 +1,9 @@
+//---------------------------------------------------------------------------------;
+   'db_section = Array("Orders", "Downloads", "Assess", "ReferralResellers", "ReferredCustomers", "ProductResellers", "SSContracts", "s_iso14000_org")
+   'db_f_ID = Array("OrderID", "DnID", "AssessID", "RrID", "RcID", "PrID", "SsID", "s_iso14000_org_id")
+   'db_f = Array("OrderID,CustomerEmail,CustomerName,Date,ApprovalCode,flags", "DnID,Email,FirstName,LastName,CurrentDate,flags", "AssessID,Email,FirstName,LastName,CurrentDate,flags", "RrID,RREmail,RRFirstName,RRLastName,RRCurrentDate,flags", "RcID,RCEmail,RCFirstName,RCLastName,RCCurrentDate,flags", "PrID,Email,FirstName,LastName,CurrentDate,Active,flags", "SsID,CustomerEmail,CustomerName,Date,flags", "s_iso14000_org_id,s_iso14000_org_email,s_iso14000_org_name,s_iso14000_org_date,flags")
+
+   'sendSection = "Orders,Downloads,Assess,ReferralResellers,ReferredCustomers,ProductResellers,SSContracts,s_iso14000_org"
+   'sendFieldID = "OrderID,DnID,AssessID,RrID,RcID,PrID,SsID,s_iso14000_org_id"
+   'sendField = "OrderID,CustomerEmail,CustomerName,Date,ApprovalCode,flags;DnID,Email,FirstName,LastName,CurrentDate,flags;AssessID,Email,FirstName,LastName,CurrentDate,flags;RrID,RREmail,RRFirstName,RRLastName,RRCurrentDate,flags;RcID,RCEmail,RCFirstName,RCLastName,RCCurrentDate,flags;PrID,Email,FirstName,LastName,CurrentDate,Active,flags;SsID,CustomerEmail,CustomerName,Date,flags;s_iso14000_org_id,s_iso14000_org_email,s_iso14000_org_name,s_iso14000_org_date,flags"
+//---------------------------------------------------------------------------------;

@@ -1,0 +1,60 @@
+//
+// Interface descriptions
+//
+import "unknwn.idl" ; 
+import "oaidl.idl" ;
+
+// Interface IMessenger
+[
+	object,
+	uuid(0089E241-0AE1-11d2-9B9D-00C04F8C94D0),
+	helpstring("IMessage Interface"),
+	pointer_default(unique)
+]
+
+interface IMessenger : IUnknown
+{
+	HRESULT addListener([in] IDispatch* listener,[out,retval] BSTR* key);
+	HRESULT removeListener([in] BSTR key);
+	HRESULT sendMessage([in] BSTR message);
+//	HRESULT sendObjects([in] SAFEARRAY(VARIANT) dataArray);
+	HRESULT sendObjects([in] SAFEARRAY(VARIANT) * dataArray);
+} ;
+//Interface IListener
+[
+	object,
+	uuid(6266E5A0-0BA1-11d2-ADB3-00C04F8C9491),
+	helpstring("IListener Interface"),
+	pointer_default(unique)
+]
+
+interface IListener : IUnknown
+{
+	HRESULT processMessage([in] BSTR message);
+	HRESULT processObjects([in] SAFEARRAY(VARIANT)* dataArray);
+};
+//
+// Hub description
+//
+[
+	uuid(0089E242-0AE1-11d2-9B9D-00C04F8C94D0),
+	version(1.0),
+	helpstring("Sample type Library")
+]
+library Hub2Lib
+{
+	importlib("stdole32.tlb") ;
+
+	// Hub2
+	[
+		uuid(04E5D4BA-0A64-11d2-9B9D-00C04F8C94D0),
+		helpstring("Java COM Object Hub2")
+	]
+	coclass Hub2
+	{
+		[default] interface IMessenger ;
+	};
+	interface IListener;
+} ;
+
+  

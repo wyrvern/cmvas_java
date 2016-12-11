@@ -1,0 +1,3 @@
+C:\win_code\src\java\bin\mygame\server\Server.java
+C:\win_code\src\java\bin\mygame\client\Client.java
+C:\win_code\src\java\bin\mygame\shared\Utilities.java

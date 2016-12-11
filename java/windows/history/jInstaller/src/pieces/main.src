@@ -1,0 +1,99 @@
+for {
+           for (int j = localFiles.length-1; ++j>=0; )
+}
+copyfiles {
+public int copyFiles(String copyDest,
+                     int    copySrc) throws IOException {
+  int     c         = 0;
+  boolean over      = false;
+  boolean ant       = false;
+  boolean tan       = false;
+  int     msgReturn = -1;
+
+  String  local     = null;
+  String  remote    = null;
+  try {
+
+     if(copyDest != null &&
+        copySrc  != -1) {
+        if (copySrc == IO_COPY_SYSTEM) {
+           copyPackage = systemFiles;
+        }else
+        if (copySrc == IO_COPY_PACKAGE) {
+           copyPackage = localFiles;
+        }
+        if (copyPackage != null) {
+           for (int x=0; x < copyPackage.length; x++) {
+              if(copySrc        == IO_COPY_SYSTEM) {
+                 local  = evalFile(appDir + packageLocation + copyPackage[x], ProductVersion);
+                 remote = evalFile(copyDest + copyPackage[x],                 ProductVersion);
+                 if(local != null && remote != null) {
+                    if(Integer.parseInt(local) < Integer.parseInt(remote) &&
+                       ant == false) {
+                       msgReturn = MessageBox.show("" +
+                       "The existing file [" + copyPackage[x] +"] "  +
+                       "is a newer version than the new file.\n"       +
+                       "Do you wish to overwrite ?               \n\n" +
+                       "Select 'Yes' to overwrite all,           \n"   +
+                       "Select 'No' to skip overwrite of all,    \n"   +
+                       "Select 'Cancel' to skip just this file.  \n\n",
+                       "File Overwrite Confirmation", MessageBox.YESNOCANCEL + MessageBox.ICONWARNING);
+                       if(msgReturn == DialogResult.YES) {
+                          over = false;
+                          ant  = true;
+                       }else
+                       if(msgReturn == DialogResult.NO) {
+                          over = true;
+                          ant  = true;
+                       }else
+                       if(msgReturn == DialogResult.CANCEL) {
+                          over = true;
+                          ant  = false;
+                       }
+                    }else              
+                    if(Integer.parseInt(local) > Integer.parseInt(remote) &&
+                       tan == false) {
+                       msgReturn = MessageBox.show("" +
+                       "The new file [" + copyPackage[x] +"] "       +
+                       "is a newer version than the existing file.\n"  +
+                       "Do you wish to overwrite ?               \n\n" +
+                       "Select 'Yes' to overwrite all,           \n"   +
+                       "Select 'No' to skip overwrite of all,    \n"   +
+                       "Select 'Cancel' to skip just this file.  \n\n",
+                       "File Overwrite Confirmation", MessageBox.YESNOCANCEL + MessageBox.ICONWARNING);
+                       if(msgReturn == DialogResult.YES) {
+                          over = false;
+                          tan  = true;
+                       }else
+                       if(msgReturn == DialogResult.NO) {
+                          over = true;
+                          tan  = true;
+                       }else
+                       if(msgReturn == DialogResult.CANCEL) {
+                          over = true;
+                          tan  = false;
+                       }
+                    }
+                 }
+              }
+              String in  = appDir          + packageLocation + copyPackage[x];
+              String out = copyDest        + copyPackage[x];
+              CopyFile(in, out, over);
+              c++;
+              new File(packageLocation + copyPackage[x]).delete();
+           }
+           if (c == copyPackage.length) {
+              new File(packageLocation).delete();
+           } 
+        }
+     }
+  }catch(Exception e){
+     String eet        = null;
+     eet =             "";
+     eet = eet + "<es> : "+ e.toString()                   +"\n";
+     eet = eet + "<ia> : "+ copyDest                       +"\n";
+     eet = eet + "<ia> : "+ new Integer(copySrc).toString()+"\n";
+     errHandler(FATAL_EXCEPTION, "copyFiles()", eet);
+  }
+     return 0;
+}

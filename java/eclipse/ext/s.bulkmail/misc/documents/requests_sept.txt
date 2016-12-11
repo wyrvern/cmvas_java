@@ -1,0 +1,36 @@
+a] write reverse function for dates >-><
+   status : ? possible removal.
+b] write io function to log bulkmail sent
+   status : ?
+c] close button/duplicates automaticate after build
+   status : done.
+d] approvalcode / active
+   status : !
+
+TEST
+
+
+TEST
+
+
+TEST
+
+
+
+
+
+============
+
+
+uuuuu
+
+/*---------------------------------------------*/
+key, 32 : rOrder // eval on chr(ident)
+/*---------------------------------------------*/
+algorithm instruct (
+ while(loop),count(c)chr{
+  sequence [>< -(count)chrs(c)- >!halt.]
+   if((c) < prev(l))
+     curs == chr(c)total.
+  
+ 

@@ -1,0 +1,38 @@
+import javax.swing.JTextArea;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import java.awt.BorderLayout;
+
+public class visual {
+
+	private JFrame jFrame = null;  //  @jve:decl-index=0:visual-constraint="49,28"
+	private JPanel jContentPane = null;
+
+	/**
+	 * This method initializes jFrame	
+	 * 	
+	 * @return javax.swing.JFrame	
+	 */
+	private JFrame getJFrame() {
+		if (jFrame == null) {
+			jFrame = new JFrame();
+			jFrame.setSize(new java.awt.Dimension(565,255));
+			jFrame.setContentPane(getJContentPane());
+		}
+		return jFrame;
+	}
+
+	/**
+	 * This method initializes jContentPane	
+	 * 	
+	 * @return javax.swing.JPanel	
+	 */
+	private JPanel getJContentPane() {
+		if (jContentPane == null) {
+			jContentPane = new JPanel();
+			jContentPane.setLayout(new BorderLayout());
+		}
+		return jContentPane;
+	}
+
+}

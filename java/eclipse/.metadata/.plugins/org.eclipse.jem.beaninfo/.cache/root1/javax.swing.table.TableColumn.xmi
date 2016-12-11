@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<change:ChangeDescription xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:change="http://www.eclipse.org/emf/2003/Change" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:org.eclipse.jem.internal.beaninfo.beaninfo="http:///org/eclipse/jem/internal/beaninfo/beaninfo.ecore" xmlns:org.eclipse.jem.internal.java="java.xmi">
+  <objectChanges key="org.eclipse.jem.internal.java:JavaClass java:/javax.swing.table#TableColumn">
+    <value featureName="eAnnotations">
+      <listChanges referenceValues="#//@objectsToAttach.0"/>
+    </value>
+    <value featureName="eStructuralFeatures">
+      <listChanges referenceValues="#//@objectsToAttach.3 #//@objectsToAttach.4 #//@objectsToAttach.5 #//@objectsToAttach.6 #//@objectsToAttach.7 #//@objectsToAttach.8 #//@objectsToAttach.9 #//@objectsToAttach.10 #//@objectsToAttach.11"/>
+    </value>
+    <value featureName="events">
+      <listChanges referenceValues="#//@objectsToAttach.12"/>
+    </value>
+  </objectChanges>
+  <objectChanges key="ecore:EReference java:/javax.swing.table#TableColumn/headerValue">
+    <value featureName="eAnnotations">
+      <listChanges referenceValues="#//@objectsToAttach.1"/>
+    </value>
+    <value featureName="name" dataValue="headerValue"/>
+    <value featureName="transient" dataValue="false"/>
+    <value featureName="volatile" dataValue="false"/>
+    <value featureName="changeable" dataValue="true"/>
+    <value featureName="eType" referenceValue="org.eclipse.jem.internal.java:JavaClass java:/java.lang#Object"/>
+    <value featureName="lowerBound" dataValue="0"/>
+    <value featureName="upperBound" dataValue="1"/>
+  </objectChanges>
+  <objectChanges key="ecore:EReference java:/javax.swing.table#TableColumn/identifier">
+    <value featureName="eAnnotations">
+      <listChanges referenceValues="#//@objectsToAttach.2"/>
+    </value>
+    <value featureName="name" dataValue="identifier"/>
+    <value featureName="transient" dataValue="false"/>
+    <value featureName="volatile" dataValue="false"/>
+    <value featureName="changeable" dataValue="true"/>
+    <value featureName="eType" referenceValue="org.eclipse.jem.internal.java:JavaClass java:/java.lang#Object"/>
+    <value featureName="lowerBound" dataValue="0"/>
+    <value featureName="upperBound" dataValue="1"/>
+  </objectChanges>
+  <objectsToAttach xsi:type="org.eclipse.jem.internal.beaninfo.beaninfo:BeanDecorator" shortDescription="Represents a column in a JTable" implicitlySetBits="6773413839565225998" implicitDecoratorFlag="IMPLICIT_DECORATOR" mergeSuperMethods="false" mergeSuperEvents="false">
+    <attributes key="ICON_COLOR_32x32" value="&quot;icons/jcolum32.gif&quot;"/>
+    <attributes key="ICON_COLOR_16x16" value="&quot;icons/jcolum16.gif&quot;"/>
+  </objectsToAttach>
+  <objectsToAttach xsi:type="org.eclipse.jem.internal.beaninfo.beaninfo:PropertyDecorator" shortDescription="Value for the header for this column" implicitlySetBits="6629298651489370172" implicitDecoratorFlag="IMPLICIT_DECORATOR" bound="true" readMethod="java:/javax.swing.table#TableColumn.getHeaderValue(" writeMethod="java:/javax.swing.table#TableColumn.setHeaderValue(java.lang.Object"/>
+  <objectsToAttach xsi:type="org.eclipse.jem.internal.beaninfo.beaninfo:PropertyDecorator" shortDescription="Identifier for the table column" implicitlySetBits="6629298651489370172" implicitDecoratorFlag="IMPLICIT_DECORATOR" readMethod="java:/javax.swing.table#TableColumn.getIdentifier(" writeMethod="java:/javax.swing.table#TableColumn.setIdentifier(java.lang.Object"/>
+  <objectsToAttach xsi:type="ecore:EReference" name="cellEditor" eType="org.eclipse.jem.internal.java:JavaClass java:/javax.swing.table#TableCellEditor" unsettable="true">
+    <eAnnotations xsi:type="org.eclipse.jem.internal.beaninfo.beaninfo:PropertyDecorator" shortDescription="TableCellEditor to edit values for this column" expert="true" implicitlySetBits="6629298651489370172" implicitDecoratorFlag="IMPLICIT_DECORATOR_AND_FEATURE" bound="true" readMethod="java:/javax.swing.table#TableColumn.getCellEditor(" writeMethod="java:/javax.swing.table#TableColumn.setCellEditor(javax.swing.table.TableCellEditor"/>
+  </objectsToAttach>
+  <objectsToAttach xsi:type="ecore:EReference" name="cellRenderer" eType="org.eclipse.jem.internal.java:JavaClass java:/javax.swing.table#TableCellRenderer" unsettable="true">
+    <eAnnotations xsi:type="org.eclipse.jem.internal.beaninfo.beaninfo:PropertyDecorator" shortDescription="CellRenderer to draw values for this column" expert="true" implicitlySetBits="6629298651489370172" implicitDecoratorFlag="IMPLICIT_DECORATOR_AND_FEATURE" bound="true" readMethod="java:/javax.swing.table#TableColumn.getCellRenderer(" writeMethod="java:/javax.swing.table#TableColumn.setCellRenderer(javax.swing.table.TableCellRenderer"/>
+  </objectsToAttach>
+  <objectsToAttach xsi:type="ecore:EReference" name="headerRenderer" eType="org.eclipse.jem.internal.java:JavaClass java:/javax.swing.table#TableCellRenderer" unsettable="true">
+    <eAnnotations xsi:type="org.eclipse.jem.internal.beaninfo.beaninfo:PropertyDecorator" shortDescription="CellRenderer to draw the header for this column" expert="true" implicitlySetBits="6629298651489370172" implicitDecoratorFlag="IMPLICIT_DECORATOR_AND_FEATURE" bound="true" readMethod="java:/javax.swing.table#TableColumn.getHeaderRenderer(" writeMethod="java:/javax.swing.table#TableColumn.setHeaderRenderer(javax.swing.table.TableCellRenderer"/>
+  </objectsToAttach>
+  <objectsToAttach xsi:type="ecore:EReference" name="maxWidth" eType="org.eclipse.jem.internal.java:JavaDataType java:/#int" unsettable="true">
+    <eAnnotations xsi:type="org.eclipse.jem.internal.beaninfo.beaninfo:PropertyDecorator" shortDescription="Maximum width of the column" expert="true" implicitlySetBits="6629298651489370172" implicitDecoratorFlag="IMPLICIT_DECORATOR_AND_FEATURE" readMethod="java:/javax.swing.table#TableColumn.getMaxWidth(" writeMethod="java:/javax.swing.table#TableColumn.setMaxWidth(int"/>
+  </objectsToAttach>
+  <objectsToAttach xsi:type="ecore:EReference" name="minWidth" eType="org.eclipse.jem.internal.java:JavaDataType java:/#int" unsettable="true">
+    <eAnnotations xsi:type="org.eclipse.jem.internal.beaninfo.beaninfo:PropertyDecorator" shortDescription="Minimum width of the column" expert="true" implicitlySetBits="6629298651489370172" implicitDecoratorFlag="IMPLICIT_DECORATOR_AND_FEATURE" readMethod="java:/javax.swing.table#TableColumn.getMinWidth(" writeMethod="java:/javax.swing.table#TableColumn.setMinWidth(int"/>
+  </objectsToAttach>
+  <objectsToAttach xsi:type="ecore:EReference" name="modelIndex" eType="org.eclipse.jem.internal.java:JavaDataType java:/#int" unsettable="true">
+    <eAnnotations xsi:type="org.eclipse.jem.internal.beaninfo.beaninfo:PropertyDecorator" shortDescription="Index in the model for data in this column" implicitlySetBits="6629298651489370172" implicitDecoratorFlag="IMPLICIT_DECORATOR_AND_FEATURE" readMethod="java:/javax.swing.table#TableColumn.getModelIndex(" writeMethod="java:/javax.swing.table#TableColumn.setModelIndex(int"/>
+  </objectsToAttach>
+  <objectsToAttach xsi:type="ecore:EReference" name="preferredWidth" eType="org.eclipse.jem.internal.java:JavaDataType java:/#int" unsettable="true">
+    <eAnnotations xsi:type="org.eclipse.jem.internal.beaninfo.beaninfo:PropertyDecorator" shortDescription="Preferred Width width of the column" implicitlySetBits="6629298651489370172" implicitDecoratorFlag="IMPLICIT_DECORATOR_AND_FEATURE" readMethod="java:/javax.swing.table#TableColumn.getPreferredWidth(" writeMethod="java:/javax.swing.table#TableColumn.setPreferredWidth(int"/>
+  </objectsToAttach>
+  <objectsToAttach xsi:type="ecore:EReference" name="resizable" eType="org.eclipse.jem.internal.java:JavaDataType java:/#boolean" unsettable="true">
+    <eAnnotations xsi:type="org.eclipse.jem.internal.beaninfo.beaninfo:PropertyDecorator" shortDescription="Whether the user can resize the column" implicitlySetBits="6629298651489370172" implicitDecoratorFlag="IMPLICIT_DECORATOR_AND_FEATURE" readMethod="java:/javax.swing.table#TableColumn.getResizable(" writeMethod="java:/javax.swing.table#TableColumn.setResizable(boolean"/>
+  </objectsToAttach>
+  <objectsToAttach xsi:type="ecore:EReference" name="width" eType="org.eclipse.jem.internal.java:JavaDataType java:/#int" changeable="false" unsettable="true">
+    <eAnnotations xsi:type="org.eclipse.jem.internal.beaninfo.beaninfo:PropertyDecorator" shortDescription="Width of the column" implicitlySetBits="6629298651489370164" implicitDecoratorFlag="IMPLICIT_DECORATOR_AND_FEATURE" readMethod="java:/javax.swing.table#TableColumn.getWidth("/>
+  </objectsToAttach>
+  <objectsToAttach xsi:type="org.eclipse.jem.internal.beaninfo.beaninfo:BeanEvent" name="propertyChange">
+    <eAnnotations xsi:type="org.eclipse.jem.internal.beaninfo.beaninfo:EventSetDecorator" displayName="Property Change" shortDescription="All property change events" implicitlySetBits="-2594073385365405571" implicitDecoratorFlag="IMPLICIT_DECORATOR_AND_FEATURE" inDefaultEventSet="true" addListenerMethod="java:/javax.swing.table#TableColumn.addPropertyChangeListener(java.beans.PropertyChangeListener" listenerType="java:/java.beans#PropertyChangeListener" removeListenerMethod="java:/javax.swing.table#TableColumn.removePropertyChangeListener(java.beans.PropertyChangeListener">
+      <serListMthd name="propertyChange" method="java:/java.beans#PropertyChangeListener.propertyChange(java.beans.PropertyChangeEvent">
+        <eAnnotations xsi:type="org.eclipse.jem.internal.beaninfo.beaninfo:MethodDecorator" shortDescription="Property changed event" implicitlySetBits="6629298651489370113">
+          <serParmDesc shortDescription="property changed event" implicitlySetBits="6629298651489370113" name="propertyChangeEvent"/>
+        </eAnnotations>
+      </serListMthd>
+    </eAnnotations>
+  </objectsToAttach>
+</change:ChangeDescription>

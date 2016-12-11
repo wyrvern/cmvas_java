@@ -1,0 +1,17 @@
+/**
+       System.out.println(System.getProperties());
+      'cp850''utf8'
+       System.out.println(System.getProperties());
+       System.getProperties().list(System.out);
+       System.out.println(System.getProperty("file.encoding"));
+       System.out.print('\n');
+       for(int j=0; j<255; j++) {
+          System.out.print((char)j);
+       }
+       System.out.print('\n');
+**/
+       double a = 7.6,
+              b = 3.1,
+              f = 0;
+       f = a % b;
+       System.out.print(f);

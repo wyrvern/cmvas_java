@@ -1,0 +1,48 @@
+import javax.swing.JTextArea;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import java.awt.BorderLayout;
+import javax.swing.JTable;
+
+public class visual {
+
+	private JFrame jFrame = null;  //  @jve:decl-index=0:visual-constraint="49,28"
+	private JTable jTable = null;
+	/**
+	 * This method initializes jFrame	
+	 * 	
+	 * @return javax.swing.JFrame	
+	 */
+	private JFrame getJFrame() {
+		if (jFrame == null) {
+			jFrame = new JFrame();
+			jFrame.setSize(new java.awt.Dimension(565,255));
+			jFrame.setContentPane(getJTable());
+		}
+		return jFrame;
+	}
+
+	/**
+	 * This method initializes jTable	
+	 * 	
+	 * @return javax.swing.JTable	
+	 */
+	private JTable getJTable() {
+		if (jTable == null) {
+			jTable = new JTable();
+		}
+		return jTable;
+	}
+	
+    public static void main(String[] args) {
+
+        JFrame frame = new JFrame("c_main");
+
+        final JLabel label = new JLabel("Hello World");
+        frame.getContentPane().add(label);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
+    }
+
+}

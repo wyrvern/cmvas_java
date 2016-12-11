@@ -1,0 +1,444 @@
+[Tag=101]
+[Header=Command Center ]
+[RTF={\rtf1\ansi\ansicpg1252\deff0\deftab720{\fonttbl{\f0\fswiss MS Sans Serif;}{\f1\froman\fcharset2 Symbol;}{\f2\froman\fprq2 Times New Roman;}{\f3\froman Times New Roman;}{\f4\froman Times New Roman;}}
+{\colortbl\red0\green0\blue0;\red255\green0\blue0;}
+\deflang2057\pard\plain\f2\fs18\b 
+\par \plain\f2\fs18 This is the control panel for the software.
+\par You can navigate by clicking on the buttons 
+\par \plain\lang1033\f2\fs18 Click on the \plain\lang1033\f2\fs18\cf1 red dots\plain\lang1033\f2\fs18  for the recommended tour through this DEMO
+\par \plain\lang1033\f2\fs18\cf1 Click here  \plain\lang1033\f2\fs96\cf1 .
+\par \plain\lang1033\f4\fs20 
+\par }]
+[Tag=102]
+[Header=Command Center ]
+[RTF={\rtf1\ansi\ansicpg1252\deff0\deftab720{\fonttbl{\f0\fswiss MS Sans Serif;}{\f1\froman\fcharset2 Symbol;}{\f2\froman Times New Roman;}{\f3\froman\fprq2 Times New Roman;}{\f4\froman Times New Roman;}}
+{\colortbl\red0\green0\blue0;\red255\green0\blue0;}
+\deflang2057\pard\plain\f3\fs18 The Implementation Guide menu is shown on the white screen.
+\par The Implementation Guide is your 24 step guide to implement ISO 14001.
+\par 
+\par \plain\f3\fs18\cf1\b Click the red dots for your tour
+\par \plain\f3\fs18\cf1 - 3 Phase Plan
+\par - Phase II Implementation and Operation
+\par - Step17- Emergency Preparedness & Response\plain\lang1033\f4\fs20 
+\par }]
+[Tag=127]
+[Header=Implementation Guide]
+[RTF={\rtf1\ansi\ansicpg1252\deff0\deftab720{\fonttbl{\f0\fswiss MS Sans Serif;}{\f1\froman\fcharset2 Symbol;}{\f2\froman\fprq2 Times New Roman;}{\f3\froman Times New Roman;}{\f4\froman Times New Roman;}}
+{\colortbl\red0\green0\blue0;\red255\green0\blue0;}
+\deflang2057\pard\plain\f2\fs18\b The Requirement in brief
+\par \plain\f2\fs18 Describes each ISO 14001 Requirement in simple language.
+\par 
+\par \plain\f2\fs18\cf1\b Click
+\par \plain\f2\fs18\cf1 - Do I need a Procedure?\plain\lang1033\f4\fs20 
+\par }]
+[Tag=104]
+[Header=Implementation Guide]
+[RTF={\rtf1\ansi\ansicpg1252\deff0\deftab720{\fonttbl{\f0\fswiss MS Sans Serif;}{\f1\froman\fcharset2 Symbol;}{\f2\froman\fprq2 Times New Roman;}{\f3\froman Times New Roman;}{\f4\froman Times New Roman;}}
+{\colortbl\red0\green0\blue0;\red255\green0\blue0;}
+\deflang2057\pard\plain\f2\fs18\b Do I need a Procedure?
+\par \plain\f2\fs18 Is a Procedure required by ISO 14001? Or does isotop recommend one? Either way, a prewritten Procedure is provided.
+\par 
+\par \plain\f2\fs18\cf1\b Click
+\par \plain\f2\fs18\cf1 - Implementation action\plain\lang1033\f4\fs20 
+\par }]
+[Tag=105]
+[Header=Implementation Guide]
+[RTF={\rtf1\ansi\ansicpg1252\deff0\deftab720{\fonttbl{\f0\fswiss MS Sans Serif;}{\f1\froman\fcharset2 Symbol;}{\f2\froman\fprq2 Times New Roman;}{\f3\froman Times New Roman;}{\f4\froman Times New Roman;}}
+{\colortbl\red0\green0\blue0;\red255\green0\blue0;}
+\deflang2057\pard\plain\f2\fs18\b Implementation action
+\par \plain\f2\fs18 Key Action Points to implement each ISO 14001 requirement are provided.
+\par \plain\f2\fs18\b 
+\par \plain\f2\fs18\cf1\b Click
+\par \plain\f2\fs18\cf1 - Any of the bolded words\plain\lang1033\f4\fs20 
+\par 
+\par }]
+[Tag=106]
+[Header=Implementation Guide]
+[RTF={\rtf1\ansi\ansicpg1252\deff0\deftab720{\fonttbl{\f0\fswiss MS Sans Serif;}{\f1\froman\fcharset2 Symbol;}{\f2\froman\fprq2 Times New Roman;}{\f3\froman Times New Roman;}{\f4\froman Times New Roman;}}
+{\colortbl\red0\green0\blue0;\red255\green0\blue0;}
+\deflang2057\pard\plain\f2\fs18\b isotop Advice
+\par \plain\f2\fs18 Further Advice on each Action Point is shown below.
+\par \plain\f2\fs18\b 
+\par \plain\f2\fs18\cf1\b Click\plain\f2\fs18\cf1 
+\par Hot Tips\plain\lang1033\f4\fs20 
+\par 
+\par }]
+[Tag=107]
+[Header=Implementation Guide]
+[RTF={\rtf1\ansi\ansicpg1252\deff0\deftab720{\fonttbl{\f0\fswiss MS Sans Serif;}{\f1\froman\fcharset2 Symbol;}{\f2\froman\fprq2 Times New Roman;}{\f3\froman Times New Roman;}{\f4\froman Times New Roman;}}
+{\colortbl\red0\green0\blue0;\red255\green0\blue0;}
+\deflang2057\pard\plain\f2\fs18\b Hot Tips
+\par \plain\f2\fs18 Use isotop's experience for effective implementation.
+\par 
+\par \plain\f2\fs18\cf1\b Click
+\par \plain\f2\fs18\cf1 - Close
+\par 
+\par OR
+\par \plain\f2\fs18\cf1\b - \plain\f2\fs18\cf1 Related Topics\plain\f2\fs18\cf1\b 
+\par \plain\f2\fs18\cf1 - Environment Manual
+\par - Emergency Preparedness & Response\plain\lang1033\f4\fs20 
+\par }]
+[Tag=108]
+[Header=Command Center]
+[RTF={\rtf1\ansi\ansicpg1252\deff0\deftab720{\fonttbl{\f0\fswiss MS Sans Serif;}{\f1\froman\fcharset2 Symbol;}{\f2\froman\fprq2 Times New Roman;}{\f3\froman Times New Roman;}{\f4\froman Times New Roman;}}
+{\colortbl\red0\green0\blue0;\red255\green0\blue0;}
+\deflang2057\pard\plain\f2\fs18 You have completed the tour of the Implementation Guide.
+\par 
+\par \plain\f2\fs18\cf1\b Click
+\par \plain\f2\fs18\cf1 - Environment Manual Button\plain\lang1033\f4\fs20 
+\par }]
+[Tag=109]
+[Header=Command Center]
+[RTF={\rtf1\ansi\ansicpg1252\deff0\deftab720{\fonttbl{\f0\fswiss MS Sans Serif;}{\f1\froman\fcharset2 Symbol;}{\f2\froman\fprq2 Times New Roman;}{\f3\froman Times New Roman;}}
+{\colortbl\red0\green0\blue0;\red255\green0\blue0;}
+\deflang2057\pard\plain\f2\fs18 isotop has an ISO 14001 compliant\plain\f2\fs18\b  Environment Manual. \plain\f2\fs18 You can \plain\f2\fs18\b customize\plain\f2\fs18  this manual in the full program
+\par 
+\par \plain\lang1033\f2\fs18\cf1\b Click\plain\f2\fs18\b 
+\par \plain\f2\fs18\cf1 - Management System Requirements
+\par - Implementation and Operation
+\par - Emergency Preparedness & Response\plain\lang1033\f3\fs20 
+\par }]
+[Tag=219]
+[Header=Environment Manual]
+[RTF={\rtf1\ansi\ansicpg1252\deff0\deftab720{\fonttbl{\f0\fswiss MS Sans Serif;}{\f1\froman\fcharset2 Symbol;}{\f2\froman\fprq2 Times New Roman;}{\f3\froman Times New Roman;}{\f4\froman Times New Roman;}}
+{\colortbl\red0\green0\blue0;\red255\green0\blue0;}
+\deflang2057\pard\plain\f2\fs18\b Commitments
+\par \plain\f2\fs18 Concise Commitments to ISO 14001 requirements. The Environment Manual uses ISO 14001 numbering for easy reference.
+\par 
+\par \plain\lang1033\f2\fs18\cf1\b Click
+\par \plain\f2\fs18\cf1 - Go to Own\plain\lang1033\f4\fs20 
+\par }]
+[Tag=201]
+[Header=Environment Manual]
+[RTF={\rtf1\ansi\ansicpg1252\deff0\deftab720{\fonttbl{\f0\fswiss MS Sans Serif;}{\f1\froman\fcharset2 Symbol;}{\f2\froman\fprq2 Times New Roman;}{\f3\froman Times New Roman;}{\f4\froman Times New Roman;}}
+{\colortbl\red0\green0\blue0;\red255\green0\blue0;}
+\deflang1033\pard\plain\lang2057\f2\fs18\b Commitments (own version)\plain\lang2057\f2\fs18 
+\par Use the Text Edit toolbar to customize text in the full program.
+\par 
+\par The \plain\lang2057\f2\fs18\b Go to Master \plain\lang2057\f2\fs18 button returns you to the non-modifiable version.
+\par 
+\par \plain\lang2057\f2\fs18\cf1\b Click
+\par \plain\f2\fs18\cf1 - Procedures \plain\lang2057\f2\fs18 
+\par \plain\f4\fs20 
+\par }]
+[Tag=202]
+[Header=Environment Manual]
+[RTF={\rtf1\ansi\ansicpg1252\deff0\deftab720{\fonttbl{\f0\fswiss MS Sans Serif;}{\f1\froman\fcharset2 Symbol;}{\f2\froman\fprq2 Times New Roman;}{\f3\froman Times New Roman;}{\f4\froman Times New Roman;}}
+{\colortbl\red0\green0\blue0;\red255\green0\blue0;\red0\green0\blue255;}
+\deflang2057\pard\plain\f2\fs18\b Procedures\plain\f2\fs18 
+\par The required management procedures are listed. 
+\par \plain\f2\fs18\cf2 
+\par \plain\lang1033\f2\fs18\cf1\b Click
+\par \plain\f2\fs18\cf1 - References\plain\lang1033\f4\fs20 
+\par }]
+[Tag=203]
+[Header=Environment Manual]
+[RTF={\rtf1\ansi\ansicpg1252\deff0\deftab720{\fonttbl{\f0\fswiss MS Sans Serif;}{\f1\froman\fcharset2 Symbol;}{\f2\froman\fprq2 Times New Roman;}{\f3\froman Times New Roman;}{\f4\froman Times New Roman;}}
+{\colortbl\red0\green0\blue0;\red255\green0\blue0;}
+\deflang1033\pard\plain\lang2057\f2\fs18\b References
+\par \plain\lang2057\f2\fs18 A list of related documents include the section of ISO 14001. 
+\par \plain\f2\fs18\cf1\b 
+\par Click
+\par \plain\lang2057\f2\fs18\cf1 - Tools on top Menu Bar
+\par \plain\f2\fs18\cf1 - Properties\plain\f4\fs20 
+\par }]
+[Tag=204]
+[Header=Environment Manual]
+[RTF={\rtf1\ansi\ansicpg1252\deff0\deftab720{\fonttbl{\f0\fswiss MS Sans Serif;}{\f1\froman\fcharset2 Symbol;}{\f2\froman\fprq2 Times New Roman;}{\f3\froman Times New Roman;}{\f4\froman Times New Roman;}}
+{\colortbl\red0\green0\blue0;\red255\green0\blue0;}
+\deflang2057\pard\plain\f2\fs18\b isotop Properties
+\par \plain\f2\fs18 Type in your \plain\f2\fs18\b Company Name\plain\f2\fs18 , 
+\par this will print on your documentation.
+\par 
+\par \plain\lang1033\f2\fs18\cf1\b Click
+\par \plain\lang1033\f2\fs18\cf1 - OK\plain\f2\fs18 
+\par \plain\f2\fs18\cf1 - Print Options
+\par \plain\lang1033\f2\fs18\cf1 - Print Current page\plain\lang1033\f4\fs20 
+\par }]
+[Tag=205]
+[Header=Environment Manual]
+[RTF={\rtf1\ansi\ansicpg1252\deff0\deftab720{\fonttbl{\f0\fswiss MS Sans Serif;}{\f1\froman\fcharset2 Symbol;}{\f2\froman\fprq2 Times New Roman;}{\f3\froman Times New Roman;}{\f4\froman Times New Roman;}}
+{\colortbl\red0\green0\blue0;\red255\green0\blue0;}
+\deflang1033\pard\plain\lang2057\f2\fs18\b Print Preview
+\par \plain\lang2057\f2\fs18 Your \plain\lang2057\f2\fs18\b Company Name\plain\lang2057\f2\fs18  appears in the header. Click the printer icon to Print\plain\lang2057\f2\fs18\b  \plain\lang2057\f2\fs18 the document\plain\lang2057\f2\fs18\b .
+\par \plain\lang2057\f2\fs18 
+\par \plain\f2\fs18\cf1\b Click\plain\f2\fs18\cf1 
+\par \plain\f2\fs18 - Close\plain\f4\fs20 
+\par }]
+[Tag=206]
+[Header=Environment Manual]
+[RTF={\rtf1\ansi\ansicpg1252\deff0\deftab720{\fonttbl{\f0\fswiss MS Sans Serif;}{\f1\froman\fcharset2 Symbol;}{\f2\froman\fprq2 Times New Roman;}{\f3\froman Times New Roman;}{\f4\froman Times New Roman;}}
+{\colortbl\red0\green0\blue0;\red255\green0\blue0;}
+\deflang1033\pard\plain\lang2057\f2\fs18 You have completed viewing the \plain\lang2057\f2\fs18\b Environment Manual\plain\lang2057\f2\fs18 .
+\par 
+\par \plain\f2\fs18\cf1\b Click\plain\lang2057\f2\fs18\b 
+\par \plain\f2\fs18\cf1 - Close
+\par 
+\par OR 
+\par 
+\par \plain\f2\fs18\cf1\b - Related Topic
+\par \plain\f2\fs18\cf1 - Procedure
+\par - Emergency Planning\plain\f4\fs20 
+\par }]
+[Tag=207]
+[Header=Command Center]
+[RTF={\rtf1\ansi\ansicpg1252\deff0\deftab720{\fonttbl{\f0\fswiss MS Sans Serif;}{\f1\froman\fcharset2 Symbol;}{\f2\froman\fprq2 Times New Roman;}{\f3\froman Times New Roman;}{\f4\froman Times New Roman;}}
+{\colortbl\red0\green0\blue0;\red255\green0\blue0;}
+\deflang1033\pard\plain\lang2057\f2\fs18 You have completed the tour of the Environment Manual.
+\par 
+\par \plain\f2\fs18\cf1\b Click\plain\lang2057\f2\fs18\b  
+\par \plain\lang2057\f2\fs18\cf1 - Management Procedures button\plain\lang2057\f2\fs18 
+\par \plain\f4\fs20 
+\par }]
+[Tag=300]
+[Header=Command Center]
+[RTF={\rtf1\ansi\ansicpg1252\deff0\deftab720{\fonttbl{\f0\fswiss MS Sans Serif;}{\f1\froman\fcharset2 Symbol;}{\f2\froman\fprq2 Times New Roman;}{\f3\froman Times New Roman;}{\f4\froman Times New Roman;}}
+{\colortbl\red0\green0\blue0;\red255\green0\blue0;}
+\deflang1033\pard\plain\lang2057\f2\fs18  19  customizable \plain\lang2057\f2\fs18\b Management Procedures \plain\lang2057\f2\fs18 are provided. 
+\par 
+\par \plain\f2\fs18\cf1\b Click
+\par \plain\f2\fs18\cf1 - Core Procedures
+\par - Emergency Planning\plain\f4\fs20 
+\par }]
+[Tag=311]
+[Header=Management Procedures]
+[RTF={\rtf1\ansi\ansicpg1252\deff0\deftab720{\fonttbl{\f0\fswiss MS Sans Serif;}{\f1\froman\fcharset2 Symbol;}{\f2\froman\fprq2 Times New Roman;}{\f3\froman Times New Roman;}}
+{\colortbl\red0\green0\blue0;\red255\green0\blue0;}
+\deflang1033\pard\plain\lang2057\f2\fs18\b Aim
+\par \plain\lang2057\f2\fs18 The \plain\lang2057\f2\fs18\b Aim\plain\lang2057\f2\fs18  of a Management Procedure is its purpose.
+\par 
+\par Click \plain\lang2057\f2\fs18\b Go to Own\plain\lang2057\f2\fs18  to create your \plain\lang2057\f2\fs18\b own version.\plain\lang2057\f2\fs18 
+\par 
+\par \plain\f2\fs18\cf1\b Click
+\par \plain\f2\fs18\cf1 -  Go to Own\plain\f3\fs20 
+\par }]
+[Tag=302]
+[Header=Management Procedures]
+[RTF={\rtf1\ansi\ansicpg1252\deff0\deftab720{\fonttbl{\f0\fswiss MS Sans Serif;}{\f1\froman\fcharset2 Symbol;}{\f2\froman\fprq2 Times New Roman;}{\f3\froman Times New Roman;}{\f4\froman Times New Roman;}}
+{\colortbl\red0\green0\blue0;\red255\green0\blue0;}
+\deflang2057\pard\plain\f2\fs18\b Create\plain\f2\fs18  and \plain\f2\fs18\b save\plain\f2\fs18  your \plain\f2\fs18\b own version \plain\f2\fs18 of\plain\f2\fs18\b  all \plain\f2\fs18 sections for your \plain\f2\fs18\b complete Management Procedure\plain\f2\fs18 .
+\par Click \plain\f2\fs18\b Go to Master \plain\f2\fs18 to return to the non-modifiable master.
+\par \plain\lang1033\f2\fs18\cf1\b 
+\par Click
+\par \plain\lang1033\f2\fs18\cf1 - \plain\f2\fs18\cf1 Responsibility\plain\lang1033\f4\fs20 
+\par }]
+[Tag=303]
+[Header=Management Procedures]
+[RTF={\rtf1\ansi\ansicpg1252\deff0\deftab720{\fonttbl{\f0\fswiss MS Sans Serif;}{\f1\froman\fcharset2 Symbol;}{\f2\froman\fprq2 Times New Roman;}{\f3\froman Times New Roman;}{\f4\froman Times New Roman;}}
+{\colortbl\red0\green0\blue0;\red255\green0\blue0;}
+\deflang2057\pard\plain\f2\fs18\b Responsibility\plain\f2\fs18  
+\par This summarises who should be involved in this Procedure. 
+\par \plain\f2\fs18\b Customize\plain\f2\fs18  using \plain\f2\fs18\b your\plain\f2\fs18  titles and names.
+\par 
+\par 
+\par \plain\lang1033\f2\fs18\cf1\b Click
+\par \plain\f2\fs18\cf1 - Method\plain\lang1033\f4\fs20 
+\par }]
+[Tag=304]
+[Header=Management Procedures]
+[RTF={\rtf1\ansi\ansicpg1252\deff0\deftab720{\fonttbl{\f0\fswiss MS Sans Serif;}{\f1\froman\fcharset2 Symbol;}{\f2\froman\fprq2 Times New Roman;}{\f3\froman Times New Roman;}}
+{\colortbl\red0\green0\blue0;\red255\green0\blue0;}
+\deflang2057\pard\plain\f2\fs18\b Method
+\par \plain\f2\fs18 The Method provides the required ISO 14001 actions. 
+\par Customize this method to your organization.
+\par 
+\par \plain\lang1033\f2\fs18\cf1\b Click
+\par \plain\f2\fs18\cf1 - Records\plain\lang1033\f3\fs20 
+\par }]
+[Tag=305]
+[Header=Management Procedures]
+[RTF={\rtf1\ansi\ansicpg1252\deff0\deftab720{\fonttbl{\f0\fswiss MS Sans Serif;}{\f1\froman\fcharset2 Symbol;}{\f2\froman\fprq2 Times New Roman;}{\f3\froman Times New Roman;}{\f4\froman Times New Roman;}}
+{\colortbl\red0\green0\blue0;\red255\green0\blue0;}
+\deflang2057\pard\plain\f2\fs18\b Records
+\par \plain\f2\fs18  This is the list of records for this procedure. 
+\par A complete set of \plain\f2\fs18\b isotop Record Forms\plain\f2\fs18  is provided.
+\par 
+\par \plain\lang1033\f2\fs18\cf1\b Click
+\par \plain\f2\fs18\cf1 - References\plain\lang1033\f4\fs20 
+\par }]
+[Tag=306]
+[Header=Management Procedures]
+[RTF={\rtf1\ansi\ansicpg1252\deff0\deftab720{\fonttbl{\f0\fswiss MS Sans Serif;}{\f1\froman\fcharset2 Symbol;}{\f2\froman\fprq2 Times New Roman;}{\f3\froman Times New Roman;}{\f4\froman Times New Roman;}}
+{\colortbl\red0\green0\blue0;\red255\green0\blue0;}
+\deflang1033\pard\plain\lang2057\f2\fs18\b References 
+\par \plain\lang2057\f2\fs18 Summarises all related documents including the requirement of ISO 14001.
+\par 
+\par \plain\f2\fs18\cf1\b Click
+\par \plain\f2\fs18\cf1 - Close
+\par 
+\par OR 
+\par 
+\par \plain\f2\fs18\cf1\b - Related Topic
+\par \plain\f2\fs18\cf1 - Action Tool
+\par - Emergency Plan Ideas\plain\f4\fs20 
+\par }]
+[Tag=307]
+[Header=Command Center]
+[RTF={\rtf1\ansi\ansicpg1252\deff0\deftab720{\fonttbl{\f0\fswiss MS Sans Serif;}{\f1\froman\fcharset2 Symbol;}{\f2\froman\fprq2 Times New Roman;}{\f3\froman Times New Roman;}{\f4\froman Times New Roman;}}
+{\colortbl\red0\green0\blue0;\red255\green0\blue0;}
+\deflang2057\pard\plain\f2\fs18 You have completed the tour of the Management Procedures
+\par 
+\par \plain\lang1033\f2\fs18\cf1\b Click \plain\f2\fs18 
+\par \plain\f2\fs18\cf1 - Action Tools button\plain\lang1033\f4\fs20 
+\par }]
+[Tag=400]
+[Header=Command Center]
+[RTF={\rtf1\ansi\ansicpg1252\deff0\deftab720{\fonttbl{\f0\fswiss MS Sans Serif;}{\f1\froman\fcharset2 Symbol;}{\f2\froman\fprq2 Times New Roman;}{\f3\froman Times New Roman;}{\f4\froman Times New Roman;}}
+{\colortbl\red0\green0\blue0;\red255\green0\blue0;}
+\deflang1033\pard\plain\lang2057\f2\fs18\b Action Tools
+\par \plain\lang2057\f2\fs18 11 checklists are available in the full program including 80 \plain\lang2057\f2\fs18\b audit questions\plain\lang2057\f2\fs18  and 60 \plain\lang2057\f2\fs18\b improvement objectives\plain\lang2057\f2\fs18 . 
+\par 
+\par \plain\f2\fs18\cf1\b Click
+\par \plain\f2\fs18\cf1 - Emergency Plan Ideas\plain\f4\fs20 
+\par }]
+[Tag=406]
+[Header=Action Tools]
+[RTF={\rtf1\ansi\ansicpg1252\deff0\deftab720{\fonttbl{\f0\fswiss MS Sans Serif;}{\f1\froman\fcharset2 Symbol;}{\f2\froman\fprq2 Times New Roman;}{\f3\froman Times New Roman;}{\f4\froman Times New Roman;}}
+{\colortbl\red0\green0\blue0;\red255\green0\blue0;}
+\deflang1033\pard\plain\lang2057\f2\fs18\b Emergency Plan Ideas\plain\lang2057\f2\fs18 
+\par Including Actions for Emergency Plans, key responsibilities, and essential emergency equipment.
+\par 
+\par \plain\f2\fs18\cf1\b Click
+\par \plain\f2\fs18\cf1 - Close  \plain\f4\fs20 
+\par }]
+[Tag=401]
+[Header=Command Center]
+[RTF={\rtf1\ansi\ansicpg1252\deff0\deftab720{\fonttbl{\f0\fswiss MS Sans Serif;}{\f1\froman\fcharset2 Symbol;}{\f2\froman\fprq2 Times New Roman;}{\f3\froman Times New Roman;}{\f4\froman Times New Roman;}}
+{\colortbl\red0\green0\blue0;\red255\green0\blue0;}
+\deflang1033\pard\plain\lang2057\f2\fs18 You have completed the tour of the Action Tools
+\par 
+\par \plain\f2\fs18\cf1\b Click \plain\lang2057\f2\fs18 
+\par \plain\lang2057\f2\fs18\cf1 - Records button\plain\lang2057\f2\fs18 
+\par \plain\f4\fs20 
+\par }]
+[Tag=500]
+[Header=Command Center]
+[RTF={\rtf1\ansi\ansicpg1252\deff0\deftab720{\fonttbl{\f0\fswiss MS Sans Serif;}{\f1\froman\fcharset2 Symbol;}{\f2\froman\fprq2 Times New Roman;}{\f3\froman Times New Roman;}{\f4\froman Times New Roman;}}
+{\colortbl\red0\green0\blue0;\red255\green0\blue0;}
+\deflang1033\pard\plain\lang2057\f2\fs18\b Records
+\par \plain\lang2057\f2\fs18 A complete set of 21\plain\lang2057\f2\fs18\b  Record Forms \plain\lang2057\f2\fs18 to\plain\lang2057\f2\fs18\b  \plain\lang2057\f2\fs18 record the data required to satisfy the\plain\lang2057\f2\fs18\b  ISO 14001 assessors\plain\lang2057\f2\fs18 .
+\par 
+\par \plain\f2\fs18\cf1\b Click
+\par \plain\f2\fs18\cf1 - Core Records
+\par - Emergency Plan\plain\f4\fs20 
+\par }]
+[Tag=511]
+[Header=Records]
+[RTF={\rtf1\ansi\ansicpg1252\deff0\deftab720{\fonttbl{\f0\fswiss MS Sans Serif;}{\f1\froman\fcharset2 Symbol;}{\f2\froman\fprq2 Times New Roman;}{\f3\froman Times New Roman;}}
+{\colortbl\red0\green0\blue0;\red255\green0\blue0;}
+\deflang1033\pard\plain\lang2057\f2\fs18\b Emergency Plan\plain\lang2057\f2\fs18 
+\par Example \plain\lang2057\f2\fs18\b data\plain\lang2057\f2\fs18  included \plain\lang2057\f2\fs18\b . \plain\lang2057\f2\fs18 (all data is fictitious)
+\par To see a blank record:
+\par 
+\par \plain\f2\fs18\cf1\b Click
+\par \plain\f2\fs18\cf1 - View Blank\plain\f3\fs20 
+\par }]
+[Tag=502]
+[Header=Records]
+[RTF={\rtf1\ansi\ansicpg1252\deff0\deftab720{\fonttbl{\f0\fswiss MS Sans Serif;}{\f1\froman\fcharset2 Symbol;}{\f2\froman\fprq2 Times New Roman;}{\f3\froman Times New Roman;}{\f4\froman Times New Roman;}}
+{\colortbl\red0\green0\blue0;\red255\green0\blue0;}
+\deflang2057\pard\plain\f2\fs18\b Blank Emergency Plan
+\par \plain\f2\fs18 This record can be printed or opened in your word processor
+\par \plain\f2\fs18\b 
+\par \plain\lang1033\f2\fs18\cf1\b Click
+\par \plain\lang1033\f2\fs18\cf1 - O\plain\f2\fs18\cf1 pen blank\plain\lang1033\f4\fs20 
+\par }]
+[Tag=503]
+[Header=Records]
+[RTF={\rtf1\ansi\ansicpg1252\deff0\deftab720{\fonttbl{\f0\fswiss MS Sans Serif;}{\f1\froman\fcharset2 Symbol;}{\f2\froman\fprq2 Times New Roman;}{\f3\froman Times New Roman;}{\f4\froman Times New Roman;}}
+{\colortbl\red0\green0\blue0;\red255\green0\blue0;}
+\deflang1033\pard\plain\lang2057\f2\fs18\b Customize Emergency Plan
+\par \plain\lang2057\f2\fs18 The Blank Record Form opens in your Word Processor for you to customize.
+\par 
+\par \plain\f2\fs18\cf1\b Click
+\par \plain\f2\fs18\cf1 - Close\plain\f4\fs20 
+\par }]
+[Tag=504]
+[Header=Command Center]
+[RTF={\rtf1\ansi\ansicpg1252\deff0\deftab720{\fonttbl{\f0\fswiss MS Sans Serif;}{\f1\froman\fcharset2 Symbol;}{\f2\froman\fprq2 Times New Roman;}{\f3\froman Times New Roman;}{\f4\froman Times New Roman;}}
+{\colortbl\red0\green0\blue0;\red255\green0\blue0;}
+\deflang2057\pard\plain\f2\fs18\b Records\plain\f2\fs18  
+\par The \plain\f2\fs18\b Environmental Records\plain\f2\fs18  include assessment & recording of your significant environmental risks.
+\par 
+\par \plain\lang1033\f2\fs18\cf1\b Click
+\par \plain\lang1033\f2\fs18\cf1 - Environment Records
+\par \plain\f2\fs18\cf1 - Significant Aspects & Impacts Summary\plain\lang1033\f4\fs20 
+\par }]
+[Tag=519]
+[Header=Records]
+[RTF={\rtf1\ansi\deff0\deftab720{\fonttbl{\f0\fswiss MS Sans Serif;}{\f1\froman\fcharset2 Symbol;}{\f2\froman\fprq2 Times New Roman;}{\f3\froman Times New Roman;}{\f4\froman Times New Roman;}}
+{\colortbl\red0\green0\blue0;\red255\green0\blue0;\red0\green0\blue255;}
+\deflang1033\pard\plain\lang7177\f4\fs18\b Significant Aspects and Impacts Summary
+\par \plain\lang7177\f4\fs18 A summary of your Significant Aspects for the assessor\plain\lang7177\f4\fs18\b .\plain\lang7177\f4\fs18  The full program uses a single page \plain\lang7177\f4\fs18\b risk assessment method.\plain\lang7177\f4\fs18  
+\par \plain\lang7177\f4\fs18\b Pollution\plain\lang7177\f4\fs18  and \plain\lang7177\f4\fs18\b Resource-use\plain\lang7177\f4\fs18  aspects are easily assessed and prioritized.
+\par \plain\lang7177\f4\fs18\cf1\b Click
+\par \plain\lang7177\f4\fs18\cf1 - Close\plain\lang7177\f4\fs18\cf2  
+\plain\lang7177\f4\fs24}]
+[Tag=600]
+[Header=Command Center]
+[RTF={\rtf1\ansi\ansicpg1252\deff0\deftab720{\fonttbl{\f0\fswiss MS Sans Serif;}{\f1\froman\fcharset2 Symbol;}{\f2\froman\fprq2 Times New Roman;}{\f3\froman Times New Roman;}{\f4\froman Times New Roman;}}
+{\colortbl\red0\green0\blue0;\red255\green0\blue0;}
+\deflang1033\pard\plain\lang2057\f2\fs18\b Help 
+\par \plain\lang2057\f2\fs18 To use \plain\lang2057\f2\fs18\b Help\plain\lang2057\f2\fs18 
+\par \plain\f2\fs18\cf1\b 
+\par Click
+\par \plain\f2\fs18\cf1 - Help
+\par - Contents\plain\f4\fs20 
+\par }]
+[Tag=601]
+[Header=Help]
+[RTF={\rtf1\ansi\deff0\deftab720{\fonttbl{\f0\fswiss MS Sans Serif;}{\f1\froman\fcharset2 Symbol;}{\f2\froman\fprq2 Times New Roman;}{\f3\froman Times New Roman;}}
+{\colortbl\red0\green0\blue0;\red255\green0\blue0;}
+\deflang2057\pard\plain\f2\fs18 The full Help Screens are available here for you to view.\plain\f2\fs18\b 
+\par 
+\par \plain\f2\fs18 When you have completed your tour of the Help Screens.
+\par Close the Help Screens and
+\par \plain\f2\fs18\cf1\b Click 
+\par - Next\plain\lang1033\f3\fs20 
+\par}]
+[Tag=602]
+[Header=Command Center]
+[RTF={\rtf1\ansi\ansicpg1252\deff0\deftab720{\fonttbl{\f0\fswiss MS Sans Serif;}{\f1\froman\fcharset2 Symbol;}{\f2\froman\fprq2 Times New Roman;}{\f3\froman Times New Roman;}{\f4\froman Times New Roman;}}
+{\colortbl\red0\green0\blue0;\red128\green0\blue0;}
+\deflang1033\pard\plain\lang2057\f2\fs18 Thank you for taking time to look at the\plain\lang2057\f2\fs18\b  isotop TimeSaver CD DEMO
+\par 
+\par \plain\lang2057\f2\fs18 You have experienced a sample of the \plain\lang2057\f2\fs18\b ease-of-use\plain\lang2057\f2\fs18  and \plain\lang2057\f2\fs18\b power\plain\lang2057\f2\fs18  of this \plain\lang2057\f2\fs18\b isotop\plain\lang2057\f2\fs18  documentation software.
+\par 
+\par You can \plain\lang2057\f2\fs18\b Click around\plain\lang2057\f2\fs18  and print many \plain\lang2057\f2\fs18\b live features\plain\lang2057\f2\fs18  in this DEMO.
+\par 
+\par 
+\par \plain\lang2057\f2\fs24\cf1\b 
+\par \plain\f4\fs20 
+\par}]
+[Tag=603]
+[Header=How to Purchase.]
+[RTF={\rtf1\ansi\ansicpg1252\deff0\deftab720{\fonttbl{\f0\fswiss MS Sans Serif;}{\f1\froman\fcharset2 Symbol;}{\f2\froman\fprq2 Times New Roman;}{\f3\froman Times New Roman;}{\f4\fswiss\fprq2 System;}{\f5\froman Times New Roman;}}
+{\colortbl\red0\green0\blue0;\red0\green128\blue128;\red0\green0\blue255;}
+\deflang2057\pard\plain\f2\fs18  \plain\f2\fs18\b isotop TimeSaver CD \plain\f2\fs18    \plain\f2\fs18\cf2\b 
+\par \plain\f2\fs18 
+\par Get your copy of the \plain\f2\fs18\b isotop TimeSaver CD \plain\f2\fs18 from the isotop website\plain\f2\fs18\b  www.isotop.net\plain\f2\fs18 
+\par 
+\par 
+\par Get your \plain\f2\fs18\b FREE  ISO 14001 Online Assessment\plain\f2\fs18  from www.isotop.net\plain\f2\fs18\b  
+\par 
+\par \plain\f2\fs18\cf1\b \'85 your route to ISO 14001 success with...
+\par \plain\f2\fs18\b isotop Global Partnership\plain\f2\fs18 .
+\par \plain\lang1033\f5\fs20 
+\par }]
+[Tag=604]
+[Header=How to Purchase.]
+[RTF={\rtf1\ansi\ansicpg1252\deff0\deftab720{\fonttbl{\f0\fswiss MS Sans Serif;}{\f1\froman\fcharset2 Symbol;}{\f2\froman\fprq2 Times New Roman;}{\f3\froman Times New Roman;}{\f4\fswiss\fprq2 System;}{\f5\froman Times New Roman;}}
+{\colortbl\red0\green0\blue0;\red0\green128\blue128;\red0\green0\blue255;}
+\deflang2057\pard\plain\f2\fs18  \plain\f2\fs18\b isotop TimeSaver CD \plain\f2\fs18    \plain\f2\fs18\cf2\b 
+\par \plain\f2\fs18 
+\par Get your copy of the \plain\f2\fs18\b isotop TimeSaver CD \plain\f2\fs18 from:
+\par
+\par
+\par 
+\par 
+\par 
+\par 
+\par \plain\f2\fs18\cf1\b \'85 your route to ISO 14001 success with...
+\par \plain\f2\fs18\b isotop Global Partnership\plain\f2\fs18 .
+\par \plain\lang1033\f5\fs20 
+\par }]

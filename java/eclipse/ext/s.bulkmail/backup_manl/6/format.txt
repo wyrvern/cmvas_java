@@ -1,0 +1,7 @@
+0.8 TO_ADDRESS_EQ_REAL To: repeats address as real name
+0.0 BAYES_44 BODY: Bayesian spam probability is 44 to 50%
+0.1 HTML_MESSAGE BODY: HTML included in message
+0.3 MIME_HTML_ONLY BODY: Message only has text/html MIME parts
+1.2 HTML_MIME_NO_HTML_TAG HTML-only message, but there is no HTML tag
+1.6 MISSING_MIMEOLE Message has X-MSMail-Priority, but no X-MimeOLE
+0.1 MISSING_OUTLOOK_NAME Message looks like Outlook, but isn't

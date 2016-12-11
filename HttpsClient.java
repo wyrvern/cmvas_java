@@ -1,10 +1,5 @@
 //package com.mkyong.client;
 
-/**
-
-
-**/
-
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.security.cert.Certificate;
@@ -22,18 +17,35 @@ public class HttpsClient{
 
    private void testIt(){
 
-      String https_url = "https://www.google.com/";
+      String https_url = "https://www.cellc.co.za/cellc/jsp/profile/login_ajax.jsp?username=0743552582&password=mp1978mp";
+      String httpr_url = "https://www.cellc.co.za/cellc/usage-history";
+
+      String httpi_url = "https://www.cellc.co.za/cellc/dashboard-overview?javascript:history.accountShortName";
+
       URL url;
+      URL uri;
+      URL urr;
+
       try {
 
 	     url = new URL(https_url);
+	     uri = new URL(httpr_url);
+	     urr = new URL(httpi_url);
+
 	     HttpsURLConnection con = (HttpsURLConnection)url.openConnection();
+	     HttpsURLConnection win = (HttpsURLConnection)uri.openConnection();
+	     HttpsURLConnection set = (HttpsURLConnection)urr.openConnection();
 
 	     //dumpl all cert info
-	     print_https_cert(con);
+	     //print_https_cert(con);
 
 	     //dump all the content
-	     print_content(con);
+	     //print_content(con);
+
+	     //dump all the content
+	     //print_content(win);
+
+	     print_content(set);
 
       } catch (MalformedURLException e) {
 	     e.printStackTrace();

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="NewWizardAction">
+		<item key="NewWizardSelectionPage..SHOW_ALL_SELECTED" value="false"/>
+		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="org.eclipse.ve.internal.java.codegen.wizards.VisualClassExampleWizard.SimpleTextEditor"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="Examples"/>
+			<item value="Examples/Example Visual Classes"/>
+			<item value="Examples/Example Visual Classes/Swing"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.internal.dialogs.FilteredComboTree">
+		<list key="search">
+		</list>
+	</section>
+</section>

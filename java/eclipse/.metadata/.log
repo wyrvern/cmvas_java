@@ -1,0 +1,130 @@
+!SESSION 2006-10-04 15:17:10.265 -----------------------------------------------
+eclipse.buildId=M20060118-1600
+java.version=1.5.0_08
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.jem.proxy 2 0 2006-10-04 15:21:46.843
+!MESSAGE 
++++ Warning +++: Wed Oct 04 15:21:46 CAT 2006    Project (mail)-VM for mail:err>
+    Exception in thread "AWT-EventQueue-0" java.lang.ClassCastException
+    	at javax.swing.LayoutComparator.compare(Unknown Source)
+    	at java.util.Arrays.mergeSort(Unknown Source)
+    	at java.util.Arrays.sort(Unknown Source)
+    	at java.util.Collections.sort(Unknown Source)
+    	at javax.swing.SortingFocusTraversalPolicy.enumerateAndSortCycle(Unknown Source)
+    	at javax.swing.SortingFocusTraversalPolicy.getFirstComponent(Unknown Source)
+    	at javax.swing.LayoutFocusTraversalPolicy.getFirstComponent(Unknown Source)
+    	at javax.swing.SortingFocusTraversalPolicy.getDefaultComponent(Unknown Source)
+    	at java.awt.FocusTraversalPolicy.getInitialComponent(Unknown Source)
+    	at java.awt.Window.getMostRecentFocusOwner(Unknown Source)
+    	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(Unknown Source)
+    	at java.awt.Component.dispatchEventImpl(Unknown Source)
+    	at java.awt.Container.dispatchEventImpl(Unknown Source)
+    	at java.awt.Window.dispatchEventImpl(Unknown Source)
+    	at java.awt.Component.dispatchEvent(Unknown Source)
+    	at java.awt.EventQueue.dispatchEvent(Unknown Source)
+    	at java.awt.SequencedEvent.dispatch(Unknown Source)
+    	at java.awt.EventQueue.dispatchEvent(Unknown Source)
+    	at java.awt.EventDispatchThread.pumpOneEventForHierarchy(Unknown Source)
+    	at java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+    	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+    	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+    	at java.awt.EventDispatchThread.run(Unknown Source)
+!SESSION 2006-10-05 12:04:49.46 ------------------------------------------------
+eclipse.buildId=M20060118-1600
+java.version=1.5.0_08
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.core.resources 2 10035 2006-10-05 12:04:54.218
+!MESSAGE A workspace crash was detected. The previous session did not exit normally.
+
+!ENTRY org.eclipse.core.resources 4 368 2006-10-05 12:05:06.812
+!MESSAGE Resource /mail/visual.java does not exist.
+
+!ENTRY org.eclipse.core.resources 4 368 2006-10-05 12:05:11.687
+!MESSAGE Resource /mail/visual.java does not exist.
+
+!ENTRY org.eclipse.ve.cde 4 2 2006-10-05 12:15:01.203
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.ve.cde".
+!STACK 0
+java.lang.IllegalArgumentException: Expression Proxy is for a different expression
+	at org.eclipse.jem.internal.proxy.core.Expression.validateProxy(Expression.java:724)
+	at org.eclipse.jem.internal.proxy.core.Expression.createSimpleMethodInvoke(Expression.java:1770)
+	at org.eclipse.ve.internal.jfc.core.ComponentManager.invalidate(ComponentManager.java:802)
+	at org.eclipse.ve.internal.jfc.core.ComponentManager.access$0(ComponentManager.java:800)
+	at org.eclipse.ve.internal.jfc.core.ComponentManager$4.run(ComponentManager.java:1247)
+	at org.eclipse.ve.internal.cde.core.ModelChangeController$1$SafeRunnable.run(ModelChangeController.java:329)
+	at org.eclipse.core.internal.runtime.InternalPlatform.run(InternalPlatform.java:1044)
+	at org.eclipse.core.runtime.Platform.run(Platform.java:783)
+	at org.eclipse.ve.internal.cde.core.ModelChangeController.executeAsyncRunnables(ModelChangeController.java:346)
+	at org.eclipse.ve.internal.cde.core.ModelChangeController$1.run(ModelChangeController.java:304)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:123)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3102)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2761)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1699)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1663)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:367)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:143)
+	at org.eclipse.ui.internal.ide.IDEApplication.run(IDEApplication.java:103)
+	at org.eclipse.core.internal.runtime.PlatformActivator$1.run(PlatformActivator.java:226)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:376)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:163)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.core.launcher.Main.invokeFramework(Main.java:334)
+	at org.eclipse.core.launcher.Main.basicRun(Main.java:278)
+	at org.eclipse.core.launcher.Main.run(Main.java:973)
+	at org.eclipse.core.launcher.Main.main(Main.java:948)
+
+!ENTRY org.eclipse.ve.cde 2 0 2006-10-05 12:15:01.203
+!MESSAGE 
+!STACK 0
+java.lang.IllegalArgumentException: Expression Proxy is for a different expression
+	at org.eclipse.jem.internal.proxy.core.Expression.validateProxy(Expression.java:724)
+	at org.eclipse.jem.internal.proxy.core.Expression.createSimpleMethodInvoke(Expression.java:1770)
+	at org.eclipse.ve.internal.jfc.core.ComponentManager.invalidate(ComponentManager.java:802)
+	at org.eclipse.ve.internal.jfc.core.ComponentManager.access$0(ComponentManager.java:800)
+	at org.eclipse.ve.internal.jfc.core.ComponentManager$4.run(ComponentManager.java:1247)
+	at org.eclipse.ve.internal.cde.core.ModelChangeController$1$SafeRunnable.run(ModelChangeController.java:329)
+	at org.eclipse.core.internal.runtime.InternalPlatform.run(InternalPlatform.java:1044)
+	at org.eclipse.core.runtime.Platform.run(Platform.java:783)
+	at org.eclipse.ve.internal.cde.core.ModelChangeController.executeAsyncRunnables(ModelChangeController.java:346)
+	at org.eclipse.ve.internal.cde.core.ModelChangeController$1.run(ModelChangeController.java:304)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:123)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3102)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2761)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1699)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1663)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:367)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:143)
+	at org.eclipse.ui.internal.ide.IDEApplication.run(IDEApplication.java:103)
+	at org.eclipse.core.internal.runtime.PlatformActivator$1.run(PlatformActivator.java:226)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:376)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:163)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.core.launcher.Main.invokeFramework(Main.java:334)
+	at org.eclipse.core.launcher.Main.basicRun(Main.java:278)
+	at org.eclipse.core.launcher.Main.run(Main.java:973)
+	at org.eclipse.core.launcher.Main.main(Main.java:948)
+!SESSION 2006-10-05 12:25:23.359 -----------------------------------------------
+eclipse.buildId=M20060118-1600
+java.version=1.5.0_08
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.core.resources 4 4 2006-10-05 12:27:59.843
+!MESSAGE Problems encountered while deleting resources.
+!SUBENTRY 1 org.eclipse.core.resources 4 273 2006-10-05 12:27:59.843
+!MESSAGE Could not delete: /mail.

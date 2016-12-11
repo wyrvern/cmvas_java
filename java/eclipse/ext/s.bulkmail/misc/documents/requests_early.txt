@@ -1,0 +1,23 @@
+1. Automatic selection by the program of the client's 
+1st Name , Last Name & Company Name
+ 
+Place these at the Top of the email content:
+ 
+TO: 1st Name  Last Name  Company Name
+ 
+2. Consider the option to Highlight Text 
+ 
+3. Consider the option to Highlight a blank line
+ie. to create a COLOR Strip accros the page
+ 
+4. Future possibility: insert a .jpg or .gif file in the text area
+ 
+5. Future: Linking this email program to OTHER Data sources
+eg comma delimited email addresses & names, DB files (types?)
+Excel data tables (.xls & .csv files)
+
+1. Date range to be inserted as an option for selecting Bulk Mail. 
+This can be done before OR After the ADD/Remove selections are applied.
+ 
+2. IDEA: Selection of Primary GROUPING by 
+        Country  OR email extension  ****.com

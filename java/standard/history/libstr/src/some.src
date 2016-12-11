@@ -1,0 +1,70 @@
+older {
+   /**
+     public String[] Split(String value,
+                           String divide) {
+          String[] c_array     = new String[value.length()];
+          int    fPosition     = 0;
+          int    f             = 0;
+          String strReturn;
+          for (int i=0;i<c_array.length;i++,f++){
+          try {
+           fPosition          = value.indexOf(divide,i);
+           strReturn          = value.substring(i,fPosition);
+           c_array[f]         = strReturn;
+           i                  = fPosition;
+             }catch(StringIndexOutOfBoundsException e){
+                strReturn  = value.substring(i);
+                c_array[f] = strReturn;
+                return c_array;
+             }
+         }
+                return c_array;
+     }
+**/
+}
+backup {
+  public String[] Split(String value,
+                        String divide) {
+       int n = 1, s = 0;
+       do{
+          if(value.indexOf(divide, s) != -1) {
+             s = value.indexOf(divide, s)+1;
+             n++;
+          }else
+             break;
+       }while(true);
+
+       String[] strArray    = new String[n];
+       int    x             = 0,y = 0;
+
+       String strReturn = null;
+       for (int i=0;i<strArray.length;i++){
+          try {
+             if(value.indexOf(divide,y) != -1 &&
+                x == 0) {
+                x         = value.indexOf(divide,y);
+                strReturn = value.substring(y,x);
+             }else
+             if(value.indexOf(divide,y) != -1 &&
+                x > 0) {
+                x         = value.indexOf(divide,y);
+                strReturn = value.substring(y,x);
+             }else
+             if(value.indexOf(divide,y) == -1 &&
+                x > 0) {
+                strReturn = value.substring(x+1);
+             }
+/*
+             }else
+                strReturn = value.substring(x);
+*/
+             y           = x+1;
+             strArray[i] = strReturn;
+          }catch(Exception e) {
+             System.out.println("Ex");
+             return new String[] { e.toString() };
+          }
+      }
+       return strArray;
+  }
+}

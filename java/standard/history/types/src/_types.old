@@ -1,0 +1,132 @@
+/*
+ *   debug. Types.
+ *   Description  : None.
+ *   Dependencies : None.
+ *   Platform     : OS Independant.
+ *   Version      : 1.0.1
+ *   Credit       : this()
+*/
+
+import java.io.*;
+import java.util.*;
+import java.lang.reflect.*;
+
+import com.ms.wfc.app.*;
+import com.ms.wfc.core.*;
+import com.ms.wfc.ui.*;
+import com.ms.wfc.html.*;
+import com.ms.win32.win.*;
+import com.ms.dll.*;
+
+/**
+ * The types class.
+ * <p>
+ * @author null@null.co.za
+ * @version 1.0.1
+ */
+
+import strlib.*;
+
+public class types {
+
+// api
+
+/** @dll.import("strlib") */
+private native static String justDo();
+
+public  String sh[]    = {"ageless","fernsh","tone"};
+//public  int erf        = DllLib.sizeOf(sh);
+//private HashMap fa     = new HashMap(5);
+
+private String appDir      = Application.getStartupPath();
+
+  public void debugThis() {
+    try {
+       strlib jt = new strlib();
+    }catch(Exception e){
+        System.out.println(e.toString());
+    }
+  }
+
+  public static int report(String in[]) {
+   
+    System.out.println(in.length);
+    System.out.println(in[0].length());
+    System.out.println(in.length);
+
+  return -1;
+  } 
+
+  public static int jre () {
+    int fork   = 0;
+    int derp[] = { 1,2,3,4,5 };
+ 
+    fork =+ fork+1;
+    System.out.println(Array.getLength(derp));
+    System.out.println(Array.get(derp,derp[0]));
+    System.out.println();
+ 
+    for (int x=0;x< derp.length;x++) {
+      System.out.println(x);   
+    }
+
+   return 0;
+  }
+
+  public static void main (String[] args) {
+    String es[]    = {"ape","bone","tone"};
+    types in = new types();
+    in.debugThis();
+//    in.report(es);
+  }
+}
+
+/**   
+
+   byte kd        = 127;
+   byte cr        = -128;
+   char dk        = 't';
+   int dt         = 123456;
+   int fi[]       = new int[156];
+   int fe[][]     = new int[1][3];
+   char da[]      = new char[3];
+   char ds[]      = {'a','b','c'};
+   String es[]    = {"ape","bone","tone"};
+   String fs[]    = es;   
+   String er      = "12";
+   byte cr        = -128;
+   Byte fc        = new Byte(cr);
+   int le         = fc.hashCode();
+   int  dr        = 190;
+   Byte kr        = Byte.decode(er);
+   byte ke        = Byte.parseByte(er);
+   byte kd        = 127;
+   byte op        = 0;
+   byte de        = Byte.MAX_VALUE;
+   Byte vo        = new Byte(kd);
+   int  kn        = vo.intValue();   
+   String fo      = vo.toString();
+   char gk        = 'f';
+   String jk      = "f";
+
+   byte dc[]      = new byte[10];
+   Byte ek[]      = new Byte[10];
+   int  so        = 0;
+   String tk      = "";
+ 
+ try { 
+      so = System.in.read(dc);
+   }
+   catch(IOException ex){System.out.println(ex);}  
+   for(int i = 0;i < so-2;i++){ 
+    tk = tk + (char)dc[i];   
+   }
+
+   byte be[]    =  new byte[5]; 
+   try{
+     System.in.read(be);
+     String dv    = new String(be);
+     System.out.print(dv);
+    }
+    catch (IOException e){System.out.print("IOexception");} 
+**/

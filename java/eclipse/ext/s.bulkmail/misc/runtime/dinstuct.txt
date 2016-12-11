@@ -1,0 +1,10 @@
+Basic isotopBulk date-range Instructions :
+----------------------------------------------------------
+- To utilise the date-range option, check 'Send via Date',
+  select the table you wish to use (ie, 'Sales, RR, etc),
+  enter the dates to begin & end with.
+  Remember to proceed numbers less than 10, such as 9 as 09.
+  Enter the fields for Subject, from & message & send your email.
+  This will send an email to all within that table between
+  the dates you enetred.
+----------------------------------------------------------

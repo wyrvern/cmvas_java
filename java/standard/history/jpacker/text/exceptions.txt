@@ -1,0 +1,11 @@
+ private static final int  FATAL_EXCEPTION     = 0;
+ private static final int  SYSTEM_EXCEPTION    = 1;
+ private static final int  LINK_EXCEPTION      = 2;
+ private static final int  IO_EXCEPTION        = 3;
+ private static final int  LIB_EXCEPTION       = 4;
+ private static final int  LOAD_EXCEPTION      = 5;
+ private static final int  MAIL_EXCEPTION      = 6;
+ private static final int  INFO_EXCEPTION      = 7;
+ private static final int  REGISTRY_EXCEPTION  = 8;
+ private static final int  INSTALL_EXCEPTION   = 9;
+ private static final int  UNINSTALL_EXCEPTION = 10;

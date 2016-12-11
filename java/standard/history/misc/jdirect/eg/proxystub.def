@@ -1,0 +1,8 @@
+; ProxyStub.def
+LIBRARY	proxystub.dll
+DESCRIPTION	'Proxy/Stub DLL'
+EXPORTS
+	DllGetClassObject	@1 PRIVATE
+	DllCanUnloadNow		@2 PRIVATE
+	DllRegisterServer	@3 PRIVATE
+	DllUnregisterServer	@4 PRIVATE

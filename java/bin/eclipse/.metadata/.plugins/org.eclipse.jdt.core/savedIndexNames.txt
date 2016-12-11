@@ -1,0 +1,9 @@
+C:\win_code\src\java\eclipse\.metadata\.plugins\org.eclipse.jdt.core\2599740383.index
+C:\win_code\src\java\eclipse\.metadata\.plugins\org.eclipse.jdt.core\2204905541.index
+C:\win_code\src\java\eclipse\.metadata\.plugins\org.eclipse.jdt.core\475182672.index
+C:\win_code\src\java\eclipse\.metadata\.plugins\org.eclipse.jdt.core\1943921490.index
+C:\win_code\src\java\eclipse\.metadata\.plugins\org.eclipse.jdt.core\2111710420.index
+C:\win_code\src\java\eclipse\.metadata\.plugins\org.eclipse.jdt.core\2398464250.index
+C:\win_code\src\java\eclipse\.metadata\.plugins\org.eclipse.jdt.core\3371148697.index
+C:\win_code\src\java\eclipse\.metadata\.plugins\org.eclipse.jdt.core\217109657.index
+C:\win_code\src\java\eclipse\.metadata\.plugins\org.eclipse.jdt.core\4179612435.index

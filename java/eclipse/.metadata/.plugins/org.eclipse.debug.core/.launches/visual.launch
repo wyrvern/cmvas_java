@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launchConfiguration type="org.eclipse.ve.java.core.launcher.JavaBean">
+<booleanAttribute key="isSWT" value="false"/>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="visual"/>
+<stringAttribute key="APPLET_PARMS_NUMBER" value="0"/>
+<booleanAttribute key=" PACK" value="false"/>
+<stringAttribute key="LOCALE" value=""/>
+<stringAttribute key="SWING_LOOKANDFEEL" value=""/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="mail"/>
+</launchConfiguration>

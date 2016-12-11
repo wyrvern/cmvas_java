@@ -1,0 +1,20 @@
+findStartup (
+        String show = cm.productCompany + "\n";
+        show += cm.productContact       + "\n";
+        show += cm.packageName          + "\n";
+        show += cm.packageDir           + "\n";
+        show += cm.productSupport       + "\n";
+        show += cm.packageExe           + "\n";
+        show += cm.packageIco           + "\n";
+        show += cm.packageLnk           + "\n";
+        show += cm.installFolder        + "\n";
+        for(int a=0; a<cm.localFiles.length; a++)
+           show += cm.localFiles[a]        + "\n";
+        for(int b=0; b<cm.systemFiles.length; b++)
+           show += cm.systemFiles[b]       + "\n";
+        for(int c=0; c<cm.localRegister.length; c++)
+           show += cm.localRegister[c]     + "\n";
+        for(int d=0; d<cm.systemRegister.length; d++)
+           show += cm.systemRegister[d]    + "\n";
+        System.out.println(show);
+)

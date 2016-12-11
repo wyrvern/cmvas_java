@@ -1,0 +1,32 @@
+//
+// package includes
+//
+
+ public  Properties sysProp       = System.getProperties();
+ public  String packageName       = "isotopDemo";
+ public  String packageFldr       = "isotopDemo";
+ public  String productSupport    = "debug@isotop.net";
+ public  String productContact    = "info@isotop.net";
+ public  String productCompany    = "isotop Global Partnership";
+ public  String packageExe        = "TimeSaver.exe";
+ public  String packageIco        = "isotop.ico";
+ public  String packageLnk        = "isotop Demo.lnk";
+
+ public  String packageSet        = "jInstaller.exe";
+ public  String packageSetArg     = "/u";
+ public  String packageSetLnk     = "Uninstall.lnk";
+ public  String uninstallIco      = "un.ico";
+ public  String startupLnk        = "Startup\\jInstaller.lnk";
+
+ public  String packageLocation   = "package\\";
+ public  String jvmLocation       = "jvm\\";
+
+// private static final String packageFiles[]    = { "isotopDemo.exe", "isotop.ico", "un.ico" };
+// private static final String packageFiles[]    = { "mail.ico", "un.ico", "comctl32.ocx", "comdlg32.ocx", "msflxgrd.ocx", "msinet.ocx", "richtx32.ocx", "bulkMail.exe", "msvbvm60.dll", "smtpsvg.dll", "isotop.mdb", "help.txt" };
+// private static final String registerFiles[]   = { "smtpsvg.dll", "msinet.ocx" };
+
+ private static final String packageFiles[]    = { "actbar.ocx", "comdlg32.ocx", "library.ocx", "richtx32.ocx", "ssa3d30.ocx", "ssscrl30.ocx", "synFormLock.ocx", "syngradient.ocx", "synrich.ocx", "synRichEd.ocx", "vsview6.ocx", "TimeSaver.exe", "isotop.cnt", "DemoData.ini", "dealerdata.dat", "isotop.gid", "isotop.hlp", "demodata.txt", "un.ico", "isotop.ico" };
+ private static final String localRegister[]   = { "actbar.ocx", "library.ocx", "synFormLock.ocx", "syngradient.ocx", "synrich.ocx", "synRichEd.ocx", "vsview6.ocx" };
+ private static final String systemRegister[]   = { "msstdfmt.dll" };
+ private static final String systemFiles[]     = { "msstdfmt.dll", "msvbvm60.dll", "msvcrt.dll", "oledlg.dll", "riched20.dll", "riched32.dll" };
+ private static String copyPackage[]           = null;

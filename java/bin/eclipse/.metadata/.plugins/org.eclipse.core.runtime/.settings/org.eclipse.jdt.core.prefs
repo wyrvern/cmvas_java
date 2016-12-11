@@ -1,0 +1,6 @@
+#Thu Feb 09 13:33:18 CAT 2006
+org.eclipse.jdt.core.classpathVariable.JUNIT_HOME=c\:/win_code/bin/other/eclipse/plugins/org.junit_3.8.1
+eclipse.preferences.version=1
+org.eclipse.jdt.core.builder.resourceCopyExclusionFilter=*.launch
+org.eclipse.jdt.core.classpathVariable.ECLIPSE_HOME=c\:/win_code/bin/other/eclipse
+org.eclipse.jdt.core.codeComplete.visibilityCheck=enabled

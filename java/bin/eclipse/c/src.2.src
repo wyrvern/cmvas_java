@@ -1,0 +1,43 @@
+import java.io.*;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JButton;
+import javax.swing.JPanel;
+import java.awt.BorderLayout;
+
+public class Visual extends JFrame {
+	
+	private JPanel jContentPane = null;
+	private JFrame jFrame = null;  //  @jve:decl-index=0:visual-constraint="16,17"
+	public Visual() {
+		super();
+		initialize();
+	}
+
+	private void initialize() {
+		
+	}
+	
+	private JPanel getJContentPane() {
+		if (jContentPane == null) {
+			jContentPane = new JPanel();
+			jContentPane.setLayout(new BorderLayout());
+		}
+		return jContentPane;
+	}
+   
+	private JFrame getJFrame() {
+		if (jFrame == null) {
+			jFrame = new JFrame();
+			jFrame.setContentPane(getJContentPane());
+			jFrame.setSize(582, 279);
+			jFrame.setTitle("jFrame");
+		}
+		return jFrame;
+	}
+    	public static void main(String[] args) {
+ 		Visual c = new Visual();
+ 		c.setVisible(true);
+	}
+}

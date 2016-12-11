@@ -1,0 +1,48 @@
+; jShell .cabinet distribution information.
+
+[hook1]
+run=extrac32.exe /e /a /y /l %49000% jShell.cab
+
+[hook2]
+
+InfFile=jShell.inf
+InfSection=RegistryData
+
+[Strings]
+
+ClassId="{9E140A42-C0EB-4e3f-8D81-20203C71EBD6}"
+
+PackageName="jShell win32 shell library"
+
+[AddRegSection]
+
+HKLM,"SOFTWARE\Classes\CLSID\%ClassId%",,,"%PackageName%"
+HKLM,"SOFTWARE\Classes\CLSID\%ClassId%\InstalledVersion",,,"aa,bb,cc,dd"
+HKLM,"Software\Classes\CLSID\%ClassId%\InstalledVersion","Path",,"%49000%\jShell.class"
+HKLM,"SOFTWARE\Classes\CLSID\%ClassId%\InProcServer32",,,"%11%\MSJAVA.DLL"
+HKLM,"SOFTWARE\Classes\CLSID\%ClassId%\InProcServer32","NoJavaClass",,""
+HKLM,"SOFTWARE\Classes\CLSID\%ClassId%\InProcServer32","ThreadingModel",,"Both"
+HKLM,"SOFTWARE\Classes\CLSID\%ClassId%\InProcServer32","Lib",,"%49000%"
+
+[RegistryData]
+AddReg=AddRegSection
+CustomDestination=MyCustomDestination
+
+[PackageDestination49000]
+
+"HKLM","Software\Microsoft\Java VM","LibsDirectory","",""
+
+[Setup Hooks]				
+hook1=hook1
+hook2=hook2
+
+[Version]
+signature="$CHICAGO$"
+AdvancedINF=2.0
+
+[DefaultInstall]
+CustomDestination=MyCustomDestination
+AddReg=AddRegSection
+
+[MyCustomDestination]
+49000=PackageDestination49000,23

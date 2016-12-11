@@ -1,0 +1,168 @@
+//---------------------------------------------------------------------------------;
+'----------------------------------------------- ISO 14000
+If cmbTable.Text = "s_iso14000_org" Then
+   frmMail.StatusBar.Panels(1).Text = "Processing..."
+   Call MouseChange("frmDate", "Wait")
+
+   Shift = False
+   If InStr(whole, LCase(rs("s_iso14000_org_email"))) <> 0 Then
+      Shift = True
+   ElseIf IsNull(LCase(rs("s_iso14000_org_email"))) = True Then
+      Shift = True
+   End If
+
+   If Shift = False Then
+      If IsNull(rs("s_iso14000_org_name")) = True Then
+         frmMail.grdMain.AddItem (rs(dbArrayID(7)) & Chr(9) & "" & Chr(9) & LCase(rs("s_iso14000_org_email")) & Chr(9) & rs(sqldate) & Chr(9) & rs("flags"))
+      Else
+         frmMail.grdMain.AddItem (rs(dbArrayID(7)) & Chr(9) & LCase(rs("s_iso14000_org_email")) & Chr(9) & rs("s_iso14000_org_name") & Chr(9) & rs(sqldate) & Chr(9) & rs("flags"))
+      End If
+   End If
+   whole = whole & " " & LCase(rs("s_iso14000_org_email"))
+   Call MouseChange("frmDate", "Normal")
+   frmMail.StatusBar.Panels(1).Text = "Ready"
+End If
+'----------------------------------------------- Downloads
+If cmbTable.Text = "Downloads" Then
+   frmMail.StatusBar.Panels(1).Text = "Processing..."
+   Call MouseChange("frmDate", "Wait")
+
+   Shift = False
+   If InStr(whole, LCase(rs("Email"))) <> 0 Then
+      Shift = True
+   ElseIf IsNull(LCase(rs("Email"))) = True Then
+      Shift = True
+   End If
+
+   If Shift = False Then
+      If IsNull(rs("FirstName")) = True Then
+         frmMail.grdMain.AddItem (rs(dbArrayID(1)) & Chr(9) & "" & Chr(9) & LCase(rs("Email")) & Chr(9) & rs(sqldate) & Chr(9) & rs("flags"))
+      Else
+         frmMail.grdMain.AddItem (rs(dbArrayID(1)) & Chr(9) & LCase(rs("Email")) & Chr(9) & rs("FirstName") & " " & rs("LastName") & Chr(9) & rs(sqldate) & Chr(9) & rs("flags"))
+      End If
+   End If
+   whole = whole & " " & LCase(rs("Email"))
+   Call MouseChange("frmDate", "Normal")
+   frmMail.StatusBar.Panels(1).Text = "Ready"
+End If
+'----------------------------------------------- Referral Resellers
+If cmbTable.Text = "Referral Resellers" Then
+   frmMail.StatusBar.Panels(1).Text = "Processing..."
+   Call MouseChange("frmDate", "Wait")
+
+   Shift = False
+   If InStr(whole, LCase(rs("RREmail"))) <> 0 Then
+      Shift = True
+   ElseIf IsNull(LCase(rs("RREmail"))) = True Then
+      Shift = True
+   End If
+
+   If Shift = False Then
+      If IsNull(rs("RRFirstName")) = True Then
+         frmMail.grdMain.AddItem (rs(dbArrayID(2)) & Chr(9) & "" & Chr(9) & LCase(rs("RREmail")) & Chr(9) & rs(sqldate) & Chr(9) & rs("flags"))
+      Else
+         frmMail.grdMain.AddItem (rs(dbArrayID(2)) & Chr(9) & LCase(rs("RREmail")) & Chr(9) & rs("RRFirstName") & " " & rs("RRLastName") & Chr(9) & rs(sqldate) & Chr(9) & rs("flags"))
+      End If
+   End If
+   whole = whole & " " & LCase(rs("RREmail"))
+   Call MouseChange("frmDate", "Normal")
+   frmMail.StatusBar.Panels(1).Text = "Ready"
+End If
+'----------------------------------------------- Referred Customers
+If cmbTable.Text = "Referred Customers" Then
+   frmMail.StatusBar.Panels(1).Text = "Processing..."
+   Call MouseChange("frmDate", "Wait")
+
+   Shift = False
+   If InStr(whole, LCase(rs("RCEmail"))) <> 0 Then
+      Shift = True
+   ElseIf IsNull(LCase(rs("RCEmail"))) = True Then
+      Shift = True
+   End If
+
+   If Shift = False Then
+      If IsNull(rs("RRFirstName")) = True Then
+         frmMail.grdMain.AddItem (rs(dbArrayID(3)) & Chr(9) & "" & Chr(9) & LCase(rs("RCEmail")) & Chr(9) & rs(sqldate) & Chr(9) & rs("flags"))
+      Else
+         frmMail.grdMain.AddItem (rs(dbArrayID(3)) & Chr(9) & LCase(rs("RCEmail")) & Chr(9) & rs("RCFirstName") & " " & rs("RCLastName") & Chr(9) & rs(sqldate) & Chr(9) & rs("flags"))
+      End If
+   End If
+   whole = whole & " " & LCase(rs("RCEmail"))
+   Call MouseChange("frmDate", "Normal")
+   frmMail.StatusBar.Panels(1).Text = "Ready"
+End If
+'----------------------------------------------- Product Resellers
+If cmbTable.Text = "Product Resellers" Then
+   frmMail.StatusBar.Panels(1).Text = "Processing..."
+   Call MouseChange("frmDate", "Wait")
+
+   Shift = False
+   If InStr(whole, LCase(rs("Email"))) <> 0 Then
+      Shift = True
+   ElseIf IsNull(LCase(rs("Email"))) = True Then
+      Shift = True
+   End If
+
+   If Shift = False Then
+      If IsNull(rs("FirstName")) = True Then
+         frmMail.grdMain.AddItem (rs(dbArrayID(4)) & Chr(9) & "" & Chr(9) & LCase(rs("Email")) & Chr(9) & rs(sqldate) & Chr(9) & rs("flags"))
+      Else
+         frmMail.grdMain.AddItem (rs(dbArrayID(4)) & Chr(9) & LCase(rs("Email")) & Chr(9) & rs("FirstName") & " " & rs("LastName") & Chr(9) & rs(sqldate) & Chr(9) & rs("flags"))
+      End If
+   End If
+   whole = whole & " " & LCase(rs("Email"))
+   Call MouseChange("frmDate", "Normal")
+   frmMail.StatusBar.Panels(1).Text = "Ready"
+End If
+'----------------------------------------------- Software Contracts
+If cmbTable.Text = "SSContracts" Then
+
+' ----------------------------------------------- cut
+   MsgBox ("Info: SScontracts are currently unavailable")
+
+'   frmmail.statusbar.panels(1).text = "Processing..."
+'   call mousechange("frmDate", "Wait")'
+'
+'   shift = false
+'   if instr(whole, lcase(rs("CustomerEmail"))) <> 0 then
+'      shift = true
+'   elseif isnull(lcase(rs("CustomerEmail"))) = True then
+'      shift = true
+'   end if
+'
+'   if shift = false then
+'      if isnull(rs("CustomerName")) = true then
+'         frmmail.grdmain.additem (rs(dbArrayID(5)) & chr(9) & "" & chr(9) & lcase(rs("CustomerEmail")) & chr(9) & rs(sqldate) & chr(9) & rs("flags"))
+'      else
+'         frmmail.grdmain.additem (rs(dbArrayID(5)) & chr(9) & lcase(rs("CustomerEmail")) & chr(9) & rs("CustomerName") & chr(9) & rs(sqlDate) & chr(9) & rs("flags"))
+'      end if
+'   end if
+'   whole = whole & " " & lcase(rs("CustomerEmail"))
+'   call mousechange("frmDate", "Normal")
+'   frmmail.statusbar.panels(1).Text = "Ready"
+End If
+'----------------------------------------------- Assessments
+If cmbTable.Text = "Assess" Then
+   frmMail.StatusBar.Panels(1).Text = "Processing..."
+   Call MouseChange("frmDate", "Wait")
+
+   Shift = False
+   If InStr(whole, LCase(rs("Email"))) <> 0 Then
+      Shift = True
+   ElseIf IsNull(LCase(rs("Email"))) = True Then
+      Shift = True
+   End If
+
+   If Shift = False Then
+      If IsNull(rs("CustomerName")) = True Then
+         frmMail.grdMain.AddItem (rs(dbArrayID(6)) & Chr(9) & "" & Chr(9) & LCase(rs("Email")) & Chr(9) & rs(sqldate) & Chr(9) & rs("flags"))
+      Else
+         frmMail.grdMain.AddItem (rs(dbArrayID(6)) & Chr(9) & LCase(rs("Email")) & Chr(9) & rs("FirstName") & " " & rs("LastName") & Chr(9) & rs(sqldate) & Chr(9) & rs("flags"))
+      End If
+   End If
+   whole = whole & " " & LCase(rs("Email"))
+   Call MouseChange("frmDate", "Normal")
+   frmMail.StatusBar.Panels(1).Text = "Ready"
+End If
+'------------------------------------------------------------/
+//---------------------------------------------------------------------------------;

@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>Cabinet File Extraction Sample</TITLE>
+<style>@import url(../../misc/jsdk_ie4.css);</style>
+<link disabled rel="stylesheet" href="../../misc/jsdk_ie3.css">
+<META NAME="ROBOTS" CONTENT="NOINDEX"></HEAD>
+<BODY>
+
+<H1><A NAME="cab_extract"></A><SUP></SUP>Cabinet File Extraction Sample</H1>
+
+<P>This sample is located in <B>\Samples\Packaging\Extract</B>. </P>
+<!-- Jump Table Starts Here -->
+<P><A HREF="#samples_cab_extract_description">Description</A><BR>
+<A HREF="#samples_cab_extract_using_the_sample">Using the Sample</A><BR>
+<A HREF="#samples_cab_extract_key_project_files">Key Project Files</A><BR>
+<A HREF="#samples_cab_extract_technologies_demonstrated">Technologies Demonstrated</A></P>
+<!-- Jump Table Ends Here -->
+<H2><A NAME="samples_cab_extract_description"></A>Description</H2>
+
+<P>This sample provides a tool for extracting files from cabinet files. The tool, extract, also includes an option for listing the files in a cabinet file without extracting them.</P>
+<!-- Description Ends Here -->
+<H2><A NAME="samples_cab_extract_using_the_sample"></A>Using the Sample</H2>
+
+<P class=label><B>To compile the sample</B></P>
+
+<P>Use Nmake.exe to compile the makefile in the <B>\Samples\Packaging\Extract</B> directory.</P>
+
+<P class=label><B>To use the sample</B></P>
+
+<P>Use the following command to run the extract tool:</P>
+
+<P class=indent>jview Extract &lt;<I>cabinet file</I>&gt;</P>
+
+<P>The <B>\Samples\Packaging\Extract</B> directory includes a sample cabinet file, Sample.cab, that you can use with the extract tool. Sample.cab contains one file, Hello.java.
+
+<UL type=disc>
+	<LI>Use the following command to extract the files from sample.cab:
+<P class=tl>jview Extract sample.cab</P></LI>
+
+	<LI>Use the <B>/V</B> option to list files in a cabinet without extracting them:
+<P class=tl>jview Extract <B>/V</B> sample.cab</P></LI>
+
+	<LI>Use the following command to display help on the Extract tool:
+<P class=tl>jview Extract</P></LI>
+</UL>
+
+<H2><A NAME="samples_cab_extract_key_project_files"></A>Key Project Files</H2>
+<A HREF="Extract.java">Extract.java</A>
+<P>This code processes the user's command and determines whether to list the cabinet files, extract them, or display Help on the extract tool. The code uses CabDecoder class methods to enumerate the contents of the cabinet file or to extract them. This file also contains the code for displaying Help on the extract tool.</P>
+
+<H2><A NAME="samples_cab_extract_technologies_demonstrated"></A>Technologies Demonstrated</H2>
+
+<H4>Packaging</H4>
+
+<UL type=disc>
+	<LI>This sample shows how to use the cabinet decoder classes in com.ms.util.cab to extract files from a cabinet file. </LI>
+</UL>
+<!-- Sample Ends Here --><P><CENTER>
+<FONT FACE="VERDANA,ARIAL,HELVETICA" SIZE="1"><A HREF="../../../cpyright.htm" target="_top">&#169; 1999 Microsoft Corporation. All rights reserved. Terms of use.</A></FONT>
+</CENTER>
+
+</BODY>
+</HTML>

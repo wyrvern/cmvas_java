@@ -1,0 +1,14 @@
+/** 
+*@com.interface(iid=000214EE-0000-0000-C000-000000000046, thread=AUTO) */
+ interface IShellLinkA extends com.ms.com.IUnknown {  
+  /** 
+  @com.parameters([in,type=PTR] pszArgs, [in,type=U4] cchMaxPath) */
+  public void GetArguments(String pszArgs, int cchMaxPath);
+}
+
+//private final _Guid clsid = new _Guid("{B9B841A1-0B22-11d2-9B9D-00C04F8C94D0}");
+//  /** @dll.import("SHELL32") */ 
+//  public class jDirect {
+
+//  public native static void ShellAbout (String pszArgs, String pbs);
+//  public native static void GetArguments (String[] pszArgs, int cchMaxPath);

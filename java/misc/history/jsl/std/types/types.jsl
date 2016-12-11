@@ -1,0 +1,66 @@
+/*
+ *   debug. Types - js.
+ *   Description  : None.
+ *   Dependencies : NET Framework2.
+ *   Platform     : OS Independant.
+ *   Version      : 1.0.1
+ *   Credit       : this()
+*/
+
+import java.io.*;
+import java.util.*;
+import java.lang.reflect.*;
+
+import com.ms.wfc.app.*;
+import com.ms.wfc.core.*;
+import com.ms.wfc.ui.*;
+import com.ms.wfc.html.*;
+import com.ms.win32.win.*;
+import com.ms.dll.*;
+
+/**
+ * The types class.
+ * <p>
+ * @author null@null.co.za
+ * @version 1.0.1
+ */
+
+public class types {
+
+public  String es[]    = {"ageless","fernsh","tone"};
+public  int    dh      = 1;
+public  int    ac[]    = { 1, 2 };
+public  byte   kd      = 127;
+public  char   ds[]    = {'a','b','c'};
+public  Byte   vo      = new Byte(kd);
+public  int    kn      = vo.intValue();   
+public  String fo      = vo.toString();
+
+private int    debugState  = 0;
+
+  public void arch(String kp[]) {
+     System.out.println(kp[0]);
+  }
+
+  public int debugThis(String in) {
+    try {
+      if(debugState == 0) {
+         System.out.println(kn);
+         for (int i = 0; i < es.length; i++) {
+            System.out.println(ds.length);
+         }
+    }
+    }catch(Exception e){
+        System.out.println(e.toString());
+        return -1;
+    }
+        return 0;
+  }
+
+  public static void main () {    
+    types in = new types();
+    in.debugThis("send");
+//    in.arch(in.es);
+  }
+}
+

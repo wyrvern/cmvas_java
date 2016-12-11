@@ -1,0 +1,69 @@
+
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import java.awt.BorderLayout;
+import javax.swing.JTable;
+
+public class m_visual {
+
+	private JFrame jFrame = null;  //  @jve:decl-index=0:visual-constraint="17,18"
+	private JPanel jContentPane = null;
+	private JTable jTable = null;
+
+	/**
+	 * This method initializes jFrame	
+	 * 	
+	 * @return javax.swing.JFrame	
+	 */
+	private JFrame getJFrame() {
+		if (jFrame == null) {
+			jFrame = new JFrame();
+			jFrame.setSize(new java.awt.Dimension(475,228));
+			jFrame.setContentPane(getJContentPane());
+		}
+		return jFrame;
+	}
+
+	/**
+	 * This method initializes jContentPane	
+	 * 	
+	 * @return javax.swing.JPanel	
+	 */
+	private JPanel getJContentPane() {
+		if (jContentPane == null) {
+			jContentPane = new JPanel();
+			jContentPane.setLayout(new BorderLayout());
+			jContentPane.add(getJTable(), java.awt.BorderLayout.WEST);
+		}
+		return jContentPane;
+	}
+
+	/**
+	 * This method initializes jTable	
+	 * 	
+	 * @return javax.swing.JTable	
+	 */
+	private JTable getJTable() {
+		if (jTable == null) {
+			jTable = new JTable();
+		}
+		return jTable;
+	}
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		m_bvisual v = new m_visual ();
+		v.jFrame 	   = v.getJFrame();
+		v.jContentPane = v.getJContentPane();
+		v.jTable       = v.getJTable();
+		v.jFrame.setVisible(true);
+		//v.jContentPane.setVisible(true);
+		v.jTable.setVisible(true);
+	
+	}
+
+}

@@ -1,0 +1,42 @@
+// 
+// typelib filename: jBrowseFolder
+
+import "unknwn.idl" ; 
+import "oaidl.idl" ;
+import "wptypes.h" ;
+
+import "objidl.idl";
+import "oleidl.idl";
+
+[
+  uuid(b3064240-1856-42e3-bbab-5176ffc7850d),
+  version(1.0),
+  helpstring("jBrowseFolder")
+]
+
+library jBrowseFolder
+{
+    importlib("stdole2.tlb");
+
+    typedef struct tagSHITEMID { 
+       USHORT cb; 
+       BYTE   abID[1]; 
+    } SHITEMID;
+    typedef const SHITEMID  * LPCSHITEMID; 
+
+    typedef struct tagITEMIDLIST {
+       SHITEMID mkid;
+    } ITEMIDLIST;
+    typedef const ITEMIDLIST * LPCITEMIDLIST;
+
+    typedef struct tagbrowseinfo {
+       HWND hwndOwner; 
+       LPCITEMIDLIST pidlRoot; 
+       LPTSTR pszDisplayName; 
+       LPCTSTR lpszTitle; 
+       UINT ulFlags; 
+//       BFFCALLBACK lpfn; 
+       LPARAM lParam; 
+       int iImage; 
+    } browseinfo;
+};

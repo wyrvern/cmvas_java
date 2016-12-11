@@ -1,0 +1,165 @@
+public int copyFiles(String lpszDest,
+                     int    copySrc) throws IOException {
+  boolean msgResult;
+  int c = 0;
+  try {
+     if (copySrc == IO_COPY_SYSTEM) {
+        copyPackage = systemFiles;
+     }else
+     if (copySrc == IO_COPY_PACKAGE) {
+        copyPackage = packageFiles;
+     }
+     for (int x=0; x< copyPackage.length; x++) {
+        String in  = packageLocation + copyPackage[x];
+        String out = lpszDest        + copyPackage[x];
+        msgResult  = CopyFile(in, out, true);
+//        if (msgResult == true) {
+           c++;
+           // new File(packageLocation + copyPackage[x]).delete();
+/*
+        }else
+        if (msgResult == false) {
+           int msgReturn = infoBox ("File Missing", "The file " + copyPackage[x] + " cannot be found.\n"   +
+                                    "This will either prevent the installation from working\n" +
+                                    "correctly, or not at all.\n\nDo you wish to Continue ?", 1);
+           if (msgReturn == DialogResult.NO) {
+              errHandler(FATAL_EXCEPTION, "copyFiles()", "File Missing : " + copyPackage[x]);
+           }
+        }
+*/
+     }
+     if (c == copyPackage.length) {
+        // new File(packageLocation).delete();
+     } 
+   }catch(Exception e){
+      errHandler(FATAL_EXCEPTION, "copyFiles()", e.toString());
+      return -1;
+   }
+      return 0;
+}
+-----------------------------------------------------------------
+public int objRegister(int modAction) {
+  try {    
+     for (int i = 0; i < registerFiles.length ; i++) {
+           int hmod = LoadLibrary(installDir + registerFiles[i]);
+        if (modAction == DLL_REGISTER) {
+           int funcaddr = GetProcAddress(hmod, "DllRegisterServer");
+           boolean result = call(funcaddr, "DllRegisterServer");
+        }else
+        if (modAction == DLL_UNREGISTER) {
+           int funcaddr = GetProcAddress(hmod, "DllUnregisterServer");
+           boolean result = call(funcaddr, "DllUnregisterServer");
+        }
+           FreeLibrary(hmod);
+     }
+  }catch(Exception e){
+      int errorcode = DllLib.getLastWin32Error();
+      errHandler(LINK_EXCEPTION, "objRegister()", e.toString() + "[win32.dll]:" + errorcode);
+  }
+      return 0;
+}
+-----------------------------------------------------------------
+import com.ms.dll.DllLib;
+
+public class browse
+{
+  /** @dll.import("shell32") */
+  static native int SHBrowseForFolder(BROWSEINFO bi);
+
+  /** @dll.import("shell32") */
+  static native boolean SHGetPathFromIDList(int pidl, StringBuffer path);
+
+ static final int BIF_VALIDATE = 0x0020;
+ static final int BIF_RETURNONLYFSDIRS = 0x0001;
+ static final int BUFSIZ = 1024;
+
+  public String browseForFolder(String message)
+  {
+    BROWSEINFO bi = new BROWSEINFO();
+    if (message != null) bi.lpszTitle = message;
+    bi.ulFlags = BIF_VALIDATE | BIF_RETURNONLYFSDIRS;
+    int pidl = SHBrowseForFolder(bi);
+    if (pidl <= 0) {
+      return null;
+    } else {
+      StringBuffer buf = new StringBuffer(BUFSIZ);
+      if (SHGetPathFromIDList(pidl, buf)) {
+        return buf.toString();
+      }
+      return null;
+    }
+  }
+
+  public static void main(String args[])
+  {
+    System.out.println(new browse().browseForFolder(args[0]));
+  }
+}
+
+/** @dll.struct() */
+class BROWSEINFO
+{
+  public int    hwndOwner;
+  public int    pidlRoot;
+  public String pszDisplayName;// Return display name of item selected.
+  public String lpszTitle; // text to go in the banner over the tree.
+  public int    ulFlags;// Flags that control the return stuff
+  public int    lpfn;
+  public int    lParam; // extra info that's passed back in callbacks
+  public int    iImage; // output var: where to return the Image index.
+}
+-----------------------------------------------------------------
+/** @dll.import("kernel32") */
+  private static native int GetTempPath(int nBufferLength, StringBuffer lpBuffer);
+
+public static final  int  USER_DEFINED_TEMP    = 14;
+
+public String sysPath(int id) {
+  try {
+    if (id == 14) {
+       StringBuffer lpBuffer = new StringBuffer(MAX_PATH);
+       GetTempPath(MAX_PATH, lpBuffer);
+       return lpBuffer.toString();
+    }else
+       return SystemInformation.getSpecialFolderPath(id);
+  }catch(Exception e){
+    errHandler(SYSTEM_EXCEPTION, "sysPath()", e.toString());
+    return null;
+  }
+}
+-----------------------------------------------------------------
+//    IShellDispatch sl  = (IShellDispatch)new Shell();
+//    Folder2        sf  = (Folder2)sl.BrowseForFolder(0, "Find or create installation folder :", 230, new Variant());
+//    FolderItem     si  = sf.getSelf();
+//    objPath            = si.getPath();
+-----------------------------------------------------------------
+public int checkVersion() {
+  try {
+    sPath = sysPath(TEMPLATES);
+    if("C:\\WINNT\\Profiles".equalsIgnoreCase(ns.Left(sPath.toLowerCase(), 17))) {
+      checkResult = 1;
+      sysDir      = "C:\\WINNT\\System32\\";
+    }else
+    if("C:\\Windows\\Desktop".equalsIgnoreCase(ns.Left(sPath.toLowerCase(), 18))) {
+      checkResult = 2;
+      sysDir      = "C:\\Windows\\System\\";
+    }else
+    if("C:\\Documents and Settings".equalsIgnoreCase(ns.Left(sPath.toLowerCase(), 25))) {
+      checkResult = 3;
+      desktopDir        = sysPath(DESKTOP_DIRECTORY);
+      programDir        = sysPath(PROGRAMS);
+      String[] sysDirArray = { "C:\\Windows\\System32\\", "C:\\WINNT\\System32\\" };
+      for (int i = 0;i < sysDirArray.length;i++) {  
+       File io = new File(sysDirArray[i]);
+       if (io.isDirectory()) {
+         sysDir = sysDirArray[i];
+       }
+      }
+    }
+      return 0;
+  }catch(Exception e){
+      errHandler(FATAL_EXCEPTION, "checkVersion()", e.toString());
+      return -1;
+  }
+}
+-----------------------------------------------------------------

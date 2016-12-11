@@ -1,0 +1,7 @@
+README for the Encoder library
+==============================
+
+The Encoder library is a collection of java classes that provided support for MIME data encoding used in email messages.
+
+Please send all bug reports, suggestions, and comments to
+java@xlevel.org.uk

@@ -1,0 +1,172 @@
+public class cMain extends Form {
+
+//
+// package information
+//
+
+private String verInstaller     = "1.0.c";
+private String verPackage       = "1.0.a";
+
+//
+// publicly accessible values
+//
+
+ public  String sd                = null;
+ public  String osName            = null;
+ public  String appDir            = null;
+ public  String desktopDir        = null;
+ public  String programDir        = null;
+ public  String installDir        = null;
+ public  String OSVersion         = null;
+ public  String objPath           = null;
+ 
+//
+// package includes
+//
+
+ public  String packageName       = "isotopDemo";
+ public  String packageDir        = "isotopDemo";
+ public  String productSupport    = "debug@isotop.net";
+ public  String productContact    = "info@isotop.net";
+ public  String productCompany    = "isotop Global Partnership";
+ public  String packageExe        = "TimeSaver.exe";
+ public  String packageIco        = "isotop.ico";
+ public  String packageLnk        = "isotop Demo.lnk";
+ public  String installFolder     = "C:\\Program Files\\isotopDemo\\";
+
+ public  String packageSet        = "jInstaller.exe";
+ public  String packageSetArg     = "/u";
+ public  String packageSetLnk     = "Uninstall.lnk";
+ public  String uninstallIco      = "un.ico";
+ public  String startupLnk        = "Startup\\jInstaller.lnk";
+
+ public  String packageLocation   = "package\\";
+ public  String jvmLocation       = "jvm\\";
+
+ private static String localFiles[]      = { "TimeSaver.exe", "isotop.cnt", "DemoData.ini", "dealerdata.dat", "isotop.gid", "isotop.hlp", "demodata.txt", "un.ico", "isotop.ico" };
+ private static String systemFiles[]     = { "msstdfmt.dll", "msvbvm60.dll", "msvcrt.dll", "oledlg.dll", "riched20.dll", "riched32.dll", "actbar.ocx", "library.ocx", "synFormLock.ocx", "syngradient.ocx", "synrich.ocx", "synRichEd.ocx", "vsview6.ocx", "ssa3d30.ocx", "ssscrl30.ocx", "comdlg32.ocx", "richtx32.ocx" };
+ private static String localRegister[]   = null;
+ private static String systemRegister[]  = { "msstdfmt.dll" };
+ private static String copyPackage[]     = null;
+
+//
+// win32 api
+//
+
+/** @dll.import("ole32", ole) */
+  private static native com.ms.com.IUnknown CoInitialize (int pvReserved);
+
+/** @dll.import("ole32", ole) */
+  private static native com.ms.com.IUnknown CoUninitialize ();
+
+/** @dll.import("shell32") */
+  private static native int DllRegisterServer();
+
+/** @dll.import("shell32") */
+  private static native int DllUnregisterServer();
+
+/** @dll.import("kernel32",auto) */
+  private native static int LoadLibrary(String lpLibFileName);
+
+/** @dll.import("kernel32",auto) */
+  private native static int LoadLibraryEx(String lpLibFileName, int hFile, int dwFlags);
+
+/** @dll.import("kernel32",auto) */
+  private native static boolean FreeLibrary(int hLibModule);
+
+/** @dll.import("kernel32",ansi) */
+  private native static int GetProcAddress(int hModule, String lpProcName);
+
+/** @dll.import("msjava") */
+  private native static boolean call(int funcptr, String argument);
+
+/** @dll.import("shell32") */
+  private static native int SHBrowseForFolder(lib.shellx.BROWSEINFO bi);
+
+/** @dll.import("shell32") */
+  private static native boolean SHGetPathFromIDList(int pidl, StringBuffer path);
+
+/** @dll.import("kernel32") */
+  private native static boolean CopyFile(String pExistingFileName, String pNewFileName, boolean bFailIfExists);
+
+// global instantces
+
+ public  Properties sysProp            = System.getProperties();
+ private Date   dt                     = new Date();
+ public lib.libstr.strFactory ns       = new lib.libstr.strFactory();
+ private lib.libsys.sysFactory sf      = new lib.libsys.sysFactory();
+
+ public  int    checkResult            = -1;
+
+// constants - shellx
+
+ private static final int  BIF_VALIDATE         = 0x0020;
+ private static final int  BIF_RETURNONLYFSDIRS = 0x0001;
+ private static final int  BUFSIZ               = 1024;
+ private static final int  MAX_PATH             = 1024;
+
+// system path constants -- public
+
+ public static final  int  USER_DESKTOP         = 0;
+ public static final  int  APPLICATION_DATA     = 1;
+ public static final  int  MY_DOCUMENTS         = 2;
+ public static final  int  COOKIES              = 3;
+ public static final  int  DESKTOP_DIRECTORY    = 4;
+ public static final  int  FAVORITES            = 5;
+ public static final  int  HISTORY              = 6;
+ public static final  int  INTERNET_CACHE       = 7;
+ public static final  int  PROGRAMS             = 8;
+ public static final  int  RECENT               = 9;
+ public static final  int  SENDTO               = 10;
+ public static final  int  START_MENU           = 11;
+ public static final  int  STARTUP              = 12;
+ public static final  int  TEMPLATES            = 13;
+ 
+// error codes -- public
+
+ public static final  int  FATAL_EXCEPTION      = 0;
+ public static final  int  SYSTEM_EXCEPTION     = 1;
+ public static final  int  LINK_EXCEPTION       = 2;
+ public static final  int  IO_EXCEPTION         = 3;
+ public static final  int  LIB_EXCEPTION        = 4;
+ public static final  int  LOAD_EXCEPTION       = 5;
+ public static final  int  MAIL_EXCEPTION       = 6;
+ public static final  int  INFO_EXCEPTION       = 7;
+ public static final  int  REGISTRY_EXCEPTION   = 8;
+ public static final  int  INSTALL_EXCEPTION    = 9;
+ public static final  int  UNINSTALL_EXCEPTION  = 10;
+
+// action indentifiers -- registry -- public
+
+ public static final int  DLL_REGISTER          = 0;
+ public static final int  DLL_UNREGISTER        = 1;
+
+// action indentifiers -- io       -- public
+
+ public static final int  IO_WRITE_LOCATION     = 0;
+ public static final int  IO_READ_LOCATION      = 1;
+
+// action indentifiers -- io -- copy source
+
+ public static final int  IO_COPY_PACKAGE       = 0;
+ public static final int  IO_COPY_SYSTEM        = 1;
+
+// file attributes     -- io
+
+ public static final String FileDescription        = "FileDescription=";
+ public static final String Description            = "Description=";
+ public static final String Language               = "Language=";
+ public static final String FileType               = "FileType=";
+ public static final String OperatingSystem        = "OperatingSystem=";
+ public static final String MajorVersion           = "MajorVersion=";
+ public static final String MinorVersion           = "MinorVersion=";
+ public static final String InternalName           = "InternalName=";
+ public static final String BuildNumber            = "BuildNumber=";
+ public static final String FileVersion            = "FileVersion=";
+ public static final String BuildIncrement         = "BuildIncrement=";
+ public static final String ProductVersion         = "ProductVersion=";
+ public static final String ComapnyName            = "ComapnyName=";
+ public static final String LegalCopyright         = "LegalCopyright=";
+ public static final String ProductName            = "ProductName=";
+ public static final String OriginalFilename       = "OriginalFilename=";
+ public static final String ProductVersionNumber   = "ProductVersionNumber=";

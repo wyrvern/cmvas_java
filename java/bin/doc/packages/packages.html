@@ -1,0 +1,131 @@
+<html><head><title>Packages - A set of rules to keep your compiler and interpreter happy.</title></head>
+<body>
+<h1>Packages - A set of rules to keep your compiler and interpreter
+happy
+happy.</h1>
+
+Many people in <a href="news:comp.lang.java.programmer">
+comp.lang.java.programmer</a> have problems compiling when they
+first enter the dizzy world of packages. There are various ways you
+<b>can</b> get everything to work, and this is just one of them -
+but I believe it's one of the <b>easiest</b> ways to get things to
+work.
+<h2>Setting the scene</h2>
+<ul>
+<li>
+I'll assume for the moment that you're working on Windows, using a
+compiler that takes the standard javac options (jikes does). If
+you're on Unix, I'm sure you can work out what the equivalent would
+be.<p>
+</p></li><li>
+Let's say you have two packages, <code>com.mycompanypackage</code>
+containing classes <code>CompanyApp</code> and
+<code>BusinessLogic</code>;
+and <code>org.mypersonalpackages.util</code> containing classes
+<code>Semaphore</code> and <code>HandyBits</code>.
+<code>BusinessLogic</code> needs access to <code>HandyBits</code>
+(and your boss has waived rights to your personal code so long as
+you don't mind putting it in the product!)<p>
+</p></li></ul>
+<h2>Coding and compiling</h2>
+<ul>
+<li>
+First things first: source organisation. You need to choose a "root"
+directory for your source tree. (I'll just call this the root from
+here onwards.) I'll use <code>c:\java</code> for my examples.<p>
+</p></li><li>
+You should have four files for your source code:
+<ul>
+<li><code>c:\java\com\mycompanypackage\CompanyApp.java</code>
+</li><li><code>c:\java\com\mycompanypackage\BusinessLogic.java</code>
+</li><li><code>c:\java\org\mypersonalpacakges\util\Semaphore.java</code>
+</li><li><code>c:\java\org\mypersonalpacakges\util\HandyUtil.java</code>
+</li></ul>
+
+Note that the source files are organised in the same way as the
+package structure. This is very important, as it helps to tell the
+compiler where to find things - as well as making it much easier for
+<b>you</b> to find your source code later on.<p>
+</p></li><li>
+At the top of each of your source files (before any imports or
+anything else other than comments), you should have a package
+declaration. For example, CompanyApp.java would start
+with:
+<pre>package com.mycompanypackage;</pre>
+</li><li>
+If your class needs to import anything from other packages, it can
+do it after that. For instance, <code>BusinessLogic.java</code>
+could start:
+<pre>package com.mycompanypackage;
+import org.mypersonalpackages.util.*;
+</pre>
+or possibly
+<pre>package com.mycompanypackage;
+import org.mypersonalpackages.util.HandyUtil;
+</pre>
+
+Some people like using import-on-demand (the first version), others
+don't. To be honest, it's mainly a matter of laziness. I use
+import-on-demand because I'm lazy. I realise that it could create
+incompatibilities if names clash later on, but within the standard
+Java packages that I use that's not likely to happen very often. (This is
+partly because I don't do much GUI work. If I were using
+the <code>java.awt</code> and <code>java.util</code> packages in the
+same class, I'd be more careful. I'll try to keep my publicly
+available source a bit cleaner though. (Don't look yet - I haven't
+done the cleaning!)<p>
+</p></li><li>Time to compile the classes. I usually compile everything, just
+to make sure I'll get the most recent version of all classes. There
+are some non-obvious dependencies in Java, such as constants from
+one class being embedded in another (eg if <code>HandyUtil</code>
+refers to <code>Semaphore.SOME_CONSTANT</code> which is a static
+final primitive/literal String, the value will be embedded in
+<code>HandyUtil.class</code>.) There are two ways you could compile
+everything. Either specify it explicitly:
+<pre>c:\java&gt; javac -d . com\mycompanypackage\*.java org\mypersonalpackage\util\*.java</pre>
+or create a list of files and pass that to javac:
+<pre>c:\java&gt; dir /s /b *.java &gt; srcfiles.txt
+c:\java&gt; javac -d . @srcfiles.txt
+</pre>
+Note that you compile from the root directory, and you specify
+<code>-d .</code> to tell the compiler to put the classes in a
+package structure starting at the root too. Some people don't like
+keeping class and source files together - in that case, you could
+use <code>-d classes</code>, although you need to create the
+<code>classes</code> directory first. (You'll also need to either
+compile everything each time or put classes on the classpath for the
+compiler with the <code>-classpath</code> option.) Unless you really know
+what you're doing, I suggest you use the above <b>and make sure you
+don't have a classpath set</b>. If you <b>must</b> use a classpath
+for some reason (see <a href="http://www.yoda.arachsys.com/java/extensions.html">my notes on the
+extension mechanism</a> for ways to avoid this), make sure that
+<code>.</code> (the current directory) is on the classpath.
+</li></ul>
+<h2>Running the application</h2>
+
+Many people "accidentally" end up with their classes in the
+right place, etc, just by luck, but then run into errors like:
+<code>java.lang.NoClassDefFoundError: MyCompanyApp (wrong name:
+com/mycompanypackage/MyCompanyApp</code>. Hopefully, if you've
+understood everything above, you won't run into this. It happens if
+you try to run your code using something like this:
+<pre>c:\java\com\mycompanypackage&gt; java MyCompanyApp</pre>
+Here's how to avoid it:
+<ul>
+<li>Stay in your "root" directory, eg <code>c:\java</code>
+</li><li>Always use the <b>fully qualified</b> classname. So, for example:
+<pre>c:\java&gt; java com.mycompanypackage.MyCompanyApp</pre>
+</li><li>The JVM knows to find that class file in the directory
+com\mycompanypackage (note, this is a VM-specific convention, it's
+just that almost all VMs use it - there's nothing in the language
+specification to say that packages <b>have</b> to be stored that 
+way; the VM just has to know how to find and load a class), but
+there's something in the class file which says what its fully
+qualified name is - and the VM uses that to check that the class its
+been asked to load is actually the one it's found. That's why you
+get the error above - if you can understand that error, you're a
+long way towards understanding how packages work.
+</li></ul>
+<hr>
+<a href="http://www.yoda.arachsys.com/java/index.html">Back</a> to the main page.
+</body></html>

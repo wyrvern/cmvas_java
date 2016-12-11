@@ -1,0 +1,50 @@
+admin - product resellers
+home  
+view product resellers 
+PrID Active FirstName LastName Date Position Company Name Email Telephone Web Site URL Fax Address Province / State Country Zip Current Business Environmental Activities Comments Username Password Confirmation Password 
+1  Cam Jam 12/7/99 none none null@isotop.net none  none none none none none none none none null pm1603 pm1603 
+2  Graham Turner 1/21/00 Manager isotop gturner@isotop.net 12   PObox Grove Monaco 2 Environmetnal consult x graham2 isotopgp isotopgp 
+3  Tony Ritter 3/23/00 support team isotop tritter@isotop.net 12  12 1222 mon mon 98000 Trainer run courses 1 igp02 w0r1d w0r1d 
+5  Sujatno Teguh 5/8/00 Director Premysis Consulting premysis@cbn.net.id 62-21-5203897 (hunting)  62-21-5204423 Plaza Mashill 23rd FloorJl. Jend Sudirman Kav 25Jakarta DKI INDONESIA 12920 Management Consulting (ISO 9000, ISO 14000, QS-9000, ISO 17025, HACCP/ISO 9000, OHSAS 18001) Consultant in ISO 14000 for companies  premysis tgh192 tgh192 
+9  Salvador Gaytan 8/9/00 Enviromental Manager ASAI asaiasesores@prodigy.net.mx (49)128990  (49)125918 Av. Aguascalientes Norte #422-202Bosques del Prado Norte Aguascalientes México 20127 Consultants officce - Iso 14000 implementation- Enviromental Impact studys- Laboratoy studys- Enviromental Auditing Id appreciate the software in SPANISH. asai chava chava 
+10  Graham Turner 11/21/00 Env 1 gturner@isotop.net 11  1 1 1 1 1 1 1 1 graham graham11 graham11 
+11  Jag Kottha 12/3/00 CEO Crestbest Qyuality Institute jkottha@bright.net 216-321-8729  216-371-6764 3261 Altamont RdCleveland, OHIO 44118 OHIO USA 44118 Consulting and training ISO-9000/QS-9000/ISO-17025/ N/A interested in reslling and training ooprtunities jkottha JK1234 JK1234 
+12  Tony test 12/4/00 w  tritter@isotop.net 2  4 eee rrr rrr rrr rrr rrr rr tony4 tony4 tony4 
+14  Barb Conti 1/5/01 Sales CPS International cpsi@iwic.net 8473820080  847.382.0521 337 W. Main StreetBarrington Illinois USA 60010 Computer related N/A  cpsi falcon falcon 
+16  Graham Brown 1/7/01 Principal Graham A Brown & Associates graham@grahamabrown.com.au +61 2 49425135 www.grahamabrown.com.au +61 2 49425191 9 Ragan CloseAdamstown Heights(PO Box 571, Kotara Fair) NSW Australia 2289 Environmental & Resource Consultants - see our website See our website We currently market ISOsoft 14001 EMS software through our Associate company, Compliance Management Pty Ltd, and have successfully done so for over 6 years. We are going to introduce other products to our market, which is international. gabrown nautilus nautilus 
+17  muhammad afzal 1/12/01 director Quality Professionals Pvt. Ltd. muhmmadafzal@usa.net 042-92-5715952-3  042-92-5715953 Appt#20 7th floor land mark plaza Jail Road Lahore, pakistan Punjab Pakistan 54000 ISO 9000/14000 leading consultant in Pakistan Iso 14000 consultancy services we want to sell your softwares in Pakistan as sole distributor. muhmmadafzal insanbano insanbano 
+18  Renuka Ramesh 2/26/01 Purchase Executive Global Information Dist.corp ltd global@kems.net 965-5620349 www.global-books.com 965-5624727 P.O.BOX 1173 SALMIYA KUWAIT 22012 TRADING OF BOOKS AND CDROMS TO LIBRARIES,SCHOOLS AND INSTITUTIONS SUPPLY OF BOOKS TO UNIVERSITIES,PETROLEUM COMPANIES AND PUBLIC AUTHORITIES GOOD PRESENTS IN MOST SECTORS global globalinfo globalinfo 
+19  Parshotam Vasudeva 3/3/01 Environmental Management Consultant = vasudeva10@hotmail.com 1-876-9290547 = 1-876-9208964 P.O.Box 9091 CSOKingston, JamaicaWest Indies = Jamaica (West Indies) = CONSULTANCY Fellow. American Society of Civil Engineer; Fellow. Chartered Institute of Water & Environmental Management London. 37 years experience in water, wastewater & environmental management. consultansy activities. I would also like to be an assessor. vasudeva binvas binvas 
+20  Candari Maribel 3/8/01 Project Manager Executive Corner for Excellence Company execore@axti.com +6327725108  +6328077232 Unit M, 5th Floor, Westgate Tower, Investment Drive, Madrigal Business Park, Ayala Alabang, Muntinlupa city Metro Manila PHILIPPINES 1779 Training and consulting for quality, environmental, process management Consulting on EMS implementation  EXECORE 102696 102696 
+21  SALVADOR GAYTAN 3/10/01 SALES MANAGER ASESORES EN SISTEMAS DE ADMINISTRACION INDUSTRIAL S.A. DE C.V. asaiasesores@prodigy.net.mx 52 49 12 89 90  52 49 12 59 18 AV. AGUASCALIENTES NORTE #422 INT. 202, BOSQUES DEL PRADO NORTE AGUASCALIENTES MEXICO 20127 ENVIRONMENTAL AND SECURITY ASSESMENT - ISO 14000 IMPLEMENTATION- ENVIRONMENTAL IMPACT STUDIES- RISK STUDIES- DANGEROUS WASTE TREATMENT WE NEED A SOFTWARE AS SOON AS POSIBLE asaiasesores asai asai 
+22  Varun Mehta 6/3/2001 CEO Green Systems varunmehta@green-smart.com + 91 98100 57583 www.green-smart.com  W-44, GK 2, New Delhi Delhi India 110048 Environmental Solution Provider please have a look at the site  greenman system123 system123 
+23  Marcos Frommel 6/18/2001 Senior Environmental Consultant International Bank for Development cedarwood@i.com.uy 05982-099602232  5982-601-6937 Gral. French 1904Montevideo Montevideo Uruguay 11400 Cedarwood Environmental Services. ISO 9000 and ISO 14000 management Sistems. Project Development. With a Staff of Engineers. Environmental Specialist of the PSA Program of the International Bank for Development. We would like to assess your iso 14001 software in order to offer it to a developing National Program. mifrommel@i.com.uy Ivanovich Ivanovich 
+24  ww dd 6/22/2001 ww  tritter@isotop.net 2   2222 2s ss 22222 wwwwwwwwwww dddddddddddd  t t t 
+25  Natalia Angelina Vizcarra Noriega 7/17/2001 Environmental Management Assesor PROOIKOS SRLmtda. prooikos@terra.com.pe 051 1 2643705  051 1 2643705 Samuel Velarde 110-114 Orrantia del Mar Magdalena Lima 17 PERU Lima 17 PERU Lima 17 PERU ISO 14401 Implementation process Assesor Environmental Management Systems,  dana 0212 0212 
+26  Philip Tang 7/20/2001 Information System Specialist Yaletown Technology Group philt@yaletech.com 604-683-8781 www.yaletech.com 604-683-3829 300-1190 HOmer St. Vancouver, BC Canada V6B 2X6 Software developer, VAR for FileNet and Onyx, Implementors, Integrators, Data warehouse consulting None directly interested in integrating your product please call me to discuss details philtbc kewl1 kewl1 
+27  Steve Crossan 9/25/2001 Director Runtime Collective Ltd steve@runtime-collective.com +44 1273 234290 http://www.runtime-collective.com +44 1273 234291 68 Middle StreetBrightonBN1 1ALUnited Kingdom East Sussex United Kingdom BN1 1AL Software Consultancy Developing ISO 14001 client base.  stevecrossan oynadotw oynadotw 
+28  Charles Johnson 10/4/2001 General Manager HGS Engineering, Inc hgsmd@magnus.net 410-676-6224  410-676-3141 1308 Continental Dr.Suite JAbingdon, MD 21009 MD USA 21009 Engineering & Environmental Consultant Consulting to Federal and Local Governments and to Private Industry HGS is now being asked to assist clients in achieving ISO14001 Compliance cdjohnson58 rollt1de rollt1de 
+29  Heather Burns 10/22/2001 Computer Programmer/Contract na synworld@earthlink.net 603-753-8653 na  131 North Main Street New Hampshire United States 03303 Provide programs and services, Industrial automation. No organisation.  HBurns 1234 1234 
+30  Waqi Alam 11/25/2001 President Tetrahedron tetrahedron@prodigy.net (410)837-0512 None  1414 Key HighwaySuite CBaltimore Maryland USA 21230 Environmental Consulting Compliance, remedial action, pollution prevention  tetrahedron sonyalam sonyalam 
+31  John Olson 11/28/2001 President  johnolson@centuryinter.net 989 876 8699 none 989.876.2288 5264 East Au Gres AvenueP.O. Box 440 MI USA 48703 System/Network Consultants Various Clients with Evironmental requirments.  johnolson@centuryinter.net 526448703 526448703 
+32  Efren Ramirez 12/3/2001 Director General Control, Investigacón y Desarrollo Especializado en Medio Ambiente, S.C. cidema_mexico@email.com (52) 55 57 84 70 59 none (52) 55 57 84 70 59 Jose Rivera #21, Col Moctezuma 1a Secc Distrito Federa Mexico 15000 Eviromental Consultant Enviromental Audit, Enviromental Impact Risk Analisys I very interesting about your product CIDEMA compermisito compermisito 
+33  Test 18 Dec 2001 12/18/2001 hh hh info@isotop.net 22` ww `11 222222 22222 ww 22222 tt tt tt tt tt tt 
+36  ace ace 12/20/2001 ace ace info@isotop.net ace ace ace ace ace ace ace ace ace ace eca t t 
+37  Mihai Dogariu 12/20/2001 Senior consultant Auditeco mihai.dogariu@auditeco.ro +4012127373 www.auditeco.ro  +4012127474 181 Constantin Noica St. Bucharest Romania 771162 Environmetal consulting & audit services Development of specialised studies; AUDITECO was set up in 1996. Since 2001, it is the official environmental consultant of PricewaterhouseCoopers auditeco cicerion cicerion 
+38  Robert T. Cole 12/27/2001 SHE.Q. Manager Delta EMD bcole@deltaemd.co.za 0027137593540 bcole@deltaemd.co.za 0027-13-752-6002 PO Box 2197Nelspruit Mpumalanga South Africa 1200 Manufacturer of Electrolytic Manganese Dioxide ISO 14001 Excellent programme B.Cole Bramshaw Bramshaw 
+39  Dr. Faten Al-Attar 12/31/2001 HSE Manager ECO Environmental Consultants faten@ecoenvironmentalfirm.org 00965-2426665 www.ecoenvironmentalfirm.org  State of Kuwait-P.O.Box 23977, Safat Kuwait 13100 consultants wide enviornmental work in industry  Al-Attar ecoenviro ecoenviro 
+
+ISYS International Ltd,
+ISYS Suite, G14,
+Verdin Exchange,
+Winsford,
+Cheshire.
+CW7 2AN
+ 
+t. +44 (0) 870 777 1130
+f. +44 (0) 870 777 1131  
+
+
+
+Website: www.isys-int.com
+Email info@isys-int.com

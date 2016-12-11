@@ -1,0 +1,40 @@
+// system path constants
+
+ public               int  USER_DESKTOP         = 0;
+ public               int  APPLICATION_DATA     = 1;
+ public               int  MY_DOCUMENTS         = 2;
+ public               int  COOKIES              = 3;
+ public               int  DESKTOP_DIRECTORY    = 4;
+ public               int  FAVORITES            = 5;
+ public               int  HISTORY              = 6;
+ public               int  INTERNET_CACHE       = 7;
+ public               int  PROGRAMS             = 8;
+ public               int  RECENT               = 9;
+ public               int  SENDTO               = 10;
+ public               int  START_MENU           = 11;
+ public               int  STARTUP              = 12;
+ public               int  TEMPLATES            = 13;
+ public               int  USER_DEFINED_TEMP    = 14;
+
+// errors
+
+ private static final int  FATAL_EXCEPTION     = 0;
+ private static final int  SYSTEM_EXCEPTION    = 1;
+ private static final int  LINK_EXCEPTION      = 2;
+ private static final int  IO_EXCEPTION        = 3;
+ private static final int  LIB_EXCEPTION       = 4;
+ private static final int  LOAD_EXCEPTION      = 5;
+ private static final int  MAIL_EXCEPTION      = 6;
+ private static final int  INFO_EXCEPTION      = 7;
+ private static final int  REGISTRY_EXCEPTION  = 8;
+ private static final int  INSTALL_EXCEPTION   = 9;
+ private static final int  UNINSTALL_EXCEPTION = 10;
+
+// OS
+
+'Windows 95:5
+'Windows 98:4
+'Windows ME:3
+'Windows 2K:2
+'Windows NT:1
+'Windows XP:0

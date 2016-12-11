@@ -1,0 +1,30 @@
+BufferedReader bufIn = new BufferedReader(new InputStreamReader(System.in));
+String gpaIn = bufIn.readLine();
+try {
+gpa = Double.parseDouble(gpaIn);
+System.out.println("You entered double: <" + gpa + ">");
+} catch (NumberFormatException e) {
+System.out.println("Wrong number type entered!");
+}
+
+************************************
+import java.awt.*;
+import java.io.*;
+
+class Test{
+public static void main(String args[]) 
+{
+byte b[]=new byte[5]; 
+try{
+System.in.read(b);
+System.out.print(new Integer(new String(b)));
+}
+catch (IOException e){
+System.out.print("IOexception");
+} 
+catch (NumberFormatException e){
+System.out.print("Only input integers please");
+} 
+}
+}
+

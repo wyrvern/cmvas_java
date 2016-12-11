@@ -1,0 +1,87 @@
+//------------------------------------------------------------------;
+' Add
+//------------------------------------------------------------------;
+If p_sect = 0 Then
+Do While Not rs.EOF
+On Error Resume Next
+
+d_date = rs("CurrentDate")
+res = getDate(d_date, p_date)
+
+If res = True Then
+
+End If
+
+rs.movenext
+Loop
+If p_sect = 1 Then
+If p_sect = 2 Then
+'---------------------------------------------------------;
+Do While Not rs.EOF
+On Error Resume Next
+
+d_date = rs("CurrentDate")
+res = getDate(d_date, p_date)
+
+If res = True Then
+'----------------------------------------------- Orders
+If cmbTable.Text = "Orders" Then
+   frmMail.StatusBar.Panels(1).Text = "Processing..."
+   Call MouseChange("frmDate", "Wait")
+
+   Shift = False
+   If InStr(whole, LCase(rs("CustomerEmail"))) <> 0 Then
+      Shift = True
+   ElseIf IsNull(LCase(rs("CustomerEmail"))) = True Then
+      Shift = True
+   End If
+
+   If Shift = False Then
+      If IsNull(rs("CustomerName")) = True Then
+         frmMail.grdMain.AddItem (rs(dbArrayID(0)) & Chr(9) & "" & Chr(9) & LCase(rs("CustomerEmail")) & Chr(9) & rs("CurrentDate") & Chr(9) & rs("flags"))
+      Else
+         frmMail.grdMain.AddItem (rs(dbArrayID(0)) & Chr(9) & LCase(rs("CustomerEmail")) & Chr(9) & rs("CustomerName") & Chr(9) & rs("CurrentDate") & Chr(9) & rs("flags"))
+      End If
+   End If
+   whole = whole & " " & LCase(rs("CustomerEmail"))
+   Call MouseChange("frmDate", "Normal")
+   frmMail.StatusBar.Panels(1).Text = "Ready"
+End If
+'------------- snip / drop ------------------------------;
+End If
+
+rs.movenext
+Loop
+End If '//Entire
+
+//------------------------------------------------------------------;
+' Remove
+//------------------------------------------------------------------;
+
+//------------------------------------------------------------------;
+
+Do While Not rs.EOF
+On Error Resume Next
+'------------------------------------------------------------------;
+If cmbTable.Text = "Orders" Then
+   frmMail.StatusBar.Panels(1).Text = "Processing..."
+   Call MouseChange("frmMail", "Wait")
+
+   rowLimit = frmMail.grdMain.Rows
+   For i = 1 To rowLimit
+   If i = rowLimit Then
+      Exit For
+   End If
+
+   If frmMail.grdMain.TextMatrix(i, 1) = LCase(rs("CustomerEmail")) Then
+      frmMail.grdMain.RemoveItem (i)
+      rowLimit = rowLimit - 1
+      i = i - 1
+   End If
+
+Next i
+Call MouseChange("frmMail", "Normal")
+End If
+'------------------------------------------------------------------;
+rs.movenext
+Loop

@@ -1,0 +1,7 @@
+history.accountShortName
+
+http://www.example.com/mypage.aspx?javascript:history.accountShortName
+
+https://www.cellc.co.za/cellc/?javascript:history.accountShortName
+
+https://www.cellc.co.za/cellc/dashboard-overview?javascript:history.accountShortName

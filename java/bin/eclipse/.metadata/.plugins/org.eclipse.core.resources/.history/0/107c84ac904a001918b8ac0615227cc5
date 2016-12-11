@@ -1,0 +1,32 @@
+import javax.swing.JButton;
+/*
+ * Created on Dec 10, 2004
+ *
+ * TODO To change the template for this generated file go to
+ * Window - Preferences - Java - Code Style - Code Templates
+ */
+
+/**
+ * @author Administrator
+ *
+ * TODO To change the template for this generated type comment go to
+ * Window - Preferences - Java - Code Style - Code Templates
+ */
+public class Test {
+
+	private JButton jButton = null;  //  @jve:decl-index=0:visual-constraint="123,65"
+	/**
+	 * This method initializes jButton	
+	 * 	
+	 * @return javax.swing.JButton	
+	 */    
+	private JButton getJButton() {
+		if (jButton == null) {
+			jButton = new JButton();
+			jButton.setSize(151, 23);
+		}
+		return jButton;
+	}
+ 	public static void main(String[] args) {
+	}
+}

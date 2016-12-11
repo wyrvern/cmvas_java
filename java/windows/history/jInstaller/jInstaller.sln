@@ -1,0 +1,13 @@
+Microsoft Visual Studio Solution File, Format Version 1.00
+Project("{66355F20-A65B-11D0-BFB5-00A0C91EBFA0}") = "jInstaller", "jInstaller.vjp", "{1F8162CE-6D3E-4EB0-A9E7-8F83A151F712}"
+EndProject
+Global
+	GlobalSection(LocalDeployment) = postSolution
+		StartupProject = {1F8162CE-6D3E-4EB0-A9E7-8F83A151F712}
+	EndGlobalSection
+	GlobalSection(BuildOrder) = postSolution
+		0 = {1F8162CE-6D3E-4EB0-A9E7-8F83A151F712}
+	EndGlobalSection
+	GlobalSection(DeploymentRoot) = postSolution
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,12 @@
+-------> error(s)
+[note] > jInstaller error/objRegister().english.  [p:2][s:c:\winnt\system32] (com.ms.dll.ParameterCountMismatchError) Wrong number of parameters passed. Expected 4 bytes. Received 8 bytes.[win32.dll]:1421
+       > jInstaller error/objRegister().english.  [p:4][s:c:\windows\system] (com.ms.dll.ParameterCountMismatchError: Wrong number of parameters passed. Expected 4 bytes. Received 8 bytes.[win32.dll]:127
+       > jInstaller error/objCreate  ().espanoal. [p:4][s:c:\windows\system] (com.ms.com.SuccessException) (0x1) "Función incorrecta"
+       > jInstaller error/objCreate  ().japanease.[p:3][s:c:\windows\system] (com.ms.com.SuccessException) (0x1) "?"
+       > jInstaller error/objCreate  ().finnish.  [p:4][s:c:\windows\system] (com.ms.com.SuccessException) (0x1) "Funktio ei kelpaa"
+       > jInstaller error/objCreate  ().english.  [p:2][s:c:\winnt\system32] (com.ms.com.SuccessException) (0x1) "Incorrect function"
+       > jInstaller error/regModifier().english   [p:2][s:c:\winnt\system32] (java.lang.NullPointerException)
+       > jInstaller error/objCreate  ().english.  [p:4][s:c:\windows\system] (java.lang.Exception: Installation Directory not found : C:\Program Files\isotopDemo\ 
+       > jInstaller error/objCreate  ().indian.   [p:2][s:c:\winnt\system32] (java.lang.Exception: Installation Directory not found : C:\Program Files\isotopDemo\ 
+[note] > recreation :
+       /------------/

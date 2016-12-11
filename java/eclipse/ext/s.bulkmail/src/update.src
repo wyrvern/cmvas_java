@@ -1,0 +1,128 @@
+connInternet.RequestTimeout = 900
+If debugMode = 0 Then
+   connInternet.URL = "www.isotop.net"
+ElseIf debugMode = 1 Then
+   connInternet.URL = "null"
+End If
+connInternet.RemotePort = 80
+connInternet.Protocol = icHTTP
+
+Update_Str = "/isotop/exec/hubrun.aspx?dbSection=" & dbSection & "&dbPos=" & posArray & "&dbFieldID=" & dbFieldID & "&dbField=" & dbField & ""
+'Update_Str = "/isotop/hub/hubrun.asp?dbSection=" & dbSection & "&dbPos=" & posArray & "&dbFieldID=" & dbFieldID & "&dbField=" & dbField & ""
+ 
+    chkContacting.value = 1
+    tmrCancel.Enabled = True
+    txtStatus.Text = "Contacting..."
+  
+    connInternet.Document = Update_Str
+    Hub = connInternet.OpenURL
+    chkConnected.value = 1
+    tmrCancel.Enabled = True
+    txtStatus.Text = "Contacted"
+    Update = connInternet.OpenURL
+    connInternet.Cancel
+  
+  If Connval = False Then
+    Unload frmUpdate
+  Exit Sub
+  End If
+  
+  If InStr(Update, "(d)") = 0 Then
+    MsgBox ("Your records are up to date")
+    Unload frmUpdate
+  Exit Sub
+  End If
+ 
+  Debug.Print connInternet.URL
+  chkProgress.value = 1
+  tmrCancel.Enabled = True
+  txtStatus.Text = "Updating..."
+'--------------------------------------------
+
+secParm = ","
+dbsplit = Split(dbSection, ",")
+dbArrayID = Split(dbFieldID, ",")
+sqlCount = 0
+fCount = 0
+secCount = 0
+For Each secParm In dbsplit
+  secCount = secCount + 1
+  rs.Open secParm, conns, 1, 2, 2
+  dbPos = rs.RecordCount
+  rs.Close
+  
+  upd_comp = Split(Update, "(s)")
+   
+  fCount = fCount + 1
+    
+  upd_find = "(d)"
+  upd_data = Split(upd_comp(fCount - 1), "(d)")
+
+  For Each upd_find In upd_data
+    fParm = "[;]"
+    upd_spin = Split(upd_find, "[;]")
+    dbSpace = Split(dbField, ";")
+    dbFieldS = Split(dbSpace((fCount - 1)), ",")
+    dbPos = dbPos + 1
+    sqlCount = 0
+  For Each fParm In upd_spin
+    sqlCount = sqlCount + 1
+         
+  If sqlCount = 1 Then
+    'Data.Text = Data.Text & ";" & secParm & ";" & _
+                dbArrayID(fCount - 1) & ";" & _
+                dbFieldS(sqlCount - 1) & ";" & _
+                dbPos & ";" & _
+                Replace(fParm, "'", "''")
+                
+    upd_sql = "insert into " & secParm & _
+              "(" & dbArrayID(fCount - 1) & _
+              "," & Replace(dbFieldS(sqlCount - 1), "Date", "CurrentDate") & _
+              ") " & "values('" & dbPos & _
+              "', '" & Replace(fParm, "'", "''") & "')"
+             'MsgBox (upd_sql)
+             'Data.Text = Data.Text & " " & sqlCount & " " & upd_sql
+             conns.Execute (upd_sql)
+  ElseIf sqlCount > 1 Then
+    If sqlCount <= UBound(dbFieldS) + 1 Then
+    'Data.Text = Data.Text & "];[" & secParm & "];[" & _
+                dbArrayID(fCount - 1) & "];[" & _
+                dbFieldS(sqlCount - 1) & "];[" & _
+                dbPos & "];[" & _
+                Replace(fParm, "'", "''") & "]"
+  
+    If InStr(dbFieldS(sqlCount - 1), "Date") <> 0 Then
+        upd_sql = "update " & secParm & " set " & _
+        Replace(dbFieldS(sqlCount - 1), dbFieldS(sqlCount - 1), "CurrentDate") & " = '" & _
+        Replace(fParm, "'", "''") & _
+        "' where " & dbArrayID(fCount - 1) & _
+        " = " & dbPos
+    Else
+            upd_sql = "update " & secParm & " set " & _
+        dbFieldS(sqlCount - 1) & " = '" & _
+        Replace(fParm, "'", "''") & _
+        "' where " & dbArrayID(fCount - 1) & _
+        " = " & dbPos
+    End If
+
+    conns.Execute (upd_sql)
+    ElseIf sqlCount > UBound(dbFieldS) + 1 Then
+    Exit For
+    End If
+  End If
+       
+      Next fParm
+    Next upd_find
+
+Next secParm
+  
+'--------------------------------------------
+  chkSuccess.value = 1
+  tmrCancel.Enabled = True
+  txtStatus.Text = "Update Complete"
+  
+  cmdFinish.Enabled = True
+  cmdCancel.Enabled = False
+  
+  Set conns = Nothing
+  dbPos = 0

@@ -1,0 +1,244 @@
+Here some reboot ap code
+--------------------------------------------------------------------------------
+ Heres some code, the commented out routines also work (if you rename them), but i only use the reboot routine, you may uncomment the others to use them.
+The important part is the AdjustTokenPrivileges. It is required to set security tokens on NT systems inorder to shut a machine down programmatically.
+
+Just Call Reboot and you're machine will reboot
+(yes it also works with win98 since it checks for the windows version)
+
+Global Const EWX_LogOff As Long = 0
+Global Const EWX_SHUTDOWN As Long = 1
+Global Const EWX_REBOOT As Long = 2
+Global Const EWX_FORCE As Long = 4
+Global Const EWX_POWEROFF As Long = 8
+
+'The ExitWindowsEx function either logs off, shuts down, or shuts
+'down and restarts the system.
+Public Declare Function ExitWindowsEx Lib "user32" _
+(ByVal dwOptions As Long, _
+ByVal dwReserved As Long) As Long
+
+'The GetLastError function returns the calling thread's last-error
+'code value. The last-error code is maintained on a per-thread basis.
+'Multiple threads do not overwrite each other's last-error code.
+Public Declare Function GetLastError Lib "kernel32" () As Long
+
+Global Const mlngWindows95 = 0
+Global Const mlngWindowsNT = 1
+
+Public glngWhichWindows32 As Long
+
+'The GetVersion function returns the operating system in use.
+Public Declare Function GetVersion Lib "kernel32" () As Long
+
+Public Type LUID
+UsedPart As Long
+IgnoredForNowHigh32BitPart As Long
+End Type
+
+Public Type LUID_AND_ATTRIBUTES
+TheLuid As LUID
+Attributes As Long
+End Type
+
+Public Type TOKEN_PRIVILEGES
+PrivilegeCount As Long
+TheLuid As LUID
+Attributes As Long
+End Type
+
+'The GetCurrentProcess function returns a pseudohandle for the
+'current process.
+Public Declare Function GetCurrentProcess Lib "kernel32" () As Long
+
+'The OpenProcessToken function opens the access token associated with
+'a process.
+Public Declare Function OpenProcessToken Lib "advapi32" _
+(ByVal ProcessHandle As Long, _
+ByVal DesiredAccess As Long, _
+TokenHandle As Long) As Long
+
+'The LookupPrivilegeValue function retrieves the locally unique
+'identifier (LUID) used on a specified system to locally represent
+'the specified privilege name.
+Public Declare Function LookupPrivilegeValue Lib "advapi32" _
+Alias "LookupPrivilegeValueA" _
+(ByVal lpSystemName As String, _
+ByVal lpName As String, _
+lpLuid As LUID) As Long
+
+'The AdjustTokenPrivileges function enables or disables privileges
+'in the specified access token. Enabling or disabling privileges
+'in an access token requires TOKEN_ADJUST_PRIVILEGES access.
+Public Declare Function AdjustTokenPrivileges Lib "advapi32" _
+(ByVal TokenHandle As Long, _
+ByVal DisableAllPrivileges As Long, _
+NewState As TOKEN_PRIVILEGES, _
+ByVal BufferLength As Long, _
+PreviousState As TOKEN_PRIVILEGES, _
+ReturnLength As Long) As Long
+
+Public Declare Sub SetLastError Lib "kernel32" _
+(ByVal dwErrCode As Long)
+
+Public Sub AdjustToken()
+
+'********************************************************************
+'* This procedure sets the proper privileges to allow a log off or a
+'* shut down to occur under Windows NT.
+'********************************************************************
+
+Const TOKEN_ADJUST_PRIVILEGES = &H20
+Const TOKEN_QUERY = &H8
+Const SE_PRIVILEGE_ENABLED = &H2
+
+Dim hdlProcessHandle As Long
+Dim hdlTokenHandle As Long
+Dim tmpLuid As LUID
+Dim tkp As TOKEN_PRIVILEGES
+Dim tkpNewButIgnored As TOKEN_PRIVILEGES
+Dim lBufferNeeded As Long
+
+'Set the error code of the last thread to zero using the
+'SetLast Error function. Do this so that the GetLastError
+'function does not return a value other than zero for no
+'apparent reason.
+SetLastError 0
+
+'Use the GetCurrentProcess function to set the hdlProcessHandle
+'variable.
+hdlProcessHandle = GetCurrentProcess()
+
+If GetLastError <> 0 Then
+MsgBox "GetCurrentProcess error==" & GetLastError
+End If
+
+OpenProcessToken hdlProcessHandle, _
+(TOKEN_ADJUST_PRIVILEGES Or TOKEN_QUERY), hdlTokenHandle
+
+If GetLastError <> 0 Then
+MsgBox "OpenProcessToken error==" & GetLastError
+End If
+
+'Get the LUID for shutdown privilege
+LookupPrivilegeValue "", "SeShutdownPrivilege", tmpLuid
+
+If GetLastError <> 0 Then
+MsgBox "LookupPrivilegeValue error==" & GetLastError
+End If
+
+tkp.PrivilegeCount = 1 ' One privilege to set
+tkp.TheLuid = tmpLuid
+tkp.Attributes = SE_PRIVILEGE_ENABLED
+
+'Enable the shutdown privilege in the access token of this process
+AdjustTokenPrivileges hdlTokenHandle, _
+False, _
+tkp, _
+Len(tkpNewButIgnored), _
+tkpNewButIgnored, _
+lBufferNeeded
+
+If GetLastError <> 0 Then
+MsgBox "AdjustTokenPrivileges error==" & GetLastError
+End If
+
+End Sub
+Public Sub Reboot()
+If glngWhichWindows32 = mlngWindowsNT Then
+AdjustToken
+'MsgBox "Post-AdjustToken GetLastError " & GetLastError
+End If
+errlog "Windows Shut Down Intitiated..."
+ExitWindowsEx (EWX_REBOOT Or EWX_FORCE), &HFFFF
+If Error <> 0 Then
+errlog "Could Not Reboot Windows. Last Error: " & GetLastError
+Exit Sub
+End If
+End
+End Sub
+
+
+
+'Private Sub cmdLogoff_Click()
+
+' ExitWindowsEx (EWX_LogOff), &HFFFF
+' MsgBox "ExitWindowsEx's GetLastError " & GetLastError
+
+'End Sub
+
+'Private Sub cmdForceLogoff_Click()
+'
+' ExitWindowsEx (EWX_LogOff Or EWX_FORCE), &HFFFF
+' MsgBox "ExitWindowsEx's GetLastError " & GetLastError
+
+'End Sub
+
+'Private Sub cmdShutdown_Click()
+
+' If glngWhichWindows32 = mlngWindowsNT Then
+' AdjustToken
+' MsgBox "Post-AdjustToken GetLastError " & GetLastError
+' End If
+
+' ExitWindowsEx (EWX_SHUTDOWN), &HFFFF
+' MsgBox "ExitWindowsEx's GetLastError " & GetLastError
+
+'End Sub
+
+=================================================================
+
+Listing One
+// Get token for this process
+HANDLE token;
+if(OpenProcessToken(GetCurrentProcess(), TOKEN_ADJUST_PRIVILEGES | TOKEN_QUERY, &token) == false)
+{
+	printf("OpenProcessToken Failed: 0x%X\n", GetLastError());
+	exit(-1);
+}
+
+//Get LUID for shutdown privilege}
+TOKEN_PRIVILEGES tkp;
+if(LookupPrivilegeValue(NULL, "SeDebugPrivilege", &tkp.Privileges[0].Luid) == false)
+{
+	printf("LookupPrivilegeValue failed: 0x%X\n", GetLastError());
+	exit(-1);
+}
+
+tkp.PrivilegeCount = 1;
+tkp.Privileges[0].Attributes = SE_PRIVILEGE_ENABLED;
+
+if(AdjustTokenPrivileges(token, false, &tkp, 0, NULL, NULL) == false)
+{
+	printf("AdjustTokenPrivileges Failed: 0x%X\n", GetLastError());
+	exit(-1);
+}
+=================================================================
+bool WINAPI SystemRestart (DWORD mode)
+{   
+    BOOL ret;
+    OSVERSIONINFO vi;
+
+    vi.dwOSVersionInfoSize = sizeof(vi);
+    GetVersionEx (&vi);
+    if (vi.dwPlatformId == VER_PLATFORM_WIN32_NT) {
+      HANDLE hToken;
+      TOKEN_PRIVILEGES tp;
+
+      ret = FALSE;
+      if (OpenProcessToken (GetCurrentProcess (),             // open access privilege list.
+          TOKEN_ADJUST_PRIVILEGES | TOKEN_QUERY, &hToken)) {
+        tp.PrivilegeCount = 1;
+        LookupPrivilegeValue (NULL, SE_SHUTDOWN_NAME,       // Ask the "shutdown" LUID
+                              &tp.Privileges[0].Luid);
+        tp.Privileges[0].Attributes = SE_PRIVILEGE_ENABLED; // enable it
+        AdjustTokenPrivileges (hToken, FALSE, &tp, 0, NULL, 0);
+        ret = (GetLastError () == ERROR_SUCCESS);
+      }
+    }
+    else
+      ret = true;
+
+    return (ret ? ExitWindowsEx (mode, 0) : false);
+}
+=================================================================

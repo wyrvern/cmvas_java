@@ -1,0 +1,104 @@
+/*
+ *   debug. Generic.
+ *   Description  : None.
+ *   Dependencies : None.
+ *   Platform     : OS Independant.
+ *   Version      : 1.0.1
+ *   Credit       : this()
+ *   Copyright (C) 2001
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ *
+ *  To contact the author email: null@null.co.za
+ *  Todo :
+*/
+
+import java.io.*;
+import java.util.*;
+import java.lang.reflect.*;
+
+/**
+ * The generic library class.
+ * <p>
+ * @author null@null.co.za
+ * @version 1.0.1
+ */
+
+public class generic {
+ private String er;
+ private String STRINGID = "string library v1.0.1";
+
+/****/
+  public static void main (String[] args) {
+    generic app = new generic(args);
+  }
+
+/***/
+  public generic(String[] args) {
+   byte mm = this.processArgs(args);
+  }
+/**/
+
+/****/  
+  public byte processArgs(String[] args) {
+   char dk        = 't';
+   int dt         = 123456;
+   int fi[]       = new int[156];
+   int fe[][]     = new int[1][3];
+   char da[]      = new char[3];
+   char ds[]      = {'a','b','c'};
+   String es[]    = {"ape","bone","tone"};
+   String fs;
+   er             = "12";
+   byte cr        = -128;
+   int  dr        = 190;
+   Byte kr        = Byte.decode(er);
+   byte ke        = Byte.parseByte(er);
+   byte kd        = 127;
+   byte op        = 0;
+   byte de        = Byte.MAX_VALUE;
+   int  lp        = hashCode();
+   Byte vo        = new Byte(kd);
+   int  kn        = vo.intValue();   
+   String fo      = vo.toString();
+   char gk        = 'f';
+   String jk      = "f";
+
+   byte dc[]      = new byte[10];
+   Byte ek[]      = new Byte[10];
+   int  so        = 0;
+   String tk      = "";
+   
+   try { 
+         so = System.in.read(dc);
+   }
+   catch(IOException ex){System.out.println(ex);}  
+   for(int i = 0;i < so-2;i++){ 
+    tk = tk + (char)dc[i];   
+   }
+//  System.out.println(tk);
+//  System.out.println(tk.length());
+//  System.out.println((int)gk);
+
+    byte be[]    =  new byte[5]; 
+    try{
+    System.in.read(be);
+     System.out.print(new Integer(new String(be)));
+    }
+     catch (IOException e){System.out.print("IOexception");} 
+     catch (NumberFormatException e){System.out.print("Only input integers please");} 
+   return cr;
+  }
+}

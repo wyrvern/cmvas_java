@@ -1,0 +1,72 @@
+If fromMonth >= toMonth And _
+   fromDay >= toDay And _
+   fromYear >= toYear Or _
+  fromMonth > toMonth And _
+  fromYear >= toYear Then
+
+'   fromMonth <> toMonth And _
+'   fromDay <= toDay And _
+'   fromYear >= toYear And _
+'   fromYear <= toYear Or _
+'   fromMonth = toMonth And _
+'   fromDay >= toDay And _
+'   fromYear >= toYear And _
+'   fromYear <= toYear Then
+   
+   MsgBox ("!")
+  If dateMonth <= fromMonth And _
+     dateMonth >= toMonth And _
+     dateDay <= fromDay And _
+     dateDay >= toDay And _
+     dateYear <= fromYear And _
+     dateYear >= toYear Then
+       drem = dateMonth & dateDay & dateYear
+  End If
+  If dateMonth < fromMonth And _
+     dateMonth > toMonth And _
+     dateYear <= fromYear And _
+     dateYear >= toYear Then
+       drem = dateMonth & dateDay & dateYear
+  End If
+
+  If dateMonth <> fromMonth And _
+     dateMonth = toMonth Or _
+     dateMonth = fromMonth And _
+     dateMonth <> toMonth And _
+     dateDay <= fromDay Or _
+     dateDay >= toDay And _
+     dateYear <= fromYear And _
+     dateYear >= toYear Then
+       drem = dateMonth & dateDay & dateYear
+  End If
+'Else
+'  If dateMonth >= fromMonth And _
+'     dateMonth <= toMonth And _
+'     dateDay >= fromDay And _
+'     dateDay <= toDay And _
+'     dateYear >= fromYear And _
+'     dateYear <= toYear Then
+'       drem = dateMonth & dateDay & dateYear
+'  End If
+'  If dateMonth > fromMonth And _
+'     dateMonth < toMonth And _
+'     dateYear >= fromYear And _
+'     dateYear <= toYear Then
+'       drem = dateMonth & dateDay & dateYear
+'  End If
+'  If dateMonth = fromMonth And _
+'     dateMonth <> toMonth And _
+'     dateDay >= fromDay And _
+'     dateYear >= fromYear And _
+'     dateYear <= toYear Then
+'       drem = dateMonth & dateDay & dateYear
+'  End If
+'  If dateMonth = toMonth And _
+'     dateMonth <> fromMonth And _
+'     dateDay <= toDay And _
+'     dateYear >= fromYear And _
+'     dateYear <= toYear Then
+'       drem = dateMonth & dateDay & dateYear
+'  End If
+
+ End If

@@ -1,0 +1,52 @@
+Option Explicit 
+
+Public Function GetRegKey(varSystemID As Variant, varUsers As Variant) As Variant 
+Dim strHiWord As String, strLoWord As String 
+Dim sngHiWord As Single, sngLoWord As Single 
+Dim strPart(4) As String 
+Dim sngPart(4) As Single 
+
+  On Error GoTo errHandler 
+  strHiWord = Left(varSystemID, InStr(varSystemID, "-") - 1) 
+  strLoWord = Right(varSystemID, InStrRev(varSystemID, "-") - 1) 
+  
+  sngHiWord = Cnv2Dec(strHiWord, 16) 
+  sngLoWord = Cnv2Dec(strLoWord, 16) 
+  
+  If varUsers <= 0 Or InStr(varSystemID, "-") = 0 Or Len(varSystemID) > 10 Or Len(varSystemID) = 0 Then 
+    GetRegKey = "Error" 
+    Exit Function 
+  End If 
+  
+  If sngHiWord = 0 Then sngHiWord = 50 * varUsers Mod 65535 
+  If sngLoWord = 0 Then sngLoWord = 35 * varUsers Mod 65535 
+  
+  sngPart(1) = (sngHiWord * (varUsers Mod 15000) + sngLoWord \ varUsers) 
+  sngPart(2) = (sngHiWord + sngLoWord) \ (varUsers Mod 98) 
+  sngPart(3) = (sngHiWord + sngLoWord + sngPart(1)) \ (varUsers * 2) Mod 18000 
+  sngPart(4) = (sngPart(3)) * (varUsers \ 2) 
+  
+  strPart(1) = Right$("0000" & Hex$(sngPart(1)), 4) 
+  strPart(2) = Right$("0000" & Hex$(sngPart(2)), 4) 
+  strPart(3) = Right$("0000" & Hex$(sngPart(3)), 4) 
+  strPart(4) = Right$("0000" & Hex$(sngPart(4)), 4) 
+  
+  GetRegKey = strPart(1) & "-" & strPart(2) & "-" & strPart(3) & "-" & strPart(4) 
+  Exit Function 
+  
+errHandler: 
+  GetRegKey = "Error" 
+  Exit Function 
+End Function 
+
+Private Function Cnv2Dec(strNum As String, Optional intBase As Integer = 16) As Long 
+Dim intLp As Integer, strVal As String, intVal As Integer 
+  On Error Resume Next 
+  For intLp = 1 To Len(strNum) 
+    strVal = Mid$(strNum, Len(strNum) + 1 - intLp, 1) 
+    If Not IsNumeric(strVal) Then intVal = Asc(strVal) - 55 Else intVal = Val(strVal) 
+    Cnv2Dec = Cnv2Dec + intVal * (intBase ^ (intLp - 1)) 
+  Next 
+  On Error GoTo 0 
+End Function 
+

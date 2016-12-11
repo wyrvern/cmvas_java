@@ -1,0 +1,15 @@
+bulkMail issues :
+-----------------------------------------------------------------------------------------------------------------------------
+1) UP_Key, not adjusting correctly,
+    (ie, line 2, line length = 0) & numerous other.
+-----------------------------------------------------------------------------------------------------------------------------
+2) Milton bug :
+Hello ALL
+
+This is a test
+typed after end now
+
+ffffff ----10---- mouse movement ffffff end now.
+
+
+Tes    ting

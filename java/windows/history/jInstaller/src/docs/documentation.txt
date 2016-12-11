@@ -1,0 +1,38 @@
+/****************************************************************\
+ * Project header    : jInstaller - software deployment software*
+ * Project inception : 17/11/2001                               *
+ * Project author    : null@null.co.za                          *
+ * Project version   : 1.0.a                                    *
+ *                                                              *
+ * Last revision     : 07/11/2001 - 01:04:00:GMT+2              *
+\****************************************************************/
+
+/------------------------------------------------- History      :
+
+
+/------------------------------------------------- Description  :
+ - A simple, direct and efficient deployment system written
+   in java + c++.
+ - Designed to supply an adaptive, small and fast interface
+   for deploying packaged software upon varying operating 
+   platforms.
+
+/------------------------------------------------- Detail       :
+ - Language  : java.
+ - Database  : None.
+ - Depends   : Microsoft jvm 1.2+.
+               lib.strlib  class factory.
+               lib.shell   class factory.
+               lib.shellx  class factory.
+
+/------------------------------------------------- Instructions :
+
+ - Faults    : An extensive error trapping system has
+               been included to catch all possible
+               exceptions caused by any fault.
+
+               The system allows the local system
+               attributes to be called to further
+               send bug information to relevant parties.
+             
+ \eof***********************************************************/

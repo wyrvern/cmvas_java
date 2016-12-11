@@ -1,0 +1,19 @@
+import javax.swing.JTextArea;
+
+public class visual {
+
+	private JTextArea jTextArea = null;  //  @jve:decl-index=0:visual-constraint="87,70"
+
+	/**
+	 * This method initializes jTextArea	
+	 * 	
+	 * @return javax.swing.JTextArea	
+	 */
+	private JTextArea getJTextArea() {
+		if (jTextArea == null) {
+			jTextArea = new JTextArea();
+		}
+		return jTextArea;
+	}
+
+}

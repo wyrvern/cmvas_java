@@ -1,0 +1,14 @@
+ms {
+    case 0:
+      OSVersion = "Microsoft Windows XP";
+    case 1:
+      OSVersion = "Microsoft Windows NT";
+    case 2:
+      OSVersion = "Microsoft Windows 2000";
+    case 3:
+      OSVersion = "Microsoft Windows ME";
+    case 4:
+      OSVersion = "Microsoft Windows 98";
+    case 5:
+      OSVersion = "Microsoft Windows 95";
+}
