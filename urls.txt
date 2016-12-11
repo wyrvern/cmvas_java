@@ -1,0 +1,2 @@
+      String https_url = "https://www.cellc.co.za/cellc/jsp/profile/login_ajax.jsp?username=0743552582&password=mp1978mp";
+      String httpr_url = "https://www.cellc.co.za/cellc/jsp/myaccount/my-account-loginBalance-ajax.jsp";
