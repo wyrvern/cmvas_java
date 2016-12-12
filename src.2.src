@@ -3,30 +3,35 @@ import java.net.URL;
 import java.security.cert.Certificate;
 import java.io.*;
 
-import java.net.URL;
-import java.net.URLConnection;
-import java.util.List;
-import java.util.Map;
+import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.SSLPeerUnverifiedException;
 
 public class http_client{
 
    public static void main(String[] args) {
 
-      URL url;
-      InputStream is = null;
-      BufferedReader br;
-      String line;
+      URL url, uri;
+      InputStream is = null, ir = null;
+      BufferedReader br, sr;
+      String line, _line;
 
       try {
          url = new URL("https://www.cellc.co.za/cellc/jsp/profile/login_ajax.jsp?username=0743552582&password=mp1978mp");
-       //uri = new URL("https://www.cellc.co.za/cellc/jsp/myaccount/my-account-loginBalance-ajax.jsp");
+         uri = new URL("https://www.cellc.co.za/cellc/jsp/myaccount/my-account-loginBalance-ajax.jsp");
 
          is = url.openStream();  // throws an IOException
+         ir = uri.openStream();  // throws an IOException
 
          br = new BufferedReader(new InputStreamReader(is));
 
          while ((line = br.readLine()) != null) {
             System.out.println(line);
+         }
+
+         sr = new BufferedReader(new InputStreamReader(ir));
+
+         while ((_line = sr.readLine()) != null) {
+            System.out.println(_line);
          }
 
      } catch (MalformedURLException mue) {
