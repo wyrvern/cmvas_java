@@ -27,8 +27,8 @@ public class http_post {
          con.setRequestMethod("POST");
 
          con.setRequestProperty("Content-length", String.valueOf(query.length())); 
-         con.setRequestProperty("Content-Type","application/x-www- form-urlencoded"); 
-         con.setRequestProperty("User-Agent", "Mozilla/4.0 (compatible; MSIE 5.0;Windows98;DigExt)"); 
+         con.setRequestProperty("Content-Type","application/x-www-form-urlencoded;charset=utf-8"); 
+         con.setRequestProperty("User-Agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:50.0) Gecko/20100101 Firefox/50.0"); 
          con.setDoOutput(true); 
          con.setDoInput(true); 
 
@@ -47,6 +47,8 @@ public class http_post {
 
          System.out.println("Resp Code:"+con .getResponseCode()); 
          System.out.println("Resp Message:"+ con .getResponseMessage()); 
+
+       //httpsURL = "https://www.cellc.co.za/cellc/jsp/myaccount/my-account-loginBalance-ajax.jsp";
 
       } catch (MalformedURLException mue) {
          mue.printStackTrace();
