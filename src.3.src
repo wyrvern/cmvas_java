@@ -1,0 +1,36 @@
+The following is a code snippet of what I'm trying to do:
+// open the connection and prepare it to POST
+
+URL url = new URL("http://www.whatever.com");
+URLConnection urlConnection = url.openConnection();
+urlConnection.setDoOutput(true);
+urlConnection.setDoInput(true);
+urlConnection.setAllowUserInteraction(false);
+DataOutputStream dataOutputStream = new DataOutputStream(urlConnection.getOutputStream());
+
+// First page
+String query = "name=value&name=value....."
+// Send the data
+dataOutputStream.writeBytes(query);
+// Read the response
+BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
+String string = new String("");
+StringBuffer stringBuffer = new StringBuffer();
+while((string = bufferedReader.readLine()) != null)
+{
+stringBuffer.append(string);
+}
+
+
+
+// Second page
+String query1 = "name=value&name=value....."
+// Send the data
+dataOutputStream.writeBytes(query1);
+// Read the response
+String string1 = new String("");
+StringBuffer stringBuffer1 = new StringBuffer();
+while((string1 = bufferedReader.readLine()) != null)
+{
+stringBuffer1.append(string1);
+}
