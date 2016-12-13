@@ -13,17 +13,44 @@ import java.net.URLEncoder;
 
 public class http_post {
 
+   public static void print_content (HttpsURLConnection con) {
+
+      if (con != null) {
+ 
+         try {
+
+	    System.out.println("---------------------");
+	    BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream()));
+
+	    String input;
+
+	    while ((input = br.readLine()) != null){
+	       System.out.println(input);
+	    }
+	    br.close();
+
+         }catch (IOException e) {
+	    e.printStackTrace();
+	 }
+      }
+   }
+
    public static void main(String[] args) {
 
       try {
 
          String httpsURL = "https://www.cellc.co.za/cellc/jsp/profile/login_ajax.jsp";
+         String http_URL = "https://www.cellc.co.za/cellc/jsp/myaccount/my-account-loginBalance-ajax.jsp";
+
          String query = "username="+URLEncoder.encode("0743552582","UTF-8"); 
          query += "&";
          query += "password="+URLEncoder.encode("pz1609pz","UTF-8") ;
 
          URL myurl = new URL(httpsURL);
-         HttpsURLConnection con = (HttpsURLConnection)myurl.openConnection();
+         URL __url = new URL(http_URL);
+
+         HttpsURLConnection  con = (HttpsURLConnection)myurl.openConnection();
+
          con.setRequestMethod("POST");
 
          con.setRequestProperty("Content-length", String.valueOf(query.length())); 
@@ -47,6 +74,10 @@ public class http_post {
 
          System.out.println("Resp Code:"+con .getResponseCode()); 
          System.out.println("Resp Message:"+ con .getResponseMessage()); 
+
+         con = (HttpsURLConnection)__url.openConnection();
+
+         print_content (con);
 
        //httpsURL = "https://www.cellc.co.za/cellc/jsp/myaccount/my-account-loginBalance-ajax.jsp";
 
