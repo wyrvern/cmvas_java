@@ -70,6 +70,8 @@ http.keepAlive=<boolean>
          con.setRequestProperty("Connection", "Keep-Alive");
          con.setRequestProperty("Keep-Alive", "header");
 
+       //System.out.println(con.getHeaderField("Set-Cookie"));
+
          con.setDoOutput(true); 
          con.setDoInput(true); 
 
