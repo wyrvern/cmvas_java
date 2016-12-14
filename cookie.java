@@ -10,6 +10,8 @@ import java.net.URL;
 import java.security.cert.Certificate;
 import java.io.*;
 
+import java.net.HttpURLConnection;
+
 import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLPeerUnverifiedException;
 
@@ -20,12 +22,34 @@ import java.net.URLEncoder;
 	 
 public class cookie {
 
+   public static void print_content (URLConnection con) {
+
+      if (con != null) {
+ 
+         try {
+
+	    System.out.println("---------------------");
+	    BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream()));
+
+	    String input;
+
+	    while ((input = br.readLine()) != null){
+	       System.out.println(input);
+	    }
+	    br.close();
+
+         }catch (IOException e) {
+	    e.printStackTrace();
+	 }
+      }
+   }
+
    public void SetCookie (String cookievalue) {
 
       try {
 
          String query            = URLEncoder.encode("key", "UTF-8") + "=" + URLEncoder.encode("value", "UTF-8");
-         String cookies          = "session_cookie=" + cookievalue; //"session_cookie=value";
+         String cookies          = cookievalue; //"session_cookie=" + cookievalue; //"session_cookie=value";
          URL url                 = new URL("https://www.cellc.co.za/cellc/jsp/myaccount/my-account-loginBalance-ajax.jsp");
          HttpsURLConnection conn = (HttpsURLConnection) url.openConnection();
 
@@ -64,7 +88,31 @@ public class cookie {
       try {
 
          URL url            = new URL("https://www.cellc.co.za/cellc/jsp/profile/login_ajax.jsp");
-	 URLConnection conn = url.openConnection();
+
+         String query = "username="+URLEncoder.encode("0743552582","UTF-8"); 
+         query += "&";
+         query += "password="+URLEncoder.encode("pz1609pz", "UTF-8") ;
+
+       //URLConnection conn = url.openConnection();
+         HttpsURLConnection conn = (HttpsURLConnection)url.openConnection();
+
+         conn.setRequestMethod  ("POST");
+         conn.setRequestProperty("Content-length", String.valueOf(query.length())); 
+         conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded;charset=utf-8"); 
+         conn.setRequestProperty("User-Agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:50.0) Gecko/20100101 Firefox/50.0");
+         conn.setRequestProperty("Connection", "Keep-Alive");
+         conn.setRequestProperty("Keep-Alive", "header");
+
+         conn.setDoOutput       (true); 
+         conn.setDoInput        (true); 
+
+         DataOutputStream output = new DataOutputStream(conn.getOutputStream());  
+
+         output.writeBytes(query);
+
+         output.close();
+
+         print_content (conn);
 
 	 Map<String, List<String>> headerFields = conn.getHeaderFields();	 
 
@@ -138,6 +186,9 @@ public class cookie {
 
        cookie c = new cookie();
        String s = c.GetCookie ();
+
+       System.out.println (s);
+
        c.SetCookie (s);
 
      //System.out.println (":" + s);
